@@ -20,10 +20,13 @@ int main(int argc, char *argv[]) {
 
 
     int index = 0;
-    for (int x = 0; x < WINDOW_WIDTH; x++) {
-       for (int y = 0; y < WINDOW_HEIGHT; y++) {
+    for (int y = WINDOW_HEIGHT - 1; y >= 0; y--) {
+       for (int x = 0; x < WINDOW_WIDTH; x++) {
          pixels[index] = Point2f(x, y);
-         colors[index] = Point3f(1.0f,0.0f,0.0f);
+         float r = (float)x / (float)WINDOW_WIDTH;
+         float g = (float)y / (float)WINDOW_HEIGHT;
+         float b = .2f;
+         colors[index] = Point3f(r,g,b);
          index++;
         }
      }
@@ -40,8 +43,8 @@ int main(int argc, char *argv[]) {
     //==========================================================================//
     // release memory
     //==========================================================================//
-    delete pixels;
-    delete colors;
+    delete[] pixels;
+    delete[] colors;
 
     return 0;
 }
