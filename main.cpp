@@ -10,7 +10,7 @@
 
 
 int main(int argc, char *argv[]) {
-    std::cout << "Hello, World! This is ma3Renderer" << std::endl;
+    std::cout << "This is ## ma3Renderer ##" << std::endl;
 
     //==========================================================================//
     //Create and check window for visualization
