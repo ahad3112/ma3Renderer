@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <cmath>
 
 #include "core/geometry.hpp"
 #include "visualization/ma_window.hpp"
@@ -8,12 +8,35 @@
 #define WINDOW_WIDTH 1024
 #define WINDOW_HEIGHT 620
 
+
+//====================================================================================================================//
+// Sample Sphere
+//====================================================================================================================//
+float hitSphere(const Point3f &center, float radius, const Ray &ray) {
+    Point3f oc = ray.o - center;
+    float a = glm::dot(ray.d , ray.d);
+    float b = 2.0f * glm::dot(oc, ray.d);
+    float c = glm::dot(oc, oc) - radius * radius;
+    float discriminant = b * b - 4.0f * a * c;
+
+    if( discriminant < 0){
+        return -1.0f;
+    } else {
+       return (-b - std::sqrt(discriminant)) / (2.0f * a);
+    }
+}
+
 //====================================================================================================================//
 // Sample color function for starting the ray tracer
 //====================================================================================================================//
 Vector3f color(const Ray &ray) {
+    float t = hitSphere(Point3f(0.0f, 0.0f, -1.0f), 0.50f, ray);
+    if(t > 0 ) {
+        Normal3f n = glm::normalize(ray(t) - Point3f(0.0f, 0.0f, -1.0f));
+        return 0.5f * Vector3f(n.x + 1, n.y + 1, n.z + 1);
+    }
     Vector3f unitDirection = glm::normalize(ray.d);
-    float t = 0.5f * (unitDirection.y + 1.0f);
+    t = 0.5f * (unitDirection.y + 1.0f);
     return (1.0f - t) * Vector3f(1.0f, 1.0f, 1.0f) + t * Vector3f(0.5f, 0.7f, 1.0f);
 }
 

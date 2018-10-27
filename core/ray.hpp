@@ -13,7 +13,7 @@ public:
     Ray() {}
     Ray(const Point3f &r_o, const Vector3f &r_d);
 
-    Point3f operator()(float t);
+    Point3f operator()(float t) const;
 
     // < Ray public data>
     Point3f o;

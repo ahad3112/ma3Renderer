@@ -8,6 +8,6 @@ Ray::Ray(const Point3f &r_o, const Vector3f &r_d) : o(r_o), d(r_d) {
 
 }
 
-Point3f Ray::operator()(float t) {
+Point3f Ray::operator()(float t) const {
     return o + t * d;
 }
