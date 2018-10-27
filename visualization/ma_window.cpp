@@ -89,7 +89,7 @@ void MAWindow::initGL() {
 // Sample draw
 //====================================================================================================================//
 
-void drawScreen(int width, int height, Point2f *pixels, Point3f *colors) {
+void drawScreen(int width, int height, Point2f *pixels, Vector3f *colors) {
 
     /* We have a color array and a vertex array */
     glEnableClientState(GL_VERTEX_ARRAY);
@@ -108,7 +108,7 @@ void drawScreen(int width, int height, Point2f *pixels, Point3f *colors) {
 //====================================================================================================================//
 // display
 //====================================================================================================================//
-void MAWindow::display(Point2f *pixels, Point3f *colors) {
+void MAWindow::display(Point2f *pixels, Vector3f *colors) {
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 

@@ -31,7 +31,8 @@ using Point3i = glm::ivec3;
 using Point3f = glm::vec3;
 
 ///////////////////////////// Normal ////////////////////////
-
+using Normal3i = glm::ivec3;
+using Normal3f = glm::vec3;
 
 
 //////////////////////// Utility function ////////////////////
