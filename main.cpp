@@ -4,6 +4,7 @@
 #include "core/geometry.hpp"
 #include "visualization/ma_window.hpp"
 #include "core/ray.hpp"
+#include "shapes/Sphere.hpp"
 
 #define WINDOW_WIDTH 1024
 #define WINDOW_HEIGHT 620
@@ -13,9 +14,9 @@
 // Sample Sphere
 //====================================================================================================================//
 float hitSphere(const Point3f &center, float radius, const Ray &ray) {
-    Point3f oc = ray.o - center;
-    float a = glm::dot(ray.d , ray.d);
-    float b = 2.0f * glm::dot(oc, ray.d);
+    Point3f oc = ray.origin - center;
+    float a = glm::dot(ray.direction , ray.direction);
+    float b = 2.0f * glm::dot(oc, ray.direction);
     float c = glm::dot(oc, oc) - radius * radius;
     float discriminant = b * b - 4.0f * a * c;
 
@@ -29,15 +30,19 @@ float hitSphere(const Point3f &center, float radius, const Ray &ray) {
 //====================================================================================================================//
 // Sample color function for starting the ray tracer
 //====================================================================================================================//
-Vector3f color(const Ray &ray) {
-    float t = hitSphere(Point3f(0.0f, 0.0f, -1.0f), 0.50f, ray);
-    if(t > 0 ) {
-        Normal3f n = glm::normalize(ray(t) - Point3f(0.0f, 0.0f, -1.0f));
+Vector3f color(const Ray &ray, const Shape &shape) {
+    SurfaceInteraction isect;
+    float *t;
+    *t = 10000000.0f;
+    shape.intersect(&ray,t,&isect);
+    //float t = hitSphere(Point3f(0.0f, 0.0f, -1.0f), 0.50f, ray);
+    if(*t > 0 ) {
+        Normal3f n = glm::normalize(ray(*t) - Point3f(0.0f, 0.0f, -1.0f));
         return 0.5f * Vector3f(n.x + 1, n.y + 1, n.z + 1);
     }
-    Vector3f unitDirection = glm::normalize(ray.d);
-    t = 0.5f * (unitDirection.y + 1.0f);
-    return (1.0f - t) * Vector3f(1.0f, 1.0f, 1.0f) + t * Vector3f(0.5f, 0.7f, 1.0f);
+    Vector3f unitDirection = glm::normalize(ray.direction);
+    *t = 0.5f * (unitDirection.y + 1.0f);
+    return (1.0f - *t) * Vector3f(1.0f, 1.0f, 1.0f) + (*t) * Vector3f(0.5f, 0.7f, 1.0f);
 }
 
 
@@ -49,6 +54,8 @@ int main(int argc, char *argv[]) {
     //================================================================================================================//
     Point2f  *pixels = new Point2f[WINDOW_WIDTH * WINDOW_HEIGHT];
     Vector3f  *colors = new Point3f[WINDOW_WIDTH * WINDOW_HEIGHT];
+
+    Sphere sphere(Point3f(0.0f, 0.0f, -1.0f), 0.5f);
 
 
     Point3f lowerLeftCorner(-2.0, -1.0, -1.0);
@@ -65,7 +72,7 @@ int main(int argc, char *argv[]) {
          float u = (float)x / (float)WINDOW_WIDTH;
          float v = (float)y / (float)WINDOW_HEIGHT;
          Ray ray(origin, lowerLeftCorner + u * horizontal + v * vertical);
-         colors[index] = color(ray);
+         colors[index] = color(ray, sphere);
          index++;
         }
      }

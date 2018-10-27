@@ -1,0 +1,10 @@
+//
+// Created by Muhammed Ahad on 2018-10-27.
+//
+
+#ifndef MA3RENDERER_MAUTILITY_HPP
+#define MA3RENDERER_MAUTILITY_HPP
+
+#define MA_EPSILON 0.00001f
+
+#endif //MA3RENDERER_MAUTILITY_HPP

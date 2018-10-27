@@ -11,18 +11,19 @@
 //====================================================================================================================//
 // Interaction
 //====================================================================================================================//
-class Interaction {
-public:
+struct Interaction {
     // < Interaction's public methods 115>
     Interaction() {}
     Interaction(const Point3f &p, const Normal3f &n);
     bool isSurfaceInteraction() const;
 
     // < Interaction's public data 115>
-    Point3f p;
-    Normal3f n;
+    Point3f position;
+    Normal3f normal;
+    // TODO not used yet.
+    float time;
 
-    // TODO MediumInterface and time, pError and wo
+    // TODO MediumInterface and pError and wo
 };
 
 //====================================================================================================================//

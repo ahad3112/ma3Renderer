@@ -7,12 +7,12 @@
 //====================================================================================================================//
 // Interaction
 //====================================================================================================================//
-Interaction::Interaction(const Point3f &p, const Normal3f &n) : p(p), n(n) {
+Interaction::Interaction(const Point3f &p, const Normal3f &n) : position(p), normal(n) {
 
 }
 
 bool Interaction::isSurfaceInteraction() const {
-    return n!= Normal3f(); // TODO need to double check this
+    return normal!= Normal3f(); // TODO need to double check this
 }
 
 //====================================================================================================================//

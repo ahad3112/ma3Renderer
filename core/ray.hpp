@@ -11,13 +11,13 @@ class Ray {
 public:
     // < Ray public methods>
     Ray() {}
-    Ray(const Point3f &r_o, const Vector3f &r_d);
+    Ray(const Point3f &origin, const Vector3f &direction);
 
     Point3f operator()(float t) const;
 
     // < Ray public data>
-    Point3f o;
-    Vector3f d;
+    Point3f origin;
+    Vector3f direction;
 };
 
 #endif //MA3RENDERER_RAY_HPP
