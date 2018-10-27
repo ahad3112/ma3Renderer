@@ -16,7 +16,7 @@ set(GLFW_LINK /usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.dylib)
 link_libraries(${OPENGL} ${GLEW_LINK} ${GLFW_LINK})
 
 
-set(SOURCE_FILES main.cpp core/geometry.hpp visualization/ma_window.hpp visualization/ma_window.cpp core/ray.hpp core/ray.cpp core/interaction.hpp core/interaction.cpp core/shape.hpp core/shape.cpp shapes/Sphere.cpp shapes/Sphere.hpp utility/maUtility.hpp)
+set(SOURCE_FILES main.cpp core/geometry.hpp visualization/ma_window.hpp visualization/ma_window.cpp core/ray.hpp core/ray.cpp core/interaction.hpp core/interaction.cpp core/shape.hpp core/shape.cpp shapes/Sphere.cpp shapes/Sphere.hpp utility/maUtility.hpp core/GeometricPrimitive.cpp core/GeometricPrimitive.hpp core/Primitive.cpp core/Primitive.hpp)
 add_executable(ma3Renderer ${SOURCE_FILES})
 
 if (APPLE)

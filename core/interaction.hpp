@@ -8,6 +8,10 @@
 #include "geometry.hpp"
 
 
+// Forward decleration for Primitive
+class Primitive;
+
+
 //====================================================================================================================//
 // Interaction
 //====================================================================================================================//
@@ -35,8 +39,12 @@ public:
     SurfaceInteraction(){}
     SurfaceInteraction(const Point3f &p, const Normal3f &n);
 
-    // < SurfaceInteraction public data 116 >
+
+    const Primitive *primitive = nullptr;
+    // < SurfaceInteraction public data 116, 250, bsdf, bssrdf >
     // TODO public data
+//    BSDF *bsdf = nullptr;
+//    BSSRDF *bssrdf = nullptr;
 };
 
 #endif //MA3RENDERER_INTERACTION_HPP

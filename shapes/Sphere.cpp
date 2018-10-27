@@ -10,10 +10,10 @@
 Sphere::Sphere(Point3f center, float radius) : center(center), radius(radius){}
 
 
-bool Sphere::intersect(const Ray *ray, float *tHit, SurfaceInteraction *isect) const {
-    Point3f oc = ray->origin - center;
-    float a = glm::dot(ray->direction , ray->direction);
-    float b = 2.0f * glm::dot(oc, ray->direction);
+bool Sphere::intersect(const Ray &ray, float *tHit, SurfaceInteraction *isect) const {
+    Point3f oc = ray.origin - center;
+    float a = glm::dot(ray.direction , ray.direction);
+    float b = 2.0f * glm::dot(oc, ray.direction);
     float c = glm::dot(oc, oc) - radius * radius;
     float discriminant = b * b - 4.0f * a * c;
 
@@ -27,7 +27,7 @@ bool Sphere::intersect(const Ray *ray, float *tHit, SurfaceInteraction *isect) c
         if(t > MA_EPSILON && t < *tHit) {
             *tHit = t;
         }
-        isect->position = (*ray)(*tHit);
+        isect->position = ray(*tHit);
         isect->normal = glm::normalize(isect->position - center);
         return true;
     }
@@ -38,4 +38,5 @@ bool Sphere::intersect(const Ray *ray, float *tHit, SurfaceInteraction *isect) c
 
 float Sphere::area() const {
     std::cerr << "Sphere::area() has not been implemented yet!!!!" << std::endl;
+    return 0.0f;
 }

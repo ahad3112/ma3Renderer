@@ -13,7 +13,7 @@ class Sphere : public Shape{
 public:
     // <Sphere public methods >
     Sphere(Point3f center, float radius);
-    virtual bool intersect(const Ray *ray, float *tHit, SurfaceInteraction *isect) const override;
+    virtual bool intersect(const Ray &ray, float *tHit, SurfaceInteraction *isect) const override;
     /**
      * this method is used to compute the surface area of a shape in object space
      */

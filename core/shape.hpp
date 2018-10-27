@@ -12,7 +12,7 @@ class Shape {
 public:
     // < Shape Interface 125>
     Shape() {}
-    virtual bool intersect(const Ray *ray, float *tHit, SurfaceInteraction *isect) const = 0;
+    virtual bool intersect(const Ray &ray, float *tHit, SurfaceInteraction *isect) const = 0;
     /**
      * this method is used to compute the surface area of a shape in object space
      */

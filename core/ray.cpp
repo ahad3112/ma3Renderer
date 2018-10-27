@@ -4,7 +4,7 @@
 
 #include "ray.hpp"
 
-Ray::Ray(const Point3f &origin, const Vector3f &direction) : origin(origin), direction(direction) {
+Ray::Ray(const Point3f &origin, const Vector3f &direction, float tMax) : origin(origin), direction(direction), tMax(tMax) {
 
 }
 

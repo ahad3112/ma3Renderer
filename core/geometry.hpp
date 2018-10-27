@@ -12,9 +12,6 @@
 // typedef / type alias for glm Vector class
 //====================================================================================================================//
 
-///////////////// infinity for float ////////////////////////
-const auto infinity = std::numeric_limits<float>::infinity();
-
 /////////////////////////////// Vector //////////////////////
 using Vector2i = glm::ivec2;
 using Vector2f = glm::vec2;
