@@ -33,9 +33,6 @@ bool Sphere::intersect(const Ray &ray, float *tHit, SurfaceInteraction *isect) c
             isect->normal = glm::normalize(isect->position - center);
             return true;
         }
-//        isect->position = ray(*tHit);
-//        isect->normal = glm::normalize(isect->position - center);
-//        return true;
     }
 
     return false;
