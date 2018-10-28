@@ -21,15 +21,21 @@ bool Sphere::intersect(const Ray &ray, float *tHit, SurfaceInteraction *isect) c
         float t = (-b - std::sqrt(discriminant)) / (2.0f * a);
         if(t > MA_EPSILON && t < *tHit) {
             *tHit = t;
+            isect->position = ray(*tHit);
+            isect->normal = glm::normalize(isect->position - center);
+            return true;
         }
 
         t = (-b + std::sqrt(discriminant)) / (2.0f * a);
         if(t > MA_EPSILON && t < *tHit) {
             *tHit = t;
+            isect->position = ray(*tHit);
+            isect->normal = glm::normalize(isect->position - center);
+            return true;
         }
-        isect->position = ray(*tHit);
-        isect->normal = glm::normalize(isect->position - center);
-        return true;
+//        isect->position = ray(*tHit);
+//        isect->normal = glm::normalize(isect->position - center);
+//        return true;
     }
 
     return false;

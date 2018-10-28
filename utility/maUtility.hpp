@@ -12,7 +12,9 @@
 
 
 ///////////////// infinity for float ////////////////////////
-const auto MA_INFINITY = std::numeric_limits<float>::infinity();
+//const auto MA_INFINITY = std::numeric_limits<float>::infinity();
+const auto MA_INFINITY = 100000000000.0f;
+
 
 
 #endif //MA3RENDERER_MAUTILITY_HPP

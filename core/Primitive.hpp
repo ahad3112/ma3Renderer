@@ -14,7 +14,6 @@ class Primitive {
 public:
     Primitive() {}
     virtual bool intersect(const Ray &ray, SurfaceInteraction *isect) const = 0;
-    virtual bool intersect(const Ray &ray, float *t, SurfaceInteraction *isect) const = 0; // THIS IS FOR CHECKING ONLY TODO :: DELETE
     virtual bool intersectP(const Ray &ray) const = 0;
 //
 //    virtual const AreaLight *getAreaLight() const = 0;

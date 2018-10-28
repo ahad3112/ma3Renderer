@@ -14,8 +14,6 @@ public:
     Aggregrate() {}
     bool intersect(const Ray &ray, SurfaceInteraction *isect) const override;
 
-    bool intersect(const Ray &ray, float *t, SurfaceInteraction *isect) const override;
-
     bool intersectP(const Ray &ray) const override ;
 
 

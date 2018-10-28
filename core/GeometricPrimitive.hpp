@@ -15,7 +15,6 @@ public:
     GeometricPrimitive() {}
     GeometricPrimitive(const Shape *shape);
     virtual bool intersect(const Ray &ray, SurfaceInteraction *isect) const  override;
-    virtual bool intersect(const Ray &ray, float *t, SurfaceInteraction *isect) const override; // THIS IS FOR CHECKING ONLY TODO :: DELETE
     virtual bool intersectP(const Ray &ray) const  override;
 
 private:
