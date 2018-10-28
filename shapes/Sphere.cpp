@@ -7,7 +7,9 @@
 #include "Sphere.hpp"
 
 
-Sphere::Sphere(Point3f center, float radius) : center(center), radius(radius){}
+Sphere::Sphere(Point3f center, float radius) : center(center), radius(radius){
+
+}
 
 
 bool Sphere::intersect(const Ray &ray, float *tHit, SurfaceInteraction *isect) const {

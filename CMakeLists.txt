@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 project(ma3Renderer)
 
+# C++ Standard
 set(CMAKE_CXX_STANDARD 14)
 
 # GLEW, GLFW and glm header file
