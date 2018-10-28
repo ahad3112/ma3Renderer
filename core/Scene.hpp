@@ -12,14 +12,16 @@ class Scene {
 public:
     // < Scene public methods 23 >
     Scene() {}
-    Scene(Primitive *aggregate);
+    Scene(std::vector<const Primitive *>aggregate);
     // TODO implements Light class
     //    Scene(Primitive *aggregate, std::vector<Light *> lights);
 
     bool intersect(const Ray &ray, SurfaceInteraction *isect);
     bool intersectP(const Ray &ray);
+
+    void addPrimitive(const Primitive *primitive);
     // < Scene public data 23 >
-    Primitive *aggregate;
+    std::vector<const Primitive *>aggregate;
     // TODO implements Light class
     //std::vector<Light *> lights;
 

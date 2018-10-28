@@ -10,7 +10,7 @@ GeometricPrimitive::GeometricPrimitive(const Shape *shape) : shape(shape){
 }
 
 bool GeometricPrimitive::intersect(const Ray &ray, SurfaceInteraction *isect) const {
-    float tHit;
+    float tHit = ray.tMax;;
     if(!shape->intersect(ray, &tHit, isect)){
         return false;
     }
@@ -21,7 +21,7 @@ bool GeometricPrimitive::intersect(const Ray &ray, SurfaceInteraction *isect) co
 }
 
 bool GeometricPrimitive::intersect(const Ray &ray, float *t, SurfaceInteraction *isect) const {
-    float tHit;
+    float tHit = ray.tMax;
     if(!shape->intersect(ray, &tHit, isect)){
         return false;
     }
