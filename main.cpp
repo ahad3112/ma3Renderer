@@ -31,15 +31,15 @@ float hitSphere(const Point3f &center, float radius, const Ray &ray) {
 //====================================================================================================================//
 // Sample color function for starting the ray tracer
 //====================================================================================================================//
-Vector3f color(const Ray &ray, GeometricPrimitive &gprimitive) {
+Vector3f color(const Ray &ray, Sphere &gprimitive) {
     SurfaceInteraction isect;
-    float t = 1000000000000.0f;
-    gprimitive.intersect(ray,&t,&isect);
-    //float t = hitSphere(Point3f(0.0f, 0.0f, -1.0f), 0.50f, ray);
-    if(t > 0 ) {
-        Normal3f n = glm::normalize(ray(t) - Point3f(0.0f, 0.0f, -1.0f));
+    float t;
+    if (gprimitive.intersect(ray,&t,&isect)) {
+        Normal3f n = isect.normal;
         return 0.5f * Vector3f(n.x + 1, n.y + 1, n.z + 1);
     }
+
+
     Vector3f unitDirection = glm::normalize(ray.direction);
     t = 0.5f * (unitDirection.y + 1.0f);
     return (1.0f - t) * Vector3f(1.0f, 1.0f, 1.0f) + t * Vector3f(0.5f, 0.7f, 1.0f);
@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
          float u = (float)x / (float)WINDOW_WIDTH;
          float v = (float)y / (float)WINDOW_HEIGHT;
          Ray ray(origin, lowerLeftCorner + u * horizontal + v * vertical);
-         colors[index] = color(ray, gprimitive);
+         colors[index] = color(ray, sphere);
          index++;
         }
      }
