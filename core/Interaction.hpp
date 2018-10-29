@@ -5,8 +5,8 @@
 #ifndef MA3RENDERER_INTERACTION_HPP
 #define MA3RENDERER_INTERACTION_HPP
 
-#include "geometry.hpp"
-#include "ray.hpp"
+#include "Geometry.hpp"
+#include "Ray.hpp"
 
 
 // Forward decleration for Primitive

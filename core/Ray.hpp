@@ -5,8 +5,8 @@
 #ifndef MA3RENDERER_RAY_HPP
 #define MA3RENDERER_RAY_HPP
 
-#include "geometry.hpp"
-#include "../utility/maUtility.hpp"
+#include "Geometry.hpp"
+#include "../utility/MA_utility.hpp"
 
 class Ray {
 public:

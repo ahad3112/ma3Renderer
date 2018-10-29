@@ -4,7 +4,7 @@
 
 #include <cstdlib>
 #include <cstdio>
-#include "ma_window.hpp"
+#include "MA_window.hpp"
 
 //====================================================================================================================//
 // Reference:

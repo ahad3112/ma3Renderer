@@ -7,15 +7,14 @@
 
 #include <limits>
 
-#include "../core/geometry.hpp"
+#include "../core/Geometry.hpp"
 
 
 #define MA_EPSILON 0.00001f
 
 
 ///////////////// infinity for float ////////////////////////
-//const auto MA_INFINITY = std::numeric_limits<float>::infinity();
-const auto MA_INFINITY = 100000000000.0f;
+const auto MA_INFINITY = std::numeric_limits<float>::infinity();
 
 
 

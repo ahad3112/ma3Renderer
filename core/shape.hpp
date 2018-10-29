@@ -5,8 +5,8 @@
 #ifndef MA3RENDERER_SHAPE_HPP
 #define MA3RENDERER_SHAPE_HPP
 
-#include "ray.hpp"
-#include "interaction.hpp"
+#include "Ray.hpp"
+#include "Interaction.hpp"
 
 class Shape {
 public:

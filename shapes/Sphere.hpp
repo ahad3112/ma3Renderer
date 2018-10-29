@@ -6,8 +6,8 @@
 #define MA3RENDERER_SPHERE_HPP
 
 #include "../core/shape.hpp"
-#include "../core/geometry.hpp"
-#include "../utility/maUtility.hpp"
+#include "../core/Geometry.hpp"
+#include "../utility/MA_utility.hpp"
 
 class Sphere : public Shape{
 public:

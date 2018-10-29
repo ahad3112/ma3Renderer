@@ -6,8 +6,8 @@
 #define MA3RENDERER_PRIMITIVE_HPP
 
 
-#include "ray.hpp"
-#include "interaction.hpp"
+#include "Ray.hpp"
+#include "Interaction.hpp"
 
 
 class Primitive {

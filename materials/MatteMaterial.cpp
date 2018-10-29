@@ -6,7 +6,7 @@
 #include <cstdlib>
 
 #include "MatteMaterial.hpp"
-#include "../core/ray.hpp"
+#include "../core/Ray.hpp"
 
 //====================================================================================================================//
 // Sample random point in unit sphere TODO delete

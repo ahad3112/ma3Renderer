@@ -6,7 +6,7 @@
 #define MA3RENDERER_MATERIAL_HPP
 
 
-#include "interaction.hpp"
+#include "Interaction.hpp"
 
 class Material {
 public:

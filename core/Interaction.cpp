@@ -3,7 +3,7 @@
 //
 
 #include "GeometricPrimitive.hpp"
-#include "interaction.hpp"
+#include "Interaction.hpp"
 
 //====================================================================================================================//
 // Interaction

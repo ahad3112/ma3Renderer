@@ -2,17 +2,17 @@
 #include <cmath>
 #include <cstdlib>
 
-#include "core/geometry.hpp"
-#include "visualization/ma_window.hpp"
-#include "core/ray.hpp"
+#include "core/Geometry.hpp"
+#include "visualization/MA_window.hpp"
+#include "core/Ray.hpp"
 #include "shapes/Sphere.hpp"
 #include "core/GeometricPrimitive.hpp"
 #include "core/Scene.hpp"
 #include "core/Camera.hpp"
 #include "materials/MatteMaterial.hpp"
 
-#define WINDOW_WIDTH 1024
-#define WINDOW_HEIGHT 620
+#define WINDOW_WIDTH 512
+#define WINDOW_HEIGHT 310
 #define N_SAMPLE 1
 
 
@@ -68,6 +68,18 @@ Vector3f color(const Ray &ray, Scene &scene) {
 
 
 int main(int argc, char *argv[]) {
+
+    //================================================================================================================//
+    // Checking Bound2 template
+    //================================================================================================================//
+//    Bounds2i bi(Point2i(100,90), Point2i(10,200));
+//    std::cout << "Bounds2i: " << bi.pMin.x << std::endl;
+//    std::cout << "Bounds2i: " << bi.pMin.y << std::endl;
+//    std::cout << "Bounds2i: " << bi.pMax.x << std::endl;
+//    std::cout << "Bounds2i: " << bi.pMax.y << std::endl;
+
+
+
     std::cout << "This is ##### ma3Renderer #####" << std::endl;
 
     //================================================================================================================//
@@ -98,7 +110,7 @@ int main(int argc, char *argv[]) {
     Scene scene;
     scene.addPrimitive(&gprimitive1);
     scene.addPrimitive(&gprimitive2);
-    scene.addPrimitive(&gprimitive3);
+    //scene.addPrimitive(&gprimitive3);
 
 
     //================================================================================================================//

@@ -9,7 +9,7 @@
 #include <GLFW/glfw3.h>
 
 
-#include "../core/geometry.hpp"
+#include "../core/Geometry.hpp"
 
 
 

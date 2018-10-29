@@ -17,7 +17,7 @@ set(GLFW_LINK /usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.dylib)
 link_libraries(${OPENGL} ${GLEW_LINK} ${GLFW_LINK})
 
 
-set(SOURCE_FILES main.cpp core/geometry.hpp visualization/ma_window.hpp visualization/ma_window.cpp core/ray.hpp core/ray.cpp core/interaction.hpp core/interaction.cpp core/shape.hpp core/shape.cpp shapes/Sphere.cpp shapes/Sphere.hpp utility/maUtility.hpp core/GeometricPrimitive.cpp core/GeometricPrimitive.hpp core/Primitive.cpp core/Primitive.hpp accelerators/Aggregrate.cpp accelerators/Aggregrate.hpp core/Scene.cpp core/Scene.hpp core/Camera.cpp core/Camera.hpp core/Material.cpp core/Material.hpp materials/MatteMaterial.cpp materials/MatteMaterial.hpp)
+set(SOURCE_FILES main.cpp core/Geometry.hpp visualization/MA_window.hpp visualization/MA_window.cpp core/Ray.hpp core/Ray.cpp core/Interaction.hpp core/Interaction.cpp core/shape.hpp core/shape.cpp shapes/Sphere.cpp shapes/Sphere.hpp utility/MA_utility.hpp core/GeometricPrimitive.cpp core/GeometricPrimitive.hpp core/Primitive.cpp core/Primitive.hpp accelerators/Aggregrate.cpp accelerators/Aggregrate.hpp core/Scene.cpp core/Scene.hpp core/Camera.cpp core/Camera.hpp core/Material.cpp core/Material.hpp materials/MatteMaterial.cpp materials/MatteMaterial.hpp core/Film.cpp core/Film.hpp)
 add_executable(ma3Renderer ${SOURCE_FILES})
 
 if (APPLE)

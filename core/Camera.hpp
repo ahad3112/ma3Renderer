@@ -5,8 +5,8 @@
 #ifndef MA3RENDERER_CAMERA_HPP
 #define MA3RENDERER_CAMERA_HPP
 
-#include "geometry.hpp"
-#include "ray.hpp"
+#include "Geometry.hpp"
+#include "Ray.hpp"
 
 class Camera {
 public:
