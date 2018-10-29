@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
 
 #include "core/geometry.hpp"
 #include "visualization/ma_window.hpp"
@@ -7,9 +8,11 @@
 #include "shapes/Sphere.hpp"
 #include "core/GeometricPrimitive.hpp"
 #include "core/Scene.hpp"
+#include "core/Camera.hpp"
 
 #define WINDOW_WIDTH 1024
 #define WINDOW_HEIGHT 620
+#define N_SAMPLE 20
 
 
 //====================================================================================================================//
@@ -56,6 +59,10 @@ int main(int argc, char *argv[]) {
     Vector3f  *colors = new Point3f[WINDOW_WIDTH * WINDOW_HEIGHT];
 
     //================================================================================================================//
+    // Camera
+    //================================================================================================================//
+    Camera camera;
+    //================================================================================================================//
     // Scene
     //================================================================================================================//
     Sphere sphere1(Point3f(0.0f, 0.0f, -1.0f), 0.5f);
@@ -75,18 +82,6 @@ int main(int argc, char *argv[]) {
     //scene.addPrimitive(&gprimitive3);
 
 
-
-
-
-
-    //================================================================================================================//
-    // Camera setup
-    //================================================================================================================//
-    Point3f lowerLeftCorner(-2.0, -1.0, -1.0);
-    Point3f horizontal(4.0, 0.0, 0.0);
-    Point3f vertical(0.0, 2.0, 0.0);
-    Point3f origin(0.0, 0.0, 0.0);
-
     //================================================================================================================//
     // Start Rendering
     //================================================================================================================//
@@ -94,12 +89,15 @@ int main(int argc, char *argv[]) {
     for (int y = WINDOW_HEIGHT - 1; y >= 0; y--) {
        for (int x = 0; x < WINDOW_WIDTH; x++) {
          pixels[index] = Point2f(x, y);
-         float u = (float)x / (float)WINDOW_WIDTH;
-         float v = (float)y / (float)WINDOW_HEIGHT;
+         Vector3f tmpColor(0,0,0);
+         for(int ns = 0; ns < N_SAMPLE; ns++) {
+             float u = (float)(x + drand48()) / (float)WINDOW_WIDTH;
+             float v = (float)(y + drand48()) / (float)WINDOW_HEIGHT;
+             Ray ray = camera.generateRay(u, v);
+             tmpColor += color(ray, scene);
+         }
 
-         Ray ray(origin, lowerLeftCorner + (u * horizontal) + (v * vertical));
-
-         colors[index] = color(ray, scene);
+         colors[index] = tmpColor / (float)N_SAMPLE;
          index++;
         }
      }
