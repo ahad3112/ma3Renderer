@@ -13,7 +13,7 @@
 
 #define WINDOW_WIDTH 512
 #define WINDOW_HEIGHT 310
-#define N_SAMPLE 1
+#define N_SAMPLE 100
 
 
 

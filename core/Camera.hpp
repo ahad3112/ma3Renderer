@@ -7,6 +7,7 @@
 
 #include "Geometry.hpp"
 #include "Ray.hpp"
+#include "Film.hpp"
 
 class Camera {
 public:
@@ -21,7 +22,7 @@ public:
     // < Camera public data >
 //    AnimatedTransform cameraToWorld;
 //    const float shutterOpen, shutterClose;
-//    Film *film;
+    Film *film;
 //    const Mediumm *medium;
 
     // Temporary .... according to Shirley
