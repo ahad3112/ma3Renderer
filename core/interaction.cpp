@@ -2,6 +2,7 @@
 // Created by Muhammed Ahad on 2018-10-27.
 //
 
+#include "GeometricPrimitive.hpp"
 #include "interaction.hpp"
 
 //====================================================================================================================//
@@ -20,4 +21,8 @@ bool Interaction::isSurfaceInteraction() const {
 //====================================================================================================================//
 SurfaceInteraction::SurfaceInteraction(const Point3f &p, const Normal3f &n) : Interaction(p, n) {
 
+}
+
+void SurfaceInteraction::computeScatteringFunctions() {
+    primitive->computeScatteringFunctions(this);
 }

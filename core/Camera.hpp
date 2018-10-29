@@ -14,7 +14,7 @@ public:
     Camera();
     Ray generateRay(float u, float v) const;
     // TODO the following constructor p356 and methods
-    //Camera(const AnimatedTransform &cameraToWorld, float shutterOpen, float shutterClose, Filem *film, const Medium *medium);
+    //Camera(const AnimatedTransform &cameraToWorld, float shutterOpen, float shutterClose, Film *film, const Medium *medium);
 
     //virtual float generateRay(const CameraSample &sample) const = 0;
 

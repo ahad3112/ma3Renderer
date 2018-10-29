@@ -6,6 +6,7 @@
 #define MA3RENDERER_INTERACTION_HPP
 
 #include "geometry.hpp"
+#include "ray.hpp"
 
 
 // Forward decleration for Primitive
@@ -38,6 +39,7 @@ public:
     // < SurfaceInteraction public methods >
     SurfaceInteraction(){}
     SurfaceInteraction(const Point3f &p, const Normal3f &n);
+    void computeScatteringFunctions();
 
 
     const Primitive *primitive = nullptr;
@@ -45,6 +47,9 @@ public:
     // TODO public data
 //    BSDF *bsdf = nullptr;
 //    BSSRDF *bssrdf = nullptr;
+
+    // TODO DELETE LATER .... THIS IS FOR TEST
+    Ray scatterRay;
 };
 
 #endif //MA3RENDERER_INTERACTION_HPP
