@@ -12,11 +12,22 @@
 
 #define WINDOW_WIDTH 1024
 #define WINDOW_HEIGHT 620
-#define N_SAMPLE 20
-
+#define N_SAMPLE 4
 
 //====================================================================================================================//
-// Sample Sphere
+// Sample random point in unit sphere TODO delete
+//====================================================================================================================//
+Vector3f randomInUnitSphere() {
+    Vector3f p;
+    do {
+        p = 2.0f * Vector3f(drand48(), drand48(), drand48()) - Vector3f(1.0f,1.0f,1.0f);
+    } while((glm::length(p) * glm::length(p)) >= 1.0);
+
+    return p;
+}
+
+//====================================================================================================================//
+// Sample Sphere TODO delete
 //====================================================================================================================//
 float hitSphere(const Point3f &center, float radius, const Ray &ray) {
     Point3f oc = ray.origin - center;
@@ -38,8 +49,10 @@ float hitSphere(const Point3f &center, float radius, const Ray &ray) {
 Vector3f color(const Ray &ray, Scene &scene) {
     SurfaceInteraction isect;
     if (scene.intersect(ray,&isect)) {
-        Normal3f n = isect.normal;
-        return 0.5f * Vector3f(n.x + 1, n.y + 1, n.z + 1);
+//        Normal3f n = isect.normal;
+//        return 0.5f * Vector3f(n.x + 1, n.y + 1, n.z + 1);
+        Vector3f target = isect.position + isect.normal + randomInUnitSphere();
+        return 0.5f * color(Ray(isect.position, target - isect.position), scene);
     } else {
         Vector3f unitDirection = glm::normalize(ray.direction);
         float t = 0.5f * (unitDirection.y + 1.0f);
@@ -97,10 +110,17 @@ int main(int argc, char *argv[]) {
              tmpColor += color(ray, scene);
          }
 
-         colors[index] = tmpColor / (float)N_SAMPLE;
-         index++;
+         //colors[index] = tmpColor / (float)N_SAMPLE;
+         // Gamma 2 corrected
+         colors[index] = Vector3f(std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE));
+
+           index++;
         }
      }
+
+    //================================================================================================================//
+    // GLFW window and display
+    //================================================================================================================//
 
      MAWindow ma_window("########## ma3Renderer ##########", WINDOW_WIDTH, WINDOW_HEIGHT);
      ma_window.display(pixels,colors);
