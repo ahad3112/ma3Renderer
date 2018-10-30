@@ -7,7 +7,6 @@
 
 #include "../core/shape.hpp"
 #include "../core/Geometry.hpp"
-#include "../utility/MA_utility.hpp"
 
 class Sphere : public Shape{
 public:

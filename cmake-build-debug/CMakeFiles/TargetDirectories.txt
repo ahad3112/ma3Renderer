@@ -1,0 +1,3 @@
+/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir

@@ -5,8 +5,6 @@
 #ifndef MA3RENDERER_GEOMETRY_H
 #define MA3RENDERER_GEOMETRY_H
 
-#include <cstdlib>
-#include <limits>
 #include <glm/glm.hpp>
 #include <algorithm>
 

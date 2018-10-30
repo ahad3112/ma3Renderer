@@ -51,7 +51,7 @@ public:
 //    BSSRDF *bssrdf = nullptr;
 
     // TODO DELETE LATER .... THIS IS FOR TEST
-    Ray scatterRay;
+    //Ray scatterRay;
 };
 
 #endif //MA3RENDERER_INTERACTION_HPP

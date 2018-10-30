@@ -27,7 +27,7 @@ Vector3f MatteMaterial::getAlbedo() const {
 
 void MatteMaterial::computeScatteringFunctions(SurfaceInteraction *isect) const {
     Point3f target = isect->position + isect->normal + randomUnitSphere();
-    isect->scatterRay = Ray(isect->position, target - isect->position); // TODO isect should not have scatterRay... need other way of storing it
+    //isect->scatterRay = Ray(isect->position, target - isect->position); // TODO isect should not have scatterRay... need other way of storing it
 }
 
 bool MatteMaterial::computeScatteringFunctions(SurfaceInteraction *isect, const Ray &ray, Ray &scatterRay) const {

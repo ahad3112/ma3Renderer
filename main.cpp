@@ -1,35 +1,34 @@
 #include <iostream>
 #include <cmath>
 #include <cstdlib>
-
 #include "core/Geometry.hpp"
-#include "visualization/MA_window.hpp"
-#include "core/Ray.hpp"
-#include "shapes/Sphere.hpp"
-#include "core/GeometricPrimitive.hpp"
+#include "core/Interaction.hpp"
 #include "core/Scene.hpp"
 #include "core/Camera.hpp"
+#include "shapes/Sphere.hpp"
 #include "materials/MatteMaterial.hpp"
 #include "materials/Metal.hpp"
+#include "core/GeometricPrimitive.hpp"
+#include "visualization/MA_window.hpp"
+
 
 #define WINDOW_WIDTH 720
 #define WINDOW_HEIGHT 480
-#define N_SAMPLE 1
-#define MAX_DEPTH 1
-
+#define N_SAMPLE 50
+#define MAX_DEPTH 50
 
 
 //====================================================================================================================//
 // Sample random point in unit sphere TODO delete
 //====================================================================================================================//
-Vector3f randomInUnitSphere() {
-    Vector3f p;
-    do {
-        p = 2.0f * Vector3f(drand48(), drand48(), drand48()) - Vector3f(1.0f,1.0f,1.0f);
-    } while((glm::length(p) * glm::length(p)) >= 1.0);
-
-    return p;
-}
+//Vector3f randomInUnitSphere() {
+//    Vector3f p;
+//    do {
+//        p = 2.0f * Vector3f(drand48(), drand48(), drand48()) - Vector3f(1.0f,1.0f,1.0f);
+//    } while((glm::length(p) * glm::length(p)) >= 1.0);
+//
+//    return p;
+//}
 
 //====================================================================================================================//
 // Sample Sphere TODO delete
@@ -56,9 +55,10 @@ Vector3f color(const Ray &ray, Scene &scene, int depth) {
     if (scene.intersect(ray,&isect)) {
         Ray scattered;
         if(depth < MAX_DEPTH && isect.computeScatteringFunctions(ray, scattered)) {
-            return isect.primitive->getMaterial()->getAlbedo() * color(scattered, scene, depth++);
+            return (isect.primitive->getMaterial()->getAlbedo()) * color(scattered, scene, depth++);
+
         } else {
-            return Vector3f(1, 0, 0);
+            return Vector3f(0, 0, 0);
         }
 //        isect.computeScatteringFunctions();
 //
@@ -67,8 +67,8 @@ Vector3f color(const Ray &ray, Scene &scene, int depth) {
 
     } else {
         Vector3f unitDirection = glm::normalize(ray.direction);
-        float t = 0.5f * (unitDirection.y + 2.0f);
-        return (1.0f - t) * Vector3f(1.0f, 1.0f, 1.0f) + t * Vector3f(0.5f, 0.7f, 1.0f);
+        float t = 0.5f * (unitDirection.y + 1.0f);
+        return (1.0f - t) * Vector3f(1.0f, 0.0f, 1.0f) + t * Vector3f(0.5f, 0.7f, 1.0f);
     }
 
 
@@ -111,8 +111,8 @@ int main(int argc, char *argv[]) {
 
     MatteMaterial matte1(Vector3f(.8, .3, .3));
     MatteMaterial matte2(Vector3f(.8, .8, 0.0));
-    Metal metal1(Vector3f(.8, .6, .2));
-    Metal metal2(Vector3f(.8, .8, .8));
+    Metal metal1(Vector3f(.8, .6, .2), .3);
+    Metal metal2(Vector3f(.8, .8, .8), 0.8);
 
 
     GeometricPrimitive gprimitive1(&sphere1, &matte1);
@@ -146,9 +146,9 @@ int main(int argc, char *argv[]) {
              tmpColor += color(ray, scene, 0);
          }
 
-         //colors[index] = tmpColor / (float)N_SAMPLE;
+         colors[index] = tmpColor / (float)N_SAMPLE;
          // Gamma 2 corrected
-         colors[index] = Vector3f(std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE));
+         //colors[index] = Vector3f(std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE));
 
            index++;
         }
