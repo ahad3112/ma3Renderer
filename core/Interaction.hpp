@@ -41,6 +41,8 @@ public:
     SurfaceInteraction(const Point3f &p, const Normal3f &n);
     void computeScatteringFunctions();
 
+    bool computeScatteringFunctions(const Ray &ray, Ray &scatterRay);
+
 
     const Primitive *primitive = nullptr;
     // < SurfaceInteraction public data 116, 250, bsdf, bssrdf >

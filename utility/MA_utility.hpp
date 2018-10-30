@@ -18,7 +18,9 @@ const auto MA_INFINITY = std::numeric_limits<float>::infinity();
 
 
 
-
+//Vector3f reflect(const Vector3f &v, const Normal3f &n) {
+//    return v - 2.0f * glm::dot(v, n) * n;
+//}
 
 
 #endif //MA3RENDERER_MAUTILITY_HPP

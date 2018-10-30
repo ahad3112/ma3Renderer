@@ -26,3 +26,7 @@ SurfaceInteraction::SurfaceInteraction(const Point3f &p, const Normal3f &n) : In
 void SurfaceInteraction::computeScatteringFunctions() {
     primitive->computeScatteringFunctions(this);
 }
+
+bool SurfaceInteraction::computeScatteringFunctions(const Ray &ray, Ray &scatterRay) {
+    return primitive->computeScatteringFunctions(this, ray, scatterRay);
+}

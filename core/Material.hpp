@@ -13,6 +13,9 @@ public:
     // < Matarial Interface 577 >
     Material () {}
     virtual void computeScatteringFunctions(SurfaceInteraction *isect) const = 0;
+    virtual bool computeScatteringFunctions(SurfaceInteraction *isect, const Ray &ray, Ray &scatterRay) const = 0;
+    virtual Vector3f getAlbedo() const = 0;
+
 
     // TODO
 //    virtual void computeScatteringFunctions(SurfaceInteraction *isect, TransportMode Mode, bool allowMultiplelobes) const = 0;

@@ -33,7 +33,14 @@ bool GeometricPrimitive::intersectP(const Ray &ray) const {
     return false;
 }
 
+const Material *GeometricPrimitive::getMaterial() const {
+    return material;
+}
 
 void GeometricPrimitive::computeScatteringFunctions(SurfaceInteraction *isect) const {
     material->computeScatteringFunctions(isect);
+}
+
+bool GeometricPrimitive::computeScatteringFunctions(SurfaceInteraction *isect, const Ray &ray, Ray &scatterRay) const {
+    return material->computeScatteringFunctions(isect, ray, scatterRay);
 }

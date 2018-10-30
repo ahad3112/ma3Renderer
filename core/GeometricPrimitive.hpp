@@ -19,6 +19,8 @@ public:
     virtual bool intersect(const Ray &ray, SurfaceInteraction *isect) const  override;
     virtual bool intersectP(const Ray &ray) const  override;
     void computeScatteringFunctions(SurfaceInteraction *isect) const override;
+    bool computeScatteringFunctions(SurfaceInteraction *isect, const Ray &ray, Ray &scatterRay) const override;
+    const Material *getMaterial() const override;
 
 private:
     // < GeometricPrimitive private data 256>

@@ -15,6 +15,8 @@ public:
     MatteMaterial(const Vector3f &albedo) : albedo(albedo) {}
 
     void computeScatteringFunctions(SurfaceInteraction *isect) const override;
+    bool computeScatteringFunctions(SurfaceInteraction *isect, const Ray &ray, Ray &scatterRay) const override;
+    Vector3f getAlbedo() const override;
 
 private:
     // Based on shirley
