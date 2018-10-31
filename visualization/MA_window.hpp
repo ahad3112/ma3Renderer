@@ -18,6 +18,7 @@ public:
     MAWindow() : MAWindow("MAWindow") {}
     MAWindow(const char * ma_title, int ma_width = 720, int ma_height = 480);
     void display(Point2f *pixels, Vector3f *colors);
+    GLFWwindow *getWindow() const;
 
 private:
     void initGLFW();

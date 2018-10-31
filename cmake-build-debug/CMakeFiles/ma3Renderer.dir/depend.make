@@ -136,6 +136,7 @@ CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o: ../shapes/Sphere.cpp
 CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o: ../shapes/Sphere.hpp
 CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o: ../utility/MA_utility.hpp
 
+CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o: ../core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o: ../utility/MA_utility.cpp
 CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o: ../utility/MA_utility.hpp
 

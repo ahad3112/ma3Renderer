@@ -11,41 +11,13 @@
 #include "core/GeometricPrimitive.hpp"
 #include "visualization/MA_window.hpp"
 
-
+#define GAMMA_2_CORRECTION 0
 #define WINDOW_WIDTH 720
 #define WINDOW_HEIGHT 480
-#define N_SAMPLE 50
-#define MAX_DEPTH 50
+#define N_SAMPLE 2
+#define MAX_DEPTH 2
 
-
-//====================================================================================================================//
-// Sample random point in unit sphere TODO delete
-//====================================================================================================================//
-//Vector3f randomInUnitSphere() {
-//    Vector3f p;
-//    do {
-//        p = 2.0f * Vector3f(drand48(), drand48(), drand48()) - Vector3f(1.0f,1.0f,1.0f);
-//    } while((glm::length(p) * glm::length(p)) >= 1.0);
-//
-//    return p;
-//}
-
-//====================================================================================================================//
-// Sample Sphere TODO delete
-//====================================================================================================================//
-float hitSphere(const Point3f &center, float radius, const Ray &ray) {
-    Point3f oc = ray.origin - center;
-    float a = glm::dot(ray.direction , ray.direction);
-    float b = 2.0f * glm::dot(oc, ray.direction);
-    float c = glm::dot(oc, oc) - radius * radius;
-    float discriminant = b * b - 4.0f * a * c;
-
-    if( discriminant < 0){
-        return -1.0f;
-    } else {
-       return (-b - std::sqrt(discriminant)) / (2.0f * a);
-    }
-}
+// TODO : CLEAN UP OPENGL PART AND DESIGN HOW THE RENDER PROCEDURE WILL LOOK LIKE
 
 //====================================================================================================================//
 // Sample color function for starting the ray tracer
@@ -60,18 +32,50 @@ Vector3f color(const Ray &ray, Scene &scene, int depth) {
         } else {
             return Vector3f(0, 0, 0);
         }
-//        isect.computeScatteringFunctions();
-//
-//        Vector3f target = isect.position + isect.normal + randomInUnitSphere();
-//        return Vector3f(.8, .3, .3) * color(isect.scatterRay, scene, depth++);
-
     } else {
         Vector3f unitDirection = glm::normalize(ray.direction);
         float t = 0.5f * (unitDirection.y + 1.0f);
-        return (1.0f - t) * Vector3f(1.0f, 0.0f, 1.0f) + t * Vector3f(0.5f, 0.7f, 1.0f);
+        return (1.0f - t) * Vector3f(1.0f, 1.0f, 1.0f) + t * Vector3f(0.5f, 0.7f, 1.0f);
     }
 
 
+}
+
+
+//====================================================================================================================//
+// display
+//====================================================================================================================//
+void draw(int width, int height, Point2f *pixels, Vector3f *colors) {
+
+    /* We have a color array and a vertex array */
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glEnableClientState(GL_COLOR_ARRAY);
+
+    glVertexPointer(2, GL_FLOAT, 0, pixels);
+    glColorPointer(3, GL_FLOAT, 0, colors);
+
+    //glDrawArrays(GL_POINTS, 0, width * height);
+
+    // Cleanup states: TODO CLEAN STATE AT THE END OF RENDERING...
+    // THIS WAY WE WILL NOT HAVE TO CALL FOR CREATE POINTER FOR VERTEX AND COLOR MULTIPLE TIMES
+
+    //glDisableClientState(GL_COLOR_ARRAY);
+    //glDisableClientState(GL_VERTEX_ARRAY);
+}
+
+//====================================================================================================================//
+// display
+//====================================================================================================================//
+void display(GLFWwindow *window, Point2f *pixels, Vector3f *colors) {
+    while (!glfwWindowShouldClose(window)) {
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        // sample drawings
+        draw(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
+
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
 }
 
 
@@ -111,8 +115,8 @@ int main(int argc, char *argv[]) {
 
     MatteMaterial matte1(Vector3f(.8, .3, .3));
     MatteMaterial matte2(Vector3f(.8, .8, 0.0));
-    Metal metal1(Vector3f(.8, .6, .2), .3);
-    Metal metal2(Vector3f(.8, .8, .8), 0.8);
+    Metal metal1(Vector3f(.8, .6, .2), 0.0);
+    Metal metal2(Vector3f(.8, .8, .8), 0.0);
 
 
     GeometricPrimitive gprimitive1(&sphere1, &matte1);
@@ -134,33 +138,68 @@ int main(int argc, char *argv[]) {
     //================================================================================================================//
     // Start Rendering
     //================================================================================================================//
-    int index = 0;
-    for (int y = WINDOW_HEIGHT - 1; y >= 0; y--) {
-       for (int x = 0; x < WINDOW_WIDTH; x++) {
-         pixels[index] = Point2f(x, y);
-         Vector3f tmpColor(0,0,0);
-         for(int ns = 0; ns < N_SAMPLE; ns++) {
-             float u = (float)(x + drand48()) / (float)WINDOW_WIDTH;
-             float v = (float)(y + drand48()) / (float)WINDOW_HEIGHT;
-             Ray ray = camera.generateRay(u, v);
-             tmpColor += color(ray, scene, 0);
-         }
-
-         colors[index] = tmpColor / (float)N_SAMPLE;
-         // Gamma 2 corrected
-         //colors[index] = Vector3f(std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE));
-
-           index++;
-        }
-     }
+//    int index = 0;
+//    for (int y = WINDOW_HEIGHT - 1; y >= 0; y--) {
+//       for (int x = 0; x < WINDOW_WIDTH; x++) {
+//         pixels[index] = Point2f(x, y);
+//         Vector3f tmpColor(0,0,0);
+//         for(int ns = 0; ns < N_SAMPLE; ns++) {
+//             float u = (float)(x + drand48()) / (float)WINDOW_WIDTH;
+//             float v = (float)(y + drand48()) / (float)WINDOW_HEIGHT;
+//             Ray ray = camera.generateRay(u, v);
+//             tmpColor += color(ray, scene, 0);
+//         }
+//
+//         if(GAMMA_2_CORRECTION) {
+//             colors[index] = Vector3f(std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE));
+//         } else {
+//             colors[index] = tmpColor / (float)N_SAMPLE;
+//
+//         }
+//
+//           index++;
+//        }
+//     }
 
     //================================================================================================================//
     // GLFW window and display
     //================================================================================================================//
 
-     MAWindow ma_window("########## ma3Renderer ##########", WINDOW_WIDTH, WINDOW_HEIGHT);
-     ma_window.display(pixels,colors);
+    MAWindow ma_window("########## ma3Renderer ##########", WINDOW_WIDTH, WINDOW_HEIGHT);
+     //ma_window.display(pixels,colors);
+    draw(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
 
+    while (!glfwWindowShouldClose(ma_window.getWindow())) {
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        int index = 0;
+        for (int y = WINDOW_HEIGHT - 1; y >= 0; y--) {
+            for (int x = 0; x < WINDOW_WIDTH; x++) {
+                pixels[index] = Point2f(x, y);
+                Vector3f tmpColor(0,0,0);
+                for(int ns = 0; ns < N_SAMPLE; ns++) {
+                    float u = (float)(x + drand48()) / (float)WINDOW_WIDTH;
+                    float v = (float)(y + drand48()) / (float)WINDOW_HEIGHT;
+                    Ray ray = camera.generateRay(u, v);
+                    tmpColor += color(ray, scene, 0);
+                }
+
+                if(GAMMA_2_CORRECTION) {
+                    colors[index] = Vector3f(std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE));
+                } else {
+                    colors[index] = tmpColor / (float)N_SAMPLE;
+
+                }
+                index++;
+            }
+            // sample drawings
+            draw(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
+            glDrawArrays(GL_POINTS, 0, WINDOW_WIDTH * WINDOW_HEIGHT);
+            glfwSwapBuffers(ma_window.getWindow());
+            glfwPollEvents();
+        }
+    }
+    //display(ma_window.getWindow(), pixels, colors);
 
     //================================================================================================================//
     // Terminate glfw

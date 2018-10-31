@@ -137,6 +137,7 @@ CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/shapes/Sphere.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.cpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/visualization/MA_window.cpp.o

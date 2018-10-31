@@ -8,18 +8,6 @@
 #include "MatteMaterial.hpp"
 #include "../core/Ray.hpp"
 
-//====================================================================================================================//
-// Sample random point in unit sphere TODO delete
-//====================================================================================================================//
-Vector3f randomUnitSphere() {
-    Vector3f p;
-    do {
-        p = 2.0f * Vector3f(drand48(), drand48(), drand48()) - Vector3f(1.0f,1.0f,1.0f);
-    } while((glm::length(p) * glm::length(p)) >= 1.0);
-
-    return p;
-}
-
 
 Vector3f MatteMaterial::getAlbedo() const {
     return albedo;
