@@ -1,2 +1,2 @@
 # ma3Renderer
-```ma3 Rendere```
+```ma3 Renderer```
