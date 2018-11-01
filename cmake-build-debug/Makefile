@@ -150,6 +150,33 @@ accelerators/Aggregrate.cpp.s:
 	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/accelerators/Aggregrate.cpp.s
 .PHONY : accelerators/Aggregrate.cpp.s
 
+cameras/ProjectiveCamera.o: cameras/ProjectiveCamera.cpp.o
+
+.PHONY : cameras/ProjectiveCamera.o
+
+# target to build an object file
+cameras/ProjectiveCamera.cpp.o:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o
+.PHONY : cameras/ProjectiveCamera.cpp.o
+
+cameras/ProjectiveCamera.i: cameras/ProjectiveCamera.cpp.i
+
+.PHONY : cameras/ProjectiveCamera.i
+
+# target to preprocess a source file
+cameras/ProjectiveCamera.cpp.i:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.i
+.PHONY : cameras/ProjectiveCamera.cpp.i
+
+cameras/ProjectiveCamera.s: cameras/ProjectiveCamera.cpp.s
+
+.PHONY : cameras/ProjectiveCamera.s
+
+# target to generate assembly for a file
+cameras/ProjectiveCamera.cpp.s:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.s
+.PHONY : cameras/ProjectiveCamera.cpp.s
+
 core/Camera.o: core/Camera.cpp.o
 
 .PHONY : core/Camera.o
@@ -393,6 +420,33 @@ core/Scene.cpp.s:
 	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Scene.cpp.s
 .PHONY : core/Scene.cpp.s
 
+core/Transform.o: core/Transform.cpp.o
+
+.PHONY : core/Transform.o
+
+# target to build an object file
+core/Transform.cpp.o:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o
+.PHONY : core/Transform.cpp.o
+
+core/Transform.i: core/Transform.cpp.i
+
+.PHONY : core/Transform.i
+
+# target to preprocess a source file
+core/Transform.cpp.i:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Transform.cpp.i
+.PHONY : core/Transform.cpp.i
+
+core/Transform.s: core/Transform.cpp.s
+
+.PHONY : core/Transform.s
+
+# target to generate assembly for a file
+core/Transform.cpp.s:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Transform.cpp.s
+.PHONY : core/Transform.cpp.s
+
 core/shape.o: core/shape.cpp.o
 
 .PHONY : core/shape.o
@@ -621,6 +675,9 @@ help:
 	@echo "... accelerators/Aggregrate.o"
 	@echo "... accelerators/Aggregrate.i"
 	@echo "... accelerators/Aggregrate.s"
+	@echo "... cameras/ProjectiveCamera.o"
+	@echo "... cameras/ProjectiveCamera.i"
+	@echo "... cameras/ProjectiveCamera.s"
 	@echo "... core/Camera.o"
 	@echo "... core/Camera.i"
 	@echo "... core/Camera.s"
@@ -648,6 +705,9 @@ help:
 	@echo "... core/Scene.o"
 	@echo "... core/Scene.i"
 	@echo "... core/Scene.s"
+	@echo "... core/Transform.o"
+	@echo "... core/Transform.i"
+	@echo "... core/Transform.s"
 	@echo "... core/shape.o"
 	@echo "... core/shape.i"
 	@echo "... core/shape.s"

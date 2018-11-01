@@ -10,18 +10,31 @@
 #include "Film.hpp"
 
 class Camera {
+protected:
+    struct CameraSample {
+        Point2f pFilms;
+        Point2f pLens;
+        float time;
+    };
 public:
     // < Camera Interface 356 >
     Camera();
-    Ray generateRay(float u, float v) const;
+    virtual ~Camera();
+    virtual Ray generateRay(float u, float v) const;
     // TODO the following constructor p356 and methods
+    Camera(float shutterOpen, float shutterClose, Film *film);
+
     //Camera(const AnimatedTransform &cameraToWorld, float shutterOpen, float shutterClose, Film *film, const Medium *medium);
 
-    //virtual float generateRay(const CameraSample &sample) const = 0;
+
+    // TODO make it pure virtual later
+    virtual float generateRay(const CameraSample &sample) const;
+
+    // TODO generateRayDifferential()
 
     // < Camera public data >
 //    AnimatedTransform cameraToWorld;
-//    const float shutterOpen, shutterClose;
+    const float shutterOpen, shutterClose;
     Film *film;
 //    const Mediumm *medium;
 

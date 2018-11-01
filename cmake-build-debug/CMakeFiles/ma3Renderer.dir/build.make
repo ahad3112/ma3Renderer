@@ -291,6 +291,32 @@ CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.cpp -o CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.s
 
+CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: CMakeFiles/ma3Renderer.dir/flags.make
+CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: ../cameras/ProjectiveCamera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o -c /Users/maaahad/CLionProjects/ma3Renderer/cameras/ProjectiveCamera.cpp
+
+CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maaahad/CLionProjects/ma3Renderer/cameras/ProjectiveCamera.cpp > CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.i
+
+CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maaahad/CLionProjects/ma3Renderer/cameras/ProjectiveCamera.cpp -o CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.s
+
+CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: CMakeFiles/ma3Renderer.dir/flags.make
+CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: ../core/Transform.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o -c /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.cpp
+
+CMakeFiles/ma3Renderer.dir/core/Transform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ma3Renderer.dir/core/Transform.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.cpp > CMakeFiles/ma3Renderer.dir/core/Transform.cpp.i
+
+CMakeFiles/ma3Renderer.dir/core/Transform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ma3Renderer.dir/core/Transform.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.cpp -o CMakeFiles/ma3Renderer.dir/core/Transform.cpp.s
+
 # Object files for target ma3Renderer
 ma3Renderer_OBJECTS = \
 "CMakeFiles/ma3Renderer.dir/main.cpp.o" \
@@ -310,7 +336,9 @@ ma3Renderer_OBJECTS = \
 "CMakeFiles/ma3Renderer.dir/core/Integrator.cpp.o" \
 "CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o" \
 "CMakeFiles/ma3Renderer.dir/materials/Metal.cpp.o" \
-"CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o"
+"CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o" \
+"CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o" \
+"CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o"
 
 # External object files for target ma3Renderer
 ma3Renderer_EXTERNAL_OBJECTS =
@@ -333,11 +361,13 @@ ma3Renderer: CMakeFiles/ma3Renderer.dir/core/Integrator.cpp.o
 ma3Renderer: CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o
 ma3Renderer: CMakeFiles/ma3Renderer.dir/materials/Metal.cpp.o
 ma3Renderer: CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o
+ma3Renderer: CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o
+ma3Renderer: CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o
 ma3Renderer: CMakeFiles/ma3Renderer.dir/build.make
 ma3Renderer: /usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib
 ma3Renderer: /usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.dylib
 ma3Renderer: CMakeFiles/ma3Renderer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable ma3Renderer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable ma3Renderer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ma3Renderer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -10,6 +10,8 @@
 #include "materials/Metal.hpp"
 #include "core/GeometricPrimitive.hpp"
 #include "visualization/MA_window.hpp"
+#include "core/Transform.hpp"
+
 
 #define GAMMA_2_CORRECTION 0
 #define WINDOW_WIDTH 720
@@ -79,127 +81,139 @@ int main(int argc, char *argv[]) {
 //    std::cout << "Bounds2i: " << bi.pMax.y << std::endl;
 //    std::cout << "Bounds2i: " << bi.pMax.z << std::endl;
 
-
-
-    std::cout << "This is ##### ma3Renderer #####" << std::endl;
+    //================================================================================================================//
+    // Checking Transform START
+    //================================================================================================================//
+    //Transform t;
 
     //================================================================================================================//
-    // Sample rendering
+    // Checking Transform END
     //================================================================================================================//
-    Point2f  *pixels = new Point2f[WINDOW_WIDTH * WINDOW_HEIGHT];
-    Vector3f  *colors = new Point3f[WINDOW_WIDTH * WINDOW_HEIGHT];
+    Transform t;
 
-    //================================================================================================================//
-    // Camera
-    //================================================================================================================//
-    Camera camera;
-    //================================================================================================================//
-    // Scene
-    //================================================================================================================//
-    Sphere sphere1(Point3f(0.0f, 0.0f, -1.0f), 0.5f);
-    Sphere sphere2(Point3f(0.0f, -100.5f, -1.0f), 100.0f);
-    Sphere sphere3(Point3f(1.0f, 0.0f, -1.0f), 0.5f);
-    Sphere sphere4(Point3f(-1.0f, 0.0f, -1.0f), 0.5f);
-
-
-    MatteMaterial matte1(Vector3f(.8, .3, .3));
-    MatteMaterial matte2(Vector3f(.8, .8, 0.0));
-    Metal metal1(Vector3f(.8, .6, .2), 0.0);
-    Metal metal2(Vector3f(.8, .8, .8), 0.0);
-
-
-    GeometricPrimitive gprimitive1(&sphere1, &matte1);
-    GeometricPrimitive gprimitive2(&sphere2, &matte2);
-    GeometricPrimitive gprimitive3(&sphere3, &metal1);
-    GeometricPrimitive gprimitive4(&sphere4, &metal2);
-
-
-
-
-    Scene scene;
-    scene.addPrimitive(&gprimitive1);
-    scene.addPrimitive(&gprimitive2);
-    scene.addPrimitive(&gprimitive3);
-    scene.addPrimitive(&gprimitive4);
-
-
-
-    //================================================================================================================//
-    // Start Rendering
-    //================================================================================================================//
-//    int index = 0;
-//    for (int y = WINDOW_HEIGHT - 1; y >= 0; y--) {
-//       for (int x = 0; x < WINDOW_WIDTH; x++) {
-//         pixels[index] = Point2f(x, y);
-//         Vector3f tmpColor(0,0,0);
-//         for(int ns = 0; ns < N_SAMPLE; ns++) {
-//             float u = (float)(x + drand48()) / (float)WINDOW_WIDTH;
-//             float v = (float)(y + drand48()) / (float)WINDOW_HEIGHT;
-//             Ray ray = camera.generateRay(u, v);
-//             tmpColor += color(ray, scene, 0);
-//         }
+    std::cout << t << std::endl;
+    Vector3i v(1,1,1);
+    Vector3i vt = t(v); // TODO transform not working
 //
-//         if(GAMMA_2_CORRECTION) {
-//             colors[index] = Vector3f(std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE));
-//         } else {
-//             colors[index] = tmpColor / (float)N_SAMPLE;
+//    std::cout << "This is ##### ma3Renderer #####" << std::endl;
 //
-//         }
+//    //================================================================================================================//
+//    // Sample rendering
+//    //================================================================================================================//
+//    Point2f  *pixels = new Point2f[WINDOW_WIDTH * WINDOW_HEIGHT];
+//    Vector3f  *colors = new Point3f[WINDOW_WIDTH * WINDOW_HEIGHT];
 //
-//           index++;
+//    //================================================================================================================//
+//    // Camera
+//    //================================================================================================================//
+//    Camera camera;
+//    //================================================================================================================//
+//    // Scene
+//    //================================================================================================================//
+//    Sphere sphere1(Point3f(0.0f, 0.0f, -1.0f), 0.5f);
+//    Sphere sphere2(Point3f(0.0f, -100.5f, -1.0f), 100.0f);
+//    Sphere sphere3(Point3f(1.0f, 0.0f, -1.0f), 0.5f);
+//    Sphere sphere4(Point3f(-1.0f, 0.0f, -1.0f), 0.5f);
+//
+//
+//    MatteMaterial matte1(Vector3f(.8, .3, .3));
+//    MatteMaterial matte2(Vector3f(.8, .8, 0.0));
+//    Metal metal1(Vector3f(.8, .6, .2), 0.0);
+//    Metal metal2(Vector3f(.8, .8, .8), 0.0);
+//
+//
+//    GeometricPrimitive gprimitive1(&sphere1, &matte1);
+//    GeometricPrimitive gprimitive2(&sphere2, &matte2);
+//    GeometricPrimitive gprimitive3(&sphere3, &metal1);
+//    GeometricPrimitive gprimitive4(&sphere4, &metal2);
+//
+//
+//
+//
+//    Scene scene;
+//    scene.addPrimitive(&gprimitive1);
+//    scene.addPrimitive(&gprimitive2);
+//    scene.addPrimitive(&gprimitive3);
+//    scene.addPrimitive(&gprimitive4);
+//
+//
+//
+//    //================================================================================================================//
+//    // Start Rendering
+//    //================================================================================================================//
+////    int index = 0;
+////    for (int y = WINDOW_HEIGHT - 1; y >= 0; y--) {
+////       for (int x = 0; x < WINDOW_WIDTH; x++) {
+////         pixels[index] = Point2f(x, y);
+////         Vector3f tmpColor(0,0,0);
+////         for(int ns = 0; ns < N_SAMPLE; ns++) {
+////             float u = (float)(x + drand48()) / (float)WINDOW_WIDTH;
+////             float v = (float)(y + drand48()) / (float)WINDOW_HEIGHT;
+////             Ray ray = camera.generateRay(u, v);
+////             tmpColor += color(ray, scene, 0);
+////         }
+////
+////         if(GAMMA_2_CORRECTION) {
+////             colors[index] = Vector3f(std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE));
+////         } else {
+////             colors[index] = tmpColor / (float)N_SAMPLE;
+////
+////         }
+////
+////           index++;
+////        }
+////     }
+//
+//    //================================================================================================================//
+//    // GLFW window and display
+//    //================================================================================================================//
+//
+//    MAWindow ma_window("########## ma3Renderer ##########", WINDOW_WIDTH, WINDOW_HEIGHT);
+//     //ma_window.display(pixels,colors);
+//    draw(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
+//
+//    while (!glfwWindowShouldClose(ma_window.getWindow())) {
+//        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//
+//        int index = 0;
+//        for (int y = WINDOW_HEIGHT - 1; y >= 0; y--) {
+//            for (int x = 0; x < WINDOW_WIDTH; x++) {
+//                pixels[index] = Point2f(x, y);
+//                Vector3f tmpColor(0,0,0);
+//                for(int ns = 0; ns < N_SAMPLE; ns++) {
+//                    float u = (float)(x + drand48()) / (float)WINDOW_WIDTH;
+//                    float v = (float)(y + drand48()) / (float)WINDOW_HEIGHT;
+//                    Ray ray = camera.generateRay(u, v);
+//                    tmpColor += color(ray, scene, 0);
+//                }
+//
+//                if(GAMMA_2_CORRECTION) {
+//                    colors[index] = Vector3f(std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE));
+//                } else {
+//                    colors[index] = tmpColor / (float)N_SAMPLE;
+//
+//                }
+//                index++;
+//            }
+//            // sample drawings
+//            draw(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
+//            glDrawArrays(GL_POINTS, 0, WINDOW_WIDTH * WINDOW_HEIGHT);
+//            glfwSwapBuffers(ma_window.getWindow());
+//            glfwPollEvents();
 //        }
-//     }
-
-    //================================================================================================================//
-    // GLFW window and display
-    //================================================================================================================//
-
-    MAWindow ma_window("########## ma3Renderer ##########", WINDOW_WIDTH, WINDOW_HEIGHT);
-     //ma_window.display(pixels,colors);
-    draw(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
-
-    while (!glfwWindowShouldClose(ma_window.getWindow())) {
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-        int index = 0;
-        for (int y = WINDOW_HEIGHT - 1; y >= 0; y--) {
-            for (int x = 0; x < WINDOW_WIDTH; x++) {
-                pixels[index] = Point2f(x, y);
-                Vector3f tmpColor(0,0,0);
-                for(int ns = 0; ns < N_SAMPLE; ns++) {
-                    float u = (float)(x + drand48()) / (float)WINDOW_WIDTH;
-                    float v = (float)(y + drand48()) / (float)WINDOW_HEIGHT;
-                    Ray ray = camera.generateRay(u, v);
-                    tmpColor += color(ray, scene, 0);
-                }
-
-                if(GAMMA_2_CORRECTION) {
-                    colors[index] = Vector3f(std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE));
-                } else {
-                    colors[index] = tmpColor / (float)N_SAMPLE;
-
-                }
-                index++;
-            }
-            // sample drawings
-            draw(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
-            glDrawArrays(GL_POINTS, 0, WINDOW_WIDTH * WINDOW_HEIGHT);
-            glfwSwapBuffers(ma_window.getWindow());
-            glfwPollEvents();
-        }
-    }
-    //display(ma_window.getWindow(), pixels, colors);
-
-    //================================================================================================================//
-    // Terminate glfw
-    //================================================================================================================//
-    glfwTerminate();
-
-    //================================================================================================================//
-    // release memory
-    //================================================================================================================//
-    delete[] pixels;
-    delete[] colors;
+//    }
+//    //display(ma_window.getWindow(), pixels, colors);
+//
+//    //================================================================================================================//
+//    // Terminate glfw
+//    //================================================================================================================//
+//    glfwTerminate();
+//
+//    //================================================================================================================//
+//    // release memory
+//    //================================================================================================================//
+//    delete[] pixels;
+//    delete[] colors;
 
     return 0;
 }
