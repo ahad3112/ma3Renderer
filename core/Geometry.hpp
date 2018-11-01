@@ -57,11 +57,36 @@ public:
     T pMin, pMax;
 };
 
+
+//====================================================================================================================//
+// Bounds3
+//====================================================================================================================//
+template <typename T, typename U> class Bounds3 {
+public:
+    Bounds3() {
+        U minNum = std::numeric_limits<U>::lowest();
+        U maxNum = std::numeric_limits<U>::max();
+        pMin = T(maxNum, maxNum, maxNum);
+        pMax = T(minNum, minNum, minNum);
+    }
+    Bounds3(const T &p1, const T &p2): pMin(std::min(p1.x, p2.x), std::min(p1.y, p2.y), std::min(p1.z, p2.z)),
+                                       pMax(std::max(p1.x, p2.x), std::max(p1.y, p2.y), std::max(p1.z, p2.z)){
+
+    }
+
+
+    // < Bounds2 public data >
+    T pMin, pMax;
+};
+
 //====================================================================================================================//
 // type alias
 //====================================================================================================================//
 using Bounds2i = Bounds2<Point2i, int>;
 using Bounds2f = Bounds2<Point2f, float>;
+
+using Bounds3i = Bounds3<Point3i, int>;
+using Bounds3f = Bounds3<Point3f, float>;
 
 
 //////////////////////// Utility function ////////////////////

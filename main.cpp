@@ -63,32 +63,21 @@ void draw(int width, int height, Point2f *pixels, Vector3f *colors) {
     //glDisableClientState(GL_VERTEX_ARRAY);
 }
 
-//====================================================================================================================//
-// display
-//====================================================================================================================//
-void display(GLFWwindow *window, Point2f *pixels, Vector3f *colors) {
-    while (!glfwWindowShouldClose(window)) {
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-        // sample drawings
-        draw(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
-
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-}
-
 
 int main(int argc, char *argv[]) {
 
     //================================================================================================================//
     // Checking Bound2 template
     //================================================================================================================//
-//    Bounds2i bi(Point2i(100,90), Point2i(10,200));
+
+//    Bounds3i bi(Point3i(100,90,0), Point3i(10,200,1));
 //    std::cout << "Bounds2i: " << bi.pMin.x << std::endl;
 //    std::cout << "Bounds2i: " << bi.pMin.y << std::endl;
+//    std::cout << "Bounds2i: " << bi.pMin.z << std::endl;
+//
 //    std::cout << "Bounds2i: " << bi.pMax.x << std::endl;
 //    std::cout << "Bounds2i: " << bi.pMax.y << std::endl;
+//    std::cout << "Bounds2i: " << bi.pMax.z << std::endl;
 
 
 
