@@ -19,6 +19,7 @@ protected:
 public:
     // < Camera Interface 356 >
     Camera();
+    Camera(Point3f lookFrom, Point3f lookAt, Vector3f vup, float vfov, float aspect); // vertical fov
     virtual ~Camera();
     virtual Ray generateRay(float u, float v) const;
     // TODO the following constructor p356 and methods

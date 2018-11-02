@@ -66,6 +66,12 @@ vector
 Primitive.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Primitive.hpp
 
+/Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
+string
+-
+Geometry.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+
 /Users/maaahad/CLionProjects/ma3Renderer/core/shape.hpp
 Ray.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
@@ -97,6 +103,8 @@ core/GeometricPrimitive.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/GeometricPrimitive.hpp
 visualization/MA_window.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/visualization/MA_window.hpp
+core/Transform.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
 
 /Users/maaahad/CLionProjects/ma3Renderer/materials/MatteMaterial.hpp
 ../core/Material.hpp
