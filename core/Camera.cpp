@@ -17,8 +17,8 @@ Camera::Camera() : shutterOpen(0.0f), shutterClose(0.0f) {
     origin          = Vector3f(0.0, 0.0, 0.0);
 }
 
-Camera::Camera(Point3f lookFrom, Point3f lookAt, Vector3f vup, float vfov, float aspect, float aperture, float focusDist)
-              : shutterOpen(0.0f), shutterClose(0.0f) {
+Camera::Camera(Point3f lookFrom, Point3f lookAt, Vector3f vup, float vfov, float aspect, float aperture, float focusDist, Film *film)
+              : shutterOpen(0.0f), shutterClose(0.0f), film(film) {
     lensRadius = aperture / 2.0f;
     float theta = (vfov * MA_PI) / 180.0f;
     float halfHeight = tan(theta / 2.0f);

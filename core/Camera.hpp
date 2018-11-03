@@ -20,7 +20,7 @@ protected:
 public:
     // < Camera Interface 356 >
     Camera();
-    Camera(Point3f lookFrom, Point3f lookAt, Vector3f vup, float vfov, float aspect, float aperture, float focusDist); // vertical fov
+    Camera(Point3f lookFrom, Point3f lookAt, Vector3f vup, float vfov, float aspect, float aperture, float focusDist, Film *film); // vertical fov
     virtual ~Camera();
     // TODO the following constructor p356 and methods
     Camera(float shutterOpen, float shutterClose, Film *film);

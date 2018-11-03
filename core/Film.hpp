@@ -12,6 +12,7 @@ class Film {
 public:
     // < Film public methods >
     Film(const Point2i &resolution, const Bounds2f &cropWindow, float diagonal, const std::string &filename, float scale);
+    ~Film();
 
     // TODO Implement later
 //    Film(const Point2i &resolution, const Bounds2f &cropWindow, Filter* filter, float diagonal, const std::string &filename, float scale);
@@ -24,9 +25,13 @@ public:
     const std::string fileName;
     const float scale;
 
+    // pixels adn colors buffer
+    Point2i *pixels;
+    Vector3f *colors;
 private:
     // < Film private methods 486>
     // < Film private data 493>
+
 };
 
 

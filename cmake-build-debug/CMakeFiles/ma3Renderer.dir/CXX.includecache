@@ -86,12 +86,6 @@ Ray.hpp
 Interaction.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Interaction.hpp
 
-/Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.cpp
-SamplerIntegrator.hpp
-/Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.hpp
-../visualization/MA_window.hpp
-/Users/maaahad/CLionProjects/ma3Renderer/visualization/MA_window.hpp
-
 /Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.hpp
 ../core/Integrator.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Integrator.hpp

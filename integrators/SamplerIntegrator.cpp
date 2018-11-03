@@ -7,32 +7,11 @@
 
 
 #define GAMMA_2_CORRECTION 0
-#define WINDOW_WIDTH 720
-#define WINDOW_HEIGHT 480
-#define N_SAMPLE 1
-#define MAX_DEPTH 1
+#define N_SAMPLE 40
+#define MAX_DEPTH 40
 
 SamplerIntegrator::SamplerIntegrator(Camera *camera) : camera(camera) {
 
-}
-
-
-void drawM(int width, int height, Point2f *pixels, Vector3f *colors) {
-
-    /* We have a color array and a vertex array */
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glEnableClientState(GL_COLOR_ARRAY);
-
-    glVertexPointer(2, GL_FLOAT, 0, pixels);
-    glColorPointer(3, GL_FLOAT, 0, colors);
-
-    //glDrawArrays(GL_POINTS, 0, width * height);
-
-    // Cleanup states: TODO CLEAN STATE AT THE END OF RENDERING...
-    // THIS WAY WE WILL NOT HAVE TO CALL FOR CREATE POINTER FOR VERTEX AND COLOR MULTIPLE TIMES
-
-    //glDisableClientState(GL_COLOR_ARRAY);
-    //glDisableClientState(GL_VERTEX_ARRAY);
 }
 
 void SamplerIntegrator::Render(const Scene &scene) {
@@ -47,30 +26,30 @@ void SamplerIntegrator::Render(const Scene &scene) {
 
 
     // CURRENTLY WINDOW_HEIGHT AND WIDTH IS HARDCODED
-//    int SCREEN_WIDTH = camera->film->fullResolution.x;
-//    int SCREEN_HEIGHT = camera->film->fullResolution.y;
+    int SCREEN_WIDTH = camera->film->fullResolution.x;
+    int SCREEN_HEIGHT = camera->film->fullResolution.y;
 
     //================================================================================================================//
     // Sample rendering
     //================================================================================================================//
-    Point2f  *pixels = new Point2f[WINDOW_WIDTH * WINDOW_HEIGHT];
-    Vector3f  *colors = new Point3f[WINDOW_WIDTH * WINDOW_HEIGHT];
+    Point2i  *pixels  = (camera->film)->pixels;
+    Vector3f  *colors = (camera->film)->colors;
 
-    MAWindow ma_window("########## ma3Renderer ##########", WINDOW_WIDTH, WINDOW_HEIGHT);
+    MAWindow ma_window("########## ma3Renderer ##########", SCREEN_WIDTH, SCREEN_HEIGHT);
+    ma_window.registerBuffer(pixels, colors);
+
 
     while (!glfwWindowShouldClose(ma_window.getWindow())) {
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
         int index = 0;
-        for (int y = WINDOW_HEIGHT - 1; y >= 0; y--) {
-            for (int x = 0; x < WINDOW_WIDTH; x++) {
-                pixels[index] = Point2f(x, y);
+        for (int y = (camera->film)->croppedPixelBounds.pMax.y - 1; y >= (camera->film)->croppedPixelBounds.pMin.y; y--) {
+            for (int x = (camera->film)->croppedPixelBounds.pMin.x; x < (camera->film)->croppedPixelBounds.pMax.x; x++) {
+                pixels[index] = Point2i(x, y);
                 Vector3f L(0,0,0);
                 for(int ns = 0; ns < N_SAMPLE; ns++) {
-                    float u = (float)(x + drand48()) / (float)WINDOW_WIDTH;
-                    float v = (float)(y + drand48()) / (float)WINDOW_HEIGHT;
+                    float u = (float)(x + drand48()) / (float)SCREEN_WIDTH;
+                    float v = (float)(y + drand48()) / (float)SCREEN_HEIGHT;
                     Ray ray = camera->generateRay(u, v);
-                    L += Li(ray, scene, 0);
+                    L += Li(ray, scene);
                 }
 
                 if(GAMMA_2_CORRECTION) {
@@ -81,17 +60,15 @@ void SamplerIntegrator::Render(const Scene &scene) {
                 }
                 index++;
             }
-            // Display TODO SHOULD MOVE TO THE MA_WINDOW ::
-            drawM(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
-            glDrawArrays(GL_POINTS, 0, WINDOW_WIDTH * WINDOW_HEIGHT);
-            glfwSwapBuffers(ma_window.getWindow());
-            glfwPollEvents();
+            ma_window.display();
         }
     }
 
     //================================================================================================================//
     // Terminate glfw
     //================================================================================================================//
+    glDisableClientState(GL_COLOR_ARRAY);
+    glDisableClientState(GL_VERTEX_ARRAY);
     glfwTerminate();
 
 

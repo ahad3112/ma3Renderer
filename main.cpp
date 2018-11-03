@@ -20,7 +20,7 @@
 #define N_SAMPLE 20
 #define MAX_DEPTH 20
 
-// TODO : CLEAN UP OPENGL PART AND DESIGN HOW THE RENDER PROCEDURE WILL LOOK LIKE
+// TODO : USE THE CAMERA FROM PBRT
 
 //====================================================================================================================//
 // Sample color function for starting the ray tracer
@@ -97,17 +97,19 @@ int main(int argc, char *argv[]) {
 //    Vector3i vt = t(v); // TODO transform not working
 
     //================================================================================================================//
-    // Sample rendering
+    // Start ma3Renderer
     //================================================================================================================//
     std::cout << "This is ##### ma3Renderer #####" << std::endl;
 
-    Point2f  *pixels = new Point2f[WINDOW_WIDTH * WINDOW_HEIGHT];
-    Vector3f  *colors = new Point3f[WINDOW_WIDTH * WINDOW_HEIGHT];
 
     //================================================================================================================//
     // Film
     //================================================================================================================//
-
+    Point2i resolution(WINDOW_WIDTH , WINDOW_HEIGHT);
+    Bounds2f cropWindow(Point2f(0.0f, 0.0f), Point2f(1.0f, 1.0f));  // RANGE (0,1)
+    float diagonal = 10.0f;         // In mili meter.... TODO ...need to know what is does
+    float scale = 1.0f;             // TODO ...need to know what is does
+    Film film(resolution, cropWindow, diagonal, std::string("fileName"), 1.0f);
     //================================================================================================================//
     // Camera
     //================================================================================================================//
@@ -115,7 +117,7 @@ int main(int argc, char *argv[]) {
     Point3f lookAt(0,0,-1);
     float focusDist = glm::length(lookFrom - lookAt);
     float aperture = 0.5f;
-    Camera camera(lookFrom, lookAt, Vector3f(0,1,0), 60.0f,(float)WINDOW_WIDTH / (float)WINDOW_HEIGHT, aperture, focusDist); // fov: in degrees
+    Camera camera(lookFrom, lookAt, Vector3f(0,1,0), 60.0f,(float)WINDOW_WIDTH / (float)WINDOW_HEIGHT, aperture, focusDist, &film); // fov: in degrees
     //================================================================================================================//
     // Scene
     //================================================================================================================//
@@ -153,83 +155,6 @@ int main(int argc, char *argv[]) {
     //================================================================================================================//
     SamplerIntegrator integrator(&camera);
     integrator.Render(scene);
-
-    //================================================================================================================//
-    // Start Rendering
-    //================================================================================================================//
-//    int index = 0;
-//    for (int y = WINDOW_HEIGHT - 1; y >= 0; y--) {
-//       for (int x = 0; x < WINDOW_WIDTH; x++) {
-//         pixels[index] = Point2f(x, y);
-//         Vector3f tmpColor(0,0,0);
-//         for(int ns = 0; ns < N_SAMPLE; ns++) {
-//             float u = (float)(x + drand48()) / (float)WINDOW_WIDTH;
-//             float v = (float)(y + drand48()) / (float)WINDOW_HEIGHT;
-//             Ray ray = camera.generateRay(u, v);
-//             tmpColor += color(ray, scene, 0);
-//         }
-//
-//         if(GAMMA_2_CORRECTION) {
-//             colors[index] = Vector3f(std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE));
-//         } else {
-//             colors[index] = tmpColor / (float)N_SAMPLE;
-//
-//         }
-//
-//           index++;
-//        }
-//     }
-
-    //================================================================================================================//
-    // GLFW window and display
-    //================================================================================================================//
-//
-//    MAWindow ma_window("########## ma3Renderer ##########", WINDOW_WIDTH, WINDOW_HEIGHT);
-//     //ma_window.display(pixels,colors);
-//    draw(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
-//
-//    while (!glfwWindowShouldClose(ma_window.getWindow())) {
-//        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//
-//        int index = 0;
-//        for (int y = WINDOW_HEIGHT - 1; y >= 0; y--) {
-//            for (int x = 0; x < WINDOW_WIDTH; x++) {
-//                pixels[index] = Point2f(x, y);
-//                Vector3f tmpColor(0,0,0);
-//                for(int ns = 0; ns < N_SAMPLE; ns++) {
-//                    float u = (float)(x + drand48()) / (float)WINDOW_WIDTH;
-//                    float v = (float)(y + drand48()) / (float)WINDOW_HEIGHT;
-//                    Ray ray = camera.generateRay(u, v);
-//                    tmpColor += color(ray, scene, 0);
-//                }
-//
-//                if(GAMMA_2_CORRECTION) {
-//                    colors[index] = Vector3f(std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE));
-//                } else {
-//                    colors[index] = tmpColor / (float)N_SAMPLE;
-//
-//                }
-//                index++;
-//            }
-//            // sample drawings
-//            draw(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
-//            glDrawArrays(GL_POINTS, 0, WINDOW_WIDTH * WINDOW_HEIGHT);
-//            glfwSwapBuffers(ma_window.getWindow());
-//            glfwPollEvents();
-//        }
-//    }
-//    //display(ma_window.getWindow(), pixels, colors);
-
-//    //================================================================================================================//
-//    // Terminate glfw
-//    //================================================================================================================//
-//    glfwTerminate();
-
-    //================================================================================================================//
-    // release memory
-    //================================================================================================================//
-    delete[] pixels;
-    delete[] colors;
 
     return 0;
 }

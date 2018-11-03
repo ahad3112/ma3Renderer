@@ -84,6 +84,17 @@ void MAWindow::initGL() {
     glLoadIdentity();
 }
 
+//====================================================================================================================//
+// init GL
+//====================================================================================================================//
+void MAWindow::registerBuffer(Point2i *pixels, Vector3f *colors) {
+    /* We have a color array and a vertex array */
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glEnableClientState(GL_COLOR_ARRAY);
+
+    glVertexPointer(2, GL_INT, 0, pixels);
+    glColorPointer(3, GL_FLOAT, 0, colors);
+}
 
 //====================================================================================================================//
 // Sample draw
@@ -108,16 +119,11 @@ void drawScreen(int width, int height, Point2f *pixels, Vector3f *colors) {
 //====================================================================================================================//
 // display
 //====================================================================================================================//
-void MAWindow::display(Point2f *pixels, Vector3f *colors) {
-    while (!glfwWindowShouldClose(window)) {
+void MAWindow::display() {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-        // sample drawings
-        drawScreen(width, height, pixels, colors);
-
+        glDrawArrays(GL_POINTS, 0, width * height);
         glfwSwapBuffers(window);
         glfwPollEvents();
-    }
 }
 
 
