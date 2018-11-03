@@ -13,6 +13,15 @@ Vector3f randomUnitSphere() {
     return p;
 }
 
+
+float radians(float degree) {
+    return (MA_PI / 180.f) * degree;
+}
+
+float degrees(float radian) {
+    return (180.0f / MA_PI) * radian;
+}
+
 //Vector3f reflect(const Vector3f &v, const Normal3f &n) {
 //    return v - 2.0f * glm::dot(v, n) * n;
 //}

@@ -16,6 +16,12 @@ public:
                       float lensRadius, float focalDist, float fov, Film *film);
     ~PerspectiveCamera();
 
+    Ray generateRay(float u, float v) const override;
+
+    float generateRay(const CameraSample &sample, Ray *ray) const override;
+private:
+    Vector3f dxCamera, dyCamera;
+    float A;
 
 };
 

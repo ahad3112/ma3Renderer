@@ -104,6 +104,7 @@ CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.cpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
  /usr/local/Cellar/glm/0.9.9.2/include/glm/./detail/./compute_vector_relational.hpp
  /usr/local/Cellar/glm/0.9.9.2/include/glm/./detail/_swizzle.hpp
  /usr/local/Cellar/glm/0.9.9.2/include/glm/./detail/_swizzle_func.hpp

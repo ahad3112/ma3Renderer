@@ -103,6 +103,7 @@ CMakeFiles/ma3Renderer.dir/core/Scene.cpp.o: ../utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: ../core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: ../core/Transform.cpp
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: ../core/Transform.hpp
+CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: ../utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: /usr/local/Cellar/glm/0.9.9.2/include/glm/./detail/./compute_vector_relational.hpp
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: /usr/local/Cellar/glm/0.9.9.2/include/glm/./detail/_swizzle.hpp
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: /usr/local/Cellar/glm/0.9.9.2/include/glm/./detail/_swizzle_func.hpp
