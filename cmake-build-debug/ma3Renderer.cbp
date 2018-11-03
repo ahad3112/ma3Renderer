@@ -94,6 +94,12 @@
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/accelerators/Aggregrate.hpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/cameras/PerspectiveCamera.cpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/cameras/PerspectiveCamera.hpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/cameras/ProjectiveCamera.cpp">
 			<Option target="ma3Renderer"/>
 		</Unit>

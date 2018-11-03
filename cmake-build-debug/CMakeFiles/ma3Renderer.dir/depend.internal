@@ -10,6 +10,16 @@ CMakeFiles/ma3Renderer.dir/accelerators/Aggregrate.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Primitive.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
+CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o
+ /Users/maaahad/CLionProjects/ma3Renderer/cameras/PerspectiveCamera.cpp
+ /Users/maaahad/CLionProjects/ma3Renderer/cameras/PerspectiveCamera.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/cameras/ProjectiveCamera.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Camera.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Film.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/cameras/ProjectiveCamera.cpp
  /Users/maaahad/CLionProjects/ma3Renderer/cameras/ProjectiveCamera.hpp
@@ -17,6 +27,7 @@ CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Film.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Camera.cpp
@@ -24,6 +35,7 @@ CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Film.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/core/Film.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Film.cpp
@@ -260,6 +272,7 @@ CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Primitive.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Scene.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.cpp
  /Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp

@@ -8,6 +8,7 @@
 #include "Geometry.hpp"
 #include "Ray.hpp"
 #include "Film.hpp"
+#include "Transform.hpp"
 
 class Camera {
 protected:
@@ -19,22 +20,25 @@ protected:
 public:
     // < Camera Interface 356 >
     Camera();
-    Camera(Point3f lookFrom, Point3f lookAt, Vector3f vup, float vfov, float aspect); // vertical fov
+    Camera(Point3f lookFrom, Point3f lookAt, Vector3f vup, float vfov, float aspect, float aperture, float focusDist); // vertical fov
     virtual ~Camera();
-    virtual Ray generateRay(float u, float v) const;
     // TODO the following constructor p356 and methods
     Camera(float shutterOpen, float shutterClose, Film *film);
 
-    //Camera(const AnimatedTransform &cameraToWorld, float shutterOpen, float shutterClose, Film *film, const Medium *medium);
+    Camera(const Transform &cameraToWorld, float shutterOpen, float shutterClose, Film *film);
+
+    // TODO IMPLEMENT THE MEDIUM CLASS
+    //Camera(Transform &cameraToWorld, float shutterOpen, float shutterClose, Film *film, const Medium *medium);
 
 
+    virtual Ray generateRay(float ux, float vy) const;
     // TODO make it pure virtual later
-    virtual float generateRay(const CameraSample &sample) const;
+    virtual float generateRay(const CameraSample &sample, Ray *ray) const;
 
     // TODO generateRayDifferential()
 
     // < Camera public data >
-//    AnimatedTransform cameraToWorld;
+    Transform cameraToWorld;
     const float shutterOpen, shutterClose;
     Film *film;
 //    const Mediumm *medium;
@@ -44,6 +48,8 @@ public:
     Point3f lowerLeftCorner;
     Vector3f horizontal;
     Vector3f vertical;
+    Vector3f u, v, w;
+    float lensRadius;
 };
 
 

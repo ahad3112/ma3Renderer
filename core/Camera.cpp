@@ -6,6 +6,10 @@
 #include <cmath>
 #include "Camera.hpp"
 
+
+//====================================================================================================================//
+// CONSTRUCTOR
+//====================================================================================================================//
 Camera::Camera() : shutterOpen(0.0f), shutterClose(0.0f) {
     lowerLeftCorner = Point3f(-2.0, -1.0, -1.0);
     horizontal      = Point3f(4.0, 0.0, 0.0);
@@ -13,8 +17,9 @@ Camera::Camera() : shutterOpen(0.0f), shutterClose(0.0f) {
     origin          = Vector3f(0.0, 0.0, 0.0);
 }
 
-Camera::Camera(Point3f lookFrom, Point3f lookAt, Vector3f vup, float vfov, float aspect) : shutterOpen(0.0f), shutterClose(0.0f) {
-    Vector3f u, v, w;
+Camera::Camera(Point3f lookFrom, Point3f lookAt, Vector3f vup, float vfov, float aspect, float aperture, float focusDist)
+              : shutterOpen(0.0f), shutterClose(0.0f) {
+    lensRadius = aperture / 2.0f;
     float theta = (vfov * MA_PI) / 180.0f;
     float halfHeight = tan(theta / 2.0f);
     float halfWidth = aspect * halfHeight;
@@ -22,13 +27,9 @@ Camera::Camera(Point3f lookFrom, Point3f lookAt, Vector3f vup, float vfov, float
     w = glm::normalize(lookFrom - lookAt);
     u = glm::normalize(glm::cross(vup, w));
     v = glm::cross(w,u);
-//    lowerLeftCorner = Point3f(-halfWidth, -halfHeight, -1.0f);
-    lowerLeftCorner = origin - halfWidth * u - halfHeight * v - w;
-//    horizontal = Vector3f(2.0f * halfWidth , 0.0f, 0.0f);
-//    vertical = Vector3f(0.0f, 2.0f * halfHeight, 0.0f);
-
-    horizontal = 2.0f * halfWidth * u;
-    vertical = 2.0f * halfHeight * v;
+    lowerLeftCorner = origin - halfWidth * focusDist * u - halfHeight * focusDist * v - focusDist * w;
+    horizontal = 2.0f * halfWidth * focusDist * u;
+    vertical = 2.0f * halfHeight * focusDist * v;
 
 }
 
@@ -37,16 +38,30 @@ Camera::Camera(float shutterOpen, float shutterClose, Film *film)
 
 }
 
+
+Camera::Camera(const Transform &cameraToWorld, float shutterOpen, float shutterClose, Film *film) : cameraToWorld(cameraToWorld),
+                shutterOpen(shutterOpen), shutterClose(shutterClose), film(film){
+
+}
+
+//====================================================================================================================//
+// DESTRUCTOR
+//====================================================================================================================//
 Camera::~Camera() {
 
 }
 
 
-Ray Camera::generateRay(float u, float v) const {
-    return Ray(origin, lowerLeftCorner + (u * horizontal) + (v * vertical) - origin);
+//====================================================================================================================//
+// CLASS METHODS
+//====================================================================================================================//
+Ray Camera::generateRay(float ux, float vy) const {
+    Vector3f rd = lensRadius * randomUnitSphere();
+    Vector3f offset = u * rd.x + v * rd.y;
+    return Ray(origin + offset, lowerLeftCorner + (ux * horizontal) + (vy * vertical) - origin - offset);
 }
 
-float Camera::generateRay(const Camera::CameraSample &sample) const {
+float Camera::generateRay(const Camera::CameraSample &sample, Ray *ray) const {
     std::cerr << "Warning: \n\tFile:" << __FILE__
               << "\n\tLine: " << __LINE__
               << "Function: " << __func__

@@ -10,12 +10,23 @@ CMakeFiles/ma3Renderer.dir/accelerators/Aggregrate.cpp.o: ../core/Primitive.hpp
 CMakeFiles/ma3Renderer.dir/accelerators/Aggregrate.cpp.o: ../core/Ray.hpp
 CMakeFiles/ma3Renderer.dir/accelerators/Aggregrate.cpp.o: ../utility/MA_utility.hpp
 
+CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../cameras/PerspectiveCamera.cpp
+CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../cameras/PerspectiveCamera.hpp
+CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../cameras/ProjectiveCamera.hpp
+CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../core/Camera.hpp
+CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../core/Film.hpp
+CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../core/Ray.hpp
+CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../core/Transform.hpp
+CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../utility/MA_utility.hpp
+
 CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: ../cameras/ProjectiveCamera.cpp
 CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: ../cameras/ProjectiveCamera.hpp
 CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: ../core/Camera.hpp
 CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: ../core/Film.hpp
 CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: ../core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: ../core/Ray.hpp
+CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: ../core/Transform.hpp
 CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: ../utility/MA_utility.hpp
 
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../core/Camera.cpp
@@ -23,6 +34,7 @@ CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../core/Camera.hpp
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../core/Film.hpp
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../core/Ray.hpp
+CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../core/Transform.hpp
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../utility/MA_utility.hpp
 
 CMakeFiles/ma3Renderer.dir/core/Film.cpp.o: ../core/Film.cpp
@@ -259,6 +271,7 @@ CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../core/Material
 CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../core/Primitive.hpp
 CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../core/Ray.hpp
 CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../core/Scene.hpp
+CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../core/Transform.hpp
 CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../integrators/SamplerIntegrator.cpp
 CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../integrators/SamplerIntegrator.hpp
 CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../utility/MA_utility.hpp

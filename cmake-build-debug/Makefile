@@ -150,6 +150,33 @@ accelerators/Aggregrate.cpp.s:
 	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/accelerators/Aggregrate.cpp.s
 .PHONY : accelerators/Aggregrate.cpp.s
 
+cameras/PerspectiveCamera.o: cameras/PerspectiveCamera.cpp.o
+
+.PHONY : cameras/PerspectiveCamera.o
+
+# target to build an object file
+cameras/PerspectiveCamera.cpp.o:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o
+.PHONY : cameras/PerspectiveCamera.cpp.o
+
+cameras/PerspectiveCamera.i: cameras/PerspectiveCamera.cpp.i
+
+.PHONY : cameras/PerspectiveCamera.i
+
+# target to preprocess a source file
+cameras/PerspectiveCamera.cpp.i:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.i
+.PHONY : cameras/PerspectiveCamera.cpp.i
+
+cameras/PerspectiveCamera.s: cameras/PerspectiveCamera.cpp.s
+
+.PHONY : cameras/PerspectiveCamera.s
+
+# target to generate assembly for a file
+cameras/PerspectiveCamera.cpp.s:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.s
+.PHONY : cameras/PerspectiveCamera.cpp.s
+
 cameras/ProjectiveCamera.o: cameras/ProjectiveCamera.cpp.o
 
 .PHONY : cameras/ProjectiveCamera.o
@@ -675,6 +702,9 @@ help:
 	@echo "... accelerators/Aggregrate.o"
 	@echo "... accelerators/Aggregrate.i"
 	@echo "... accelerators/Aggregrate.s"
+	@echo "... cameras/PerspectiveCamera.o"
+	@echo "... cameras/PerspectiveCamera.i"
+	@echo "... cameras/PerspectiveCamera.s"
 	@echo "... cameras/ProjectiveCamera.o"
 	@echo "... cameras/ProjectiveCamera.i"
 	@echo "... cameras/ProjectiveCamera.s"

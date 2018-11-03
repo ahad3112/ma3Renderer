@@ -16,8 +16,8 @@
 #define GAMMA_2_CORRECTION 0
 #define WINDOW_WIDTH 720
 #define WINDOW_HEIGHT 480
-#define N_SAMPLE 100
-#define MAX_DEPTH 100
+#define N_SAMPLE 20
+#define MAX_DEPTH 20
 
 // TODO : CLEAN UP OPENGL PART AND DESIGN HOW THE RENDER PROCEDURE WILL LOOK LIKE
 
@@ -106,7 +106,11 @@ int main(int argc, char *argv[]) {
     //================================================================================================================//
     // Camera
     //================================================================================================================//
-    Camera camera(Point3f(-2,2,1), Point3f(0,0,-1), Vector3f(0,1,0), 90.0f,(float)WINDOW_WIDTH / (float)WINDOW_HEIGHT); // fov: in degrees
+    Point3f lookFrom(-2,2,1);
+    Point3f lookAt(0,0,-1);
+    float focusDist = glm::length(lookFrom - lookAt);
+    float aperture = 0.5f;
+    Camera camera(lookFrom, lookAt, Vector3f(0,1,0), 60.0f,(float)WINDOW_WIDTH / (float)WINDOW_HEIGHT, aperture, focusDist); // fov: in degrees
     //================================================================================================================//
     // Scene
     //================================================================================================================//
@@ -114,18 +118,18 @@ int main(int argc, char *argv[]) {
     Sphere sphere1(Point3f(-R, 0.0f, -1.0f), R);
     Sphere sphere2(Point3f(R, 0.0f, -1.0f), R);
     Sphere sphere3(Point3f(0.0f, -100.5f, -1.0f), 100.0f);
-    Sphere sphere4(Point3f(-1.0f, 0.0f, -1.0f), 0.5f);
+    Sphere sphere4(Point3f(-2.0f, 1.0f, -1.0f), 0.5f);
 
 
-    MatteMaterial matte1(Vector3f(0, 0, 1));
-    MatteMaterial matte2(Vector3f(1, 0, 0.0));
-    MatteMaterial matte3(Vector3f(.8, .8, .8));
-    Metal metal1(Vector3f(.8, .6, .2), 0.0);
-    Metal metal2(Vector3f(.8, .8, .8), 0.0);
+    MatteMaterial matte1(Vector3f(0.1, 0.2, .5));
+    MatteMaterial matte2(Vector3f(.8, 0.8, 0.0));
+    MatteMaterial matte3(Vector3f(.8, .8, 0.0));
+    Metal metal1(Vector3f(.8, .6, .2), 0.2);
+    Metal metal2(Vector3f(.8, .8, .8), 0.2);
 
 
     GeometricPrimitive gprimitive1(&sphere1, &matte1);
-    GeometricPrimitive gprimitive2(&sphere2, &matte2);
+    GeometricPrimitive gprimitive2(&sphere2, &metal2);
     GeometricPrimitive gprimitive3(&sphere3, &matte3);
     GeometricPrimitive gprimitive4(&sphere4, &metal2);
 

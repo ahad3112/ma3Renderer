@@ -19,6 +19,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o"
   "CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o"
   "CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o"
+  "CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o"
   "ma3Renderer.pdb"
   "ma3Renderer"
 )
