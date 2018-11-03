@@ -16,7 +16,7 @@ public:
     // TODO implements Light class
     //    Scene(Primitive *aggregate, std::vector<Light *> lights);
 
-    bool intersect(const Ray &ray, SurfaceInteraction *isect);
+    bool intersect(const Ray &ray, SurfaceInteraction *isect) const;
     bool intersectP(const Ray &ray);
 
     void addPrimitive(const Primitive *primitive);

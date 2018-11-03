@@ -12,6 +12,7 @@ class Integrator {
 public:
     // < Integrator Interface 25 >
     Integrator () {}
+    virtual ~Integrator() {}
     virtual void Render(const Scene &scene) = 0;
 };
 

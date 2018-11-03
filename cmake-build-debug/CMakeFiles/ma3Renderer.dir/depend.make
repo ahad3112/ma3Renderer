@@ -276,11 +276,13 @@ CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../core/Transfor
 CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../integrators/SamplerIntegrator.cpp
 CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../integrators/SamplerIntegrator.hpp
 CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../utility/MA_utility.hpp
+CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../visualization/MA_window.hpp
 
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Camera.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Film.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/GeometricPrimitive.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Integrator.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Interaction.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Material.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Primitive.hpp
@@ -288,6 +290,7 @@ CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Ray.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Scene.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Transform.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/shape.hpp
+CMakeFiles/ma3Renderer.dir/main.cpp.o: ../integrators/SamplerIntegrator.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../main.cpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../materials/MatteMaterial.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../materials/Metal.hpp

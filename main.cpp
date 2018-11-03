@@ -11,6 +11,7 @@
 #include "core/GeometricPrimitive.hpp"
 #include "visualization/MA_window.hpp"
 #include "core/Transform.hpp"
+#include "integrators/SamplerIntegrator.hpp"
 
 
 #define GAMMA_2_CORRECTION 0
@@ -95,13 +96,17 @@ int main(int argc, char *argv[]) {
 //    Vector3i v(1,1,1);
 //    Vector3i vt = t(v); // TODO transform not working
 
-    std::cout << "This is ##### ma3Renderer #####" << std::endl;
-
     //================================================================================================================//
     // Sample rendering
     //================================================================================================================//
+    std::cout << "This is ##### ma3Renderer #####" << std::endl;
+
     Point2f  *pixels = new Point2f[WINDOW_WIDTH * WINDOW_HEIGHT];
     Vector3f  *colors = new Point3f[WINDOW_WIDTH * WINDOW_HEIGHT];
+
+    //================================================================================================================//
+    // Film
+    //================================================================================================================//
 
     //================================================================================================================//
     // Camera
@@ -143,6 +148,11 @@ int main(int argc, char *argv[]) {
     //scene.addPrimitive(&gprimitive4);
 
 
+    //================================================================================================================//
+    // Call Integrator for rendering
+    //================================================================================================================//
+    SamplerIntegrator integrator(&camera);
+    integrator.Render(scene);
 
     //================================================================================================================//
     // Start Rendering
@@ -173,47 +183,47 @@ int main(int argc, char *argv[]) {
     //================================================================================================================//
     // GLFW window and display
     //================================================================================================================//
+//
+//    MAWindow ma_window("########## ma3Renderer ##########", WINDOW_WIDTH, WINDOW_HEIGHT);
+//     //ma_window.display(pixels,colors);
+//    draw(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
+//
+//    while (!glfwWindowShouldClose(ma_window.getWindow())) {
+//        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//
+//        int index = 0;
+//        for (int y = WINDOW_HEIGHT - 1; y >= 0; y--) {
+//            for (int x = 0; x < WINDOW_WIDTH; x++) {
+//                pixels[index] = Point2f(x, y);
+//                Vector3f tmpColor(0,0,0);
+//                for(int ns = 0; ns < N_SAMPLE; ns++) {
+//                    float u = (float)(x + drand48()) / (float)WINDOW_WIDTH;
+//                    float v = (float)(y + drand48()) / (float)WINDOW_HEIGHT;
+//                    Ray ray = camera.generateRay(u, v);
+//                    tmpColor += color(ray, scene, 0);
+//                }
+//
+//                if(GAMMA_2_CORRECTION) {
+//                    colors[index] = Vector3f(std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE));
+//                } else {
+//                    colors[index] = tmpColor / (float)N_SAMPLE;
+//
+//                }
+//                index++;
+//            }
+//            // sample drawings
+//            draw(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
+//            glDrawArrays(GL_POINTS, 0, WINDOW_WIDTH * WINDOW_HEIGHT);
+//            glfwSwapBuffers(ma_window.getWindow());
+//            glfwPollEvents();
+//        }
+//    }
+//    //display(ma_window.getWindow(), pixels, colors);
 
-    MAWindow ma_window("########## ma3Renderer ##########", WINDOW_WIDTH, WINDOW_HEIGHT);
-     //ma_window.display(pixels,colors);
-    draw(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
-
-    while (!glfwWindowShouldClose(ma_window.getWindow())) {
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-        int index = 0;
-        for (int y = WINDOW_HEIGHT - 1; y >= 0; y--) {
-            for (int x = 0; x < WINDOW_WIDTH; x++) {
-                pixels[index] = Point2f(x, y);
-                Vector3f tmpColor(0,0,0);
-                for(int ns = 0; ns < N_SAMPLE; ns++) {
-                    float u = (float)(x + drand48()) / (float)WINDOW_WIDTH;
-                    float v = (float)(y + drand48()) / (float)WINDOW_HEIGHT;
-                    Ray ray = camera.generateRay(u, v);
-                    tmpColor += color(ray, scene, 0);
-                }
-
-                if(GAMMA_2_CORRECTION) {
-                    colors[index] = Vector3f(std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE), std::sqrt(tmpColor.x / (float)N_SAMPLE));
-                } else {
-                    colors[index] = tmpColor / (float)N_SAMPLE;
-
-                }
-                index++;
-            }
-            // sample drawings
-            draw(WINDOW_WIDTH, WINDOW_HEIGHT, pixels, colors);
-            glDrawArrays(GL_POINTS, 0, WINDOW_WIDTH * WINDOW_HEIGHT);
-            glfwSwapBuffers(ma_window.getWindow());
-            glfwPollEvents();
-        }
-    }
-    //display(ma_window.getWindow(), pixels, colors);
-
-    //================================================================================================================//
-    // Terminate glfw
-    //================================================================================================================//
-    glfwTerminate();
+//    //================================================================================================================//
+//    // Terminate glfw
+//    //================================================================================================================//
+//    glfwTerminate();
 
     //================================================================================================================//
     // release memory

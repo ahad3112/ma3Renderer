@@ -277,11 +277,13 @@ CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.cpp
  /Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/visualization/MA_window.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Camera.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Film.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/GeometricPrimitive.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Integrator.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Interaction.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Material.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Primitive.hpp
@@ -289,6 +291,7 @@ CMakeFiles/ma3Renderer.dir/main.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Scene.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/shape.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/main.cpp
  /Users/maaahad/CLionProjects/ma3Renderer/materials/MatteMaterial.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/materials/Metal.hpp

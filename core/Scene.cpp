@@ -10,7 +10,7 @@ Scene::Scene(std::vector<const Primitive *> aggregate) : aggregate(aggregate) {
     // TODO Preprocess for lights
 }
 
-bool Scene::intersect(const Ray &ray, SurfaceInteraction *isect) {
+bool Scene::intersect(const Ray &ray, SurfaceInteraction *isect) const {
     bool hit = false;
     for (const auto prim : aggregate) {
         if(prim->intersect(ray, isect)) {
