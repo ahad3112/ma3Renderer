@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/Cellar/glew/2.1.0/include/GL -I/usr/local/Cellar/glfw/3.2.1/include/GLFW -I/usr/local/Cellar/glm/0.9.9.2/include/glm 
+CXX_INCLUDES = -I/usr/local/Cellar/glew/2.1.0/include/GL -I/usr/local/Cellar/glfw/3.2.1/include/GLFW -I/usr/local/Cellar/glm/0.9.9.2/include/glm -I/usr/local/Cellar/boost/1.67.0_1/include/boost 
 

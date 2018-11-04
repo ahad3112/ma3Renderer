@@ -11,7 +11,7 @@
 class Material {
 public:
     // < Matarial Interface 577 >
-    Material () {}
+    Material (const Vector3f &albedo);
     virtual void computeScatteringFunctions(SurfaceInteraction *isect) const = 0;
     virtual bool computeScatteringFunctions(SurfaceInteraction *isect, const Ray &ray, Ray &scatterRay) const = 0;
     virtual Vector3f getAlbedo() const = 0;
@@ -19,7 +19,8 @@ public:
 
     // TODO
 //    virtual void computeScatteringFunctions(SurfaceInteraction *isect, TransportMode Mode, bool allowMultiplelobes) const = 0;
-
+    // Based on shirley
+    Vector3f albedo;
 };
 
 

@@ -33,6 +33,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/local/Cellar/glew/2.1.0/include/GL"
   "/usr/local/Cellar/glfw/3.2.1/include/GLFW"
   "/usr/local/Cellar/glm/0.9.9.2/include/glm"
+  "/usr/local/Cellar/boost/1.67.0_1/include/boost"
   )
 
 # Targets to which this target links.

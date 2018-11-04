@@ -10,13 +10,13 @@
 #include "Film.hpp"
 #include "Transform.hpp"
 
+struct CameraSample {
+    Point2f pFilms;
+    Point2f pLens;
+    float time;
+};
+
 class Camera {
-protected:
-    struct CameraSample {
-        Point2f pFilms;
-        Point2f pLens;
-        float time;
-    };
 public:
     // < Camera Interface 356 >
     Camera();

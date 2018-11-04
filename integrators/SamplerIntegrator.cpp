@@ -7,8 +7,8 @@
 
 
 #define GAMMA_2_CORRECTION 0
-#define N_SAMPLE 40
-#define MAX_DEPTH 40
+#define N_SAMPLE 1
+#define MAX_DEPTH 1
 
 SamplerIntegrator::SamplerIntegrator(Camera *camera) : camera(camera) {
 
@@ -38,6 +38,8 @@ void SamplerIntegrator::Render(const Scene &scene) {
     MAWindow ma_window("########## ma3Renderer ##########", SCREEN_WIDTH, SCREEN_HEIGHT);
     ma_window.registerBuffer(pixels, colors);
 
+    // TODO SHOULD GET THIS SAMPLE FROM Sampler class
+    //CameraSample cameraSample;
 
     while (!glfwWindowShouldClose(ma_window.getWindow())) {
         int index = 0;
@@ -49,6 +51,16 @@ void SamplerIntegrator::Render(const Scene &scene) {
                     float u = (float)(x + drand48()) / (float)SCREEN_WIDTH;
                     float v = (float)(y + drand48()) / (float)SCREEN_HEIGHT;
                     Ray ray = camera->generateRay(u, v);
+
+                    // Create camera sample
+
+                    //cameraSample.pFilms = Point2f((float)(x + drand48()), (float)(y + drand48()));
+
+                    //cameraSample.pFilms = Point2f((float)x, (float)y); // TESTING PURPOSE
+
+                    // Create Ray using the Perspective Camera
+                    //float weight = camera->generateRay(cameraSample,&ray);
+
                     L += Li(ray, scene);
                 }
 

@@ -6,7 +6,7 @@
 #include "Metal.hpp"
 
 
-Metal::Metal(const Vector3f &albedo, float f) : albedo(albedo){
+Metal::Metal(const Vector3f &albedo, float f) : Material(albedo){
     if(f < 1.0) {
         fuzz = f;
     } else {

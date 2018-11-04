@@ -61,7 +61,7 @@ Ray Camera::generateRay(float ux, float vy) const {
     return Ray(origin + offset, lowerLeftCorner + (ux * horizontal) + (vy * vertical) - origin - offset);
 }
 
-float Camera::generateRay(const Camera::CameraSample &sample, Ray *ray) const {
+float Camera::generateRay(const CameraSample &sample, Ray *ray) const {
     std::cerr << "Warning: \n\tFile:" << __FILE__
               << "\n\tLine: " << __LINE__
               << "Function: " << __func__

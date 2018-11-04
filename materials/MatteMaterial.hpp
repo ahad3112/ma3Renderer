@@ -11,16 +11,13 @@
 class MatteMaterial : public Material{
 public:
     // <  MatteMaterial public methods 578>
-    MatteMaterial() {}
-    MatteMaterial(const Vector3f &albedo) : albedo(albedo) {}
+    MatteMaterial(const Vector3f &albedo) : Material(albedo) {}
 
     void computeScatteringFunctions(SurfaceInteraction *isect) const override;
     bool computeScatteringFunctions(SurfaceInteraction *isect, const Ray &ray, Ray &scatterRay) const override;
     Vector3f getAlbedo() const override;
 
 private:
-    // Based on shirley
-    Vector3f albedo;
     // < MatteMaterial private data 578>
 
 };

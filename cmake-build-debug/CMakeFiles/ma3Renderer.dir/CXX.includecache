@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/Users/maaahad/CLionProjects/ma3Renderer/cameras/PerspectiveCamera.hpp
+../core/Transform.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
+ProjectiveCamera.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/cameras/ProjectiveCamera.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/cameras/ProjectiveCamera.hpp
+../core/Camera.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Camera.hpp
+
 /Users/maaahad/CLionProjects/ma3Renderer/core/Camera.hpp
 Geometry.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
@@ -121,6 +131,8 @@ core/Transform.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
 integrators/SamplerIntegrator.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.hpp
+cameras/PerspectiveCamera.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/cameras/PerspectiveCamera.hpp
 
 /Users/maaahad/CLionProjects/ma3Renderer/materials/MatteMaterial.hpp
 ../core/Material.hpp

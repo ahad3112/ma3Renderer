@@ -10,7 +10,6 @@
 
 class Metal : public Material {
 public:
-    Metal() {}
     Metal(const Vector3f &albedo, float f);
 
     void computeScatteringFunctions(SurfaceInteraction *isect) const override;
@@ -20,7 +19,7 @@ public:
     Vector3f getAlbedo() const override;
 
 private:
-    Vector3f albedo;
+
     float fuzz;
 };
 

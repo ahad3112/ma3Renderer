@@ -12,60 +12,14 @@
 #include "visualization/MA_window.hpp"
 #include "core/Transform.hpp"
 #include "integrators/SamplerIntegrator.hpp"
+#include "cameras/PerspectiveCamera.hpp"
 
 
-#define GAMMA_2_CORRECTION 0
 #define WINDOW_WIDTH 720
 #define WINDOW_HEIGHT 480
-#define N_SAMPLE 20
-#define MAX_DEPTH 20
+
 
 // TODO : USE THE CAMERA FROM PBRT
-
-//====================================================================================================================//
-// Sample color function for starting the ray tracer
-//====================================================================================================================//
-Vector3f color(const Ray &ray, Scene &scene, int depth) {
-    SurfaceInteraction isect;
-    if (scene.intersect(ray,&isect)) {
-        Ray scattered;
-        if(depth < MAX_DEPTH && isect.computeScatteringFunctions(ray, scattered)) {
-            return (isect.primitive->getMaterial()->getAlbedo()) * color(scattered, scene, depth++);
-
-        } else {
-            return Vector3f(0, 0, 0);
-        }
-    } else {
-        Vector3f unitDirection = glm::normalize(ray.direction);
-        float t = 0.5f * (unitDirection.y + 1.0f);
-        return (1.0f - t) * Vector3f(1.0f, 1.0f, 1.0f) + t * Vector3f(0.5f, 0.7f, 1.0f);
-    }
-
-
-}
-
-
-//====================================================================================================================//
-// display
-//====================================================================================================================//
-void draw(int width, int height, Point2f *pixels, Vector3f *colors) {
-
-    /* We have a color array and a vertex array */
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glEnableClientState(GL_COLOR_ARRAY);
-
-    glVertexPointer(2, GL_FLOAT, 0, pixels);
-    glColorPointer(3, GL_FLOAT, 0, colors);
-
-    //glDrawArrays(GL_POINTS, 0, width * height);
-
-    // Cleanup states: TODO CLEAN STATE AT THE END OF RENDERING...
-    // THIS WAY WE WILL NOT HAVE TO CALL FOR CREATE POINTER FOR VERTEX AND COLOR MULTIPLE TIMES
-
-    //glDisableClientState(GL_COLOR_ARRAY);
-    //glDisableClientState(GL_VERTEX_ARRAY);
-}
-
 
 int main(int argc, char *argv[]) {
 
@@ -91,10 +45,18 @@ int main(int argc, char *argv[]) {
     // Checking Transform END
     //================================================================================================================//
 //    Transform t;
+////
+////    std::cout << t << std::endl;
+////    Vector3i v(1,1,1);
+////    Vector3i vt = t(v); // TODO transform not working
 //
-//    std::cout << t << std::endl;
-//    Vector3i v(1,1,1);
-//    Vector3i vt = t(v); // TODO transform not working
+//      Vector3i v(1,1,1);
+//      t(v,1);
+//      if(typeid(v).name() ==  typeid(Point3f).name()) {
+//          std::cout << "Same type" << std::endl;
+//      } else {
+//          std::cout << "Not same type" << std::endl;
+//      }
 
     //================================================================================================================//
     // Start ma3Renderer
@@ -106,7 +68,7 @@ int main(int argc, char *argv[]) {
     // Film
     //================================================================================================================//
     Point2i resolution(WINDOW_WIDTH , WINDOW_HEIGHT);
-    Bounds2f cropWindow(Point2f(0.0f, 0.0f), Point2f(1.0f, 1.0f));  // RANGE (0,1)
+    Bounds2f cropWindow(Point2f(0.25f, 0.25f), Point2f(0.75f, 0.75f));  // RANGE (0,1)
     float diagonal = 10.0f;         // In mili meter.... TODO ...need to know what is does
     float scale = 1.0f;             // TODO ...need to know what is does
     Film film(resolution, cropWindow, diagonal, std::string("fileName"), 1.0f);
@@ -117,12 +79,33 @@ int main(int argc, char *argv[]) {
     Point3f lookAt(0,0,-1);
     float focusDist = glm::length(lookFrom - lookAt);
     float aperture = 0.5f;
-    Camera camera(lookFrom, lookAt, Vector3f(0,1,0), 60.0f,(float)WINDOW_WIDTH / (float)WINDOW_HEIGHT, aperture, focusDist, &film); // fov: in degrees
+    float fov = 60.0f;          // [degrees]
+    float aspectRatio = (float)WINDOW_WIDTH / (float)WINDOW_HEIGHT;
+    Camera *camera = new Camera(lookFrom, lookAt, Vector3f(0,1,0), fov, aspectRatio, aperture, focusDist, &film);
+
+
+    //================================================================================================================//
+    // PerspectiveCamera PBRT TODO NOT WORKING RIGHT NOW
+    //================================================================================================================//
+    // PerspectiveCamera Assume that the camera is at the origin of the world space
+
+//    Transform worldToCamera = translate(Vector3f(15.0f, 0.0f, 0.0f));
+//    Transform cameraToWorld = inverse(worldToCamera);
+//    std::cout << "cameraToWorld: " << cameraToWorld << std::endl;
+//    Bounds2f screenWindow(Point2f(-1.0f, -1.0f), Point2f(1.0f, 1.0f));
+//    float shutterOpen = 0.0f;
+//    float shutterClose = 0.0f;
+//    float lensRadius = 0.5f;
+//    float focalDist = 4.0f;
+//    float fov = 30.0f;
+//    Camera *camera = new PerspectiveCamera(cameraToWorld, screenWindow, shutterOpen, shutterClose, lensRadius, focalDist, fov, &film);
+
+
     //================================================================================================================//
     // Scene
     //================================================================================================================//
     float R = cos(MA_PI / 4.0f);
-    Sphere sphere1(Point3f(-R, 0.0f, -1.0f), R);
+    Sphere sphere1(Point3f(-R, 0.0f,-1.0f), R);
     Sphere sphere2(Point3f(R, 0.0f, -1.0f), R);
     Sphere sphere3(Point3f(0.0f, -100.5f, -1.0f), 100.0f);
     Sphere sphere4(Point3f(-2.0f, 1.0f, -1.0f), 0.5f);
@@ -153,8 +136,13 @@ int main(int argc, char *argv[]) {
     //================================================================================================================//
     // Call Integrator for rendering
     //================================================================================================================//
-    SamplerIntegrator integrator(&camera);
+    SamplerIntegrator integrator(camera);
     integrator.Render(scene);
+
+    //================================================================================================================//
+    // Delete resources
+    //================================================================================================================//
+    delete camera;
 
     return 0;
 }

@@ -5,6 +5,8 @@
 #ifndef MA3RENDERER_GEOMETRY_H
 #define MA3RENDERER_GEOMETRY_H
 
+
+//#include <boost/serialization/strong_typedef.hpp>
 #include <glm/glm.hpp>
 #include <algorithm>
 
@@ -12,7 +14,15 @@
 // typedef / type alias for glm Vector class
 //====================================================================================================================//
 
+//====================================================================================================================//
+// Checking Boost
+//====================================================================================================================//
+
+
+
+
 /////////////////////////////// Vector //////////////////////
+
 using Vector2i = glm::ivec2;
 using Vector2f = glm::vec2;
 
