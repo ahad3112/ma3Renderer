@@ -35,7 +35,7 @@ void SamplerIntegrator::Render(const Scene &scene) {
     Point2i  *pixels  = (camera->film)->pixels;
     Vector3f  *colors = (camera->film)->colors;
 
-    MAWindow ma_window("########## ma3Renderer ##########", SCREEN_WIDTH, SCREEN_HEIGHT);
+    MAWindow ma_window(camera, "########## ma3Renderer ##########", SCREEN_WIDTH, SCREEN_HEIGHT);
     ma_window.registerBuffer(pixels, colors);
 
     // TODO SHOULD GET THIS SAMPLE FROM Sampler class

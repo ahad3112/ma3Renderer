@@ -10,24 +10,31 @@
 
 
 #include "../core/Geometry.hpp"
-
+#include "../core/Camera.hpp"
 
 
 class MAWindow final {
 public:
-    MAWindow() : MAWindow("MAWindow") {}
-    MAWindow(const char * ma_title, int ma_width = 720, int ma_height = 480);
+    MAWindow(Camera *camera, const char * ma_title, int ma_width = 720, int ma_height = 480);
     void display();
     GLFWwindow *getWindow() const;
-    void registerBuffer(Point2i *pixels, Vector3f *colors);
+    void registerBuffer(Point2i *pixels, Vector3f *colors)const;
 
 private:
+    //====================================================================================================================//
+    // Call-back functions
+    //====================================================================================================================//
+    static void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mode);
+    static void framebufferSizeCallback(GLFWwindow* window, int width, int height);
+    static void errorCallback (int error, const char *description);
     void initGLFW();
     void initGL();
 
     GLFWwindow *window;
     int height, width;
     const char* title;
+
+    Camera *camera;
 };
 
 //====================================================================================================================//
@@ -36,11 +43,6 @@ private:
 
 void displayOpenGLInfo ();
 
-//====================================================================================================================//
-// Non member function (Call-back functions)
-//====================================================================================================================//
-void errorCallback (int error, const char *description);
-void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mode);
-void framebufferSizeCallback(GLFWwindow* window, int width, int height);
+
 
 #endif //MA3RENDERER_MA_WINDOW_HPP

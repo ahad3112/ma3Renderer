@@ -16,8 +16,8 @@
 //====================================================================================================================//
 // Constructor
 //====================================================================================================================//
-MAWindow::MAWindow(const char *ma_title, int ma_width, int ma_height) :
-        title(ma_title), height(ma_height), width(ma_width) {
+MAWindow::MAWindow(Camera *camera, const char *ma_title, int ma_width, int ma_height) :
+        camera(camera), title(ma_title), height(ma_height), width(ma_width) {
     initGLFW();
     initGL();
 }
@@ -87,7 +87,7 @@ void MAWindow::initGL() {
 //====================================================================================================================//
 // init GL
 //====================================================================================================================//
-void MAWindow::registerBuffer(Point2i *pixels, Vector3f *colors) {
+void MAWindow::registerBuffer(Point2i *pixels, Vector3f *colors) const {
     /* We have a color array and a vertex array */
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_COLOR_ARRAY);
@@ -146,16 +146,16 @@ void displayOpenGLInfo() {
 //====================================================================================================================//
 // GLFW callback mehtods
 //====================================================================================================================//
-void errorCallback(int error, const char *description) {
+void MAWindow::errorCallback(int error, const char *description) {
     fprintf(stderr, "Error: %s\n", description);
 }
 
-void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mode) {
+void MAWindow::keyCallback(GLFWwindow *window, int key, int scancode, int action, int mode) {
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
         glfwSetWindowShouldClose(window, GL_TRUE);
     }
 }
 
-void framebufferSizeCallback(GLFWwindow *window, int width, int height) {
+void MAWindow::framebufferSizeCallback(GLFWwindow *window, int width, int height) {
     glViewport(0, 0, width, height);
 }

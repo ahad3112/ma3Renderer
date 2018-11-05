@@ -68,10 +68,10 @@ int main(int argc, char *argv[]) {
     // Film
     //================================================================================================================//
     Point2i resolution(WINDOW_WIDTH , WINDOW_HEIGHT);
-    Bounds2f cropWindow(Point2f(0.25f, 0.25f), Point2f(0.75f, 0.75f));  // RANGE (0,1)
+    Bounds2f cropWindow(Point2f(0.0f, 0.0f), Point2f(1.0f, 1.0f));  // RANGE (0,1)
     float diagonal = 10.0f;         // In mili meter.... TODO ...need to know what is does
     float scale = 1.0f;             // TODO ...need to know what is does
-    Film film(resolution, cropWindow, diagonal, std::string("fileName"), 1.0f);
+    Film *film  = new Film(resolution, cropWindow, diagonal, std::string("fileName"), 1.0f);
     //================================================================================================================//
     // Camera
     //================================================================================================================//
@@ -81,7 +81,7 @@ int main(int argc, char *argv[]) {
     float aperture = 0.5f;
     float fov = 60.0f;          // [degrees]
     float aspectRatio = (float)WINDOW_WIDTH / (float)WINDOW_HEIGHT;
-    Camera *camera = new Camera(lookFrom, lookAt, Vector3f(0,1,0), fov, aspectRatio, aperture, focusDist, &film);
+    Camera *camera = new Camera(lookFrom, lookAt, Vector3f(0,1,0), fov, aspectRatio, aperture, focusDist, film);
 
 
     //================================================================================================================//
@@ -142,6 +142,7 @@ int main(int argc, char *argv[]) {
     //================================================================================================================//
     // Delete resources
     //================================================================================================================//
+    delete film;
     delete camera;
 
     return 0;

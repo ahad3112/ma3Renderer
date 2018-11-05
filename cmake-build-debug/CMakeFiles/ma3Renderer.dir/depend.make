@@ -278,6 +278,8 @@ CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../integrators/S
 CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../visualization/MA_window.hpp
 
+CMakeFiles/ma3Renderer.dir/main.cpp.o: ../cameras/PerspectiveCamera.hpp
+CMakeFiles/ma3Renderer.dir/main.cpp.o: ../cameras/ProjectiveCamera.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Camera.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Film.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/GeometricPrimitive.hpp
@@ -326,7 +328,12 @@ CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o: ../core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o: ../utility/MA_utility.cpp
 CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o: ../utility/MA_utility.hpp
 
+CMakeFiles/ma3Renderer.dir/visualization/MA_window.cpp.o: ../core/Camera.hpp
+CMakeFiles/ma3Renderer.dir/visualization/MA_window.cpp.o: ../core/Film.hpp
 CMakeFiles/ma3Renderer.dir/visualization/MA_window.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/visualization/MA_window.cpp.o: ../core/Ray.hpp
+CMakeFiles/ma3Renderer.dir/visualization/MA_window.cpp.o: ../core/Transform.hpp
+CMakeFiles/ma3Renderer.dir/visualization/MA_window.cpp.o: ../utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/visualization/MA_window.cpp.o: ../visualization/MA_window.cpp
 CMakeFiles/ma3Renderer.dir/visualization/MA_window.cpp.o: ../visualization/MA_window.hpp
 
