@@ -17,20 +17,10 @@ Camera::Camera() : shutterOpen(0.0f), shutterClose(0.0f) {
     origin          = Vector3f(0.0, 0.0, 0.0);
 }
 
-Camera::Camera(Point3f lookFrom, Point3f lookAt, Vector3f vup, float vfov, float aspect, float aperture, float focusDist, Film *film)
-              : shutterOpen(0.0f), shutterClose(0.0f), film(film) {
-    lensRadius = aperture / 2.0f;
-    float theta = (vfov * MA_PI) / 180.0f;
-    float halfHeight = tan(theta / 2.0f);
-    float halfWidth = aspect * halfHeight;
-    origin = lookFrom;
-    w = glm::normalize(lookFrom - lookAt);
-    u = glm::normalize(glm::cross(vup, w));
-    v = glm::cross(w,u);
-    lowerLeftCorner = origin - halfWidth * focusDist * u - halfHeight * focusDist * v - focusDist * w;
-    horizontal = 2.0f * halfWidth * focusDist * u;
-    vertical = 2.0f * halfHeight * focusDist * v;
-
+Camera::Camera(Point3f lookFrom, Point3f lookAt, Vector3f vup, float vfov, float aspect, float aperture, Film *film)
+              : origin(lookFrom), lookAt(lookAt), vup(vup), vfov(vfov), aspect(aspect), aperture(aperture), shutterOpen(0.0f),
+              shutterClose(0.0f), film(film) {
+    updateCamera();
 }
 
 Camera::Camera(float shutterOpen, float shutterClose, Film *film)
@@ -45,6 +35,69 @@ Camera::Camera(const Transform &cameraToWorld, float shutterOpen, float shutterC
 }
 
 //====================================================================================================================//
+// Setter methods
+//====================================================================================================================//
+void Camera::setOrigin(const Point3f &origin) {
+    Camera::origin = origin;
+}
+
+void Camera::setLookAt(const Point3f &lookAt) {
+    Camera::lookAt = lookAt;
+}
+
+void Camera::setVup(const Vector3f &vup) {
+    Camera::vup = vup;
+}
+
+void Camera::setVfov(float vfov) {
+    Camera::vfov = vfov;
+}
+
+void Camera::setAspect(float aspect) {
+    Camera::aspect = aspect;
+}
+
+void Camera::setAperture(float aperture) {
+    Camera::aperture = aperture;
+}
+
+void Camera::setFocusDist(float focusDist) {
+    Camera::focusDist = focusDist;
+}
+
+//====================================================================================================================//
+// Getter methods
+//====================================================================================================================//
+
+const Point3f &Camera::getOrigin() const {
+    return origin;
+}
+
+const Point3f &Camera::getLookAt() const {
+    return lookAt;
+}
+
+const Vector3f &Camera::getVup() const {
+    return vup;
+}
+
+float Camera::getVfov() const {
+    return vfov;
+}
+
+float Camera::getAspect() const {
+    return aspect;
+}
+
+float Camera::getAperture() const {
+    return aperture;
+}
+
+float Camera::getFocusDist() const {
+    return focusDist;
+}
+
+//====================================================================================================================//
 // DESTRUCTOR
 //====================================================================================================================//
 Camera::~Camera() {
@@ -55,6 +108,21 @@ Camera::~Camera() {
 //====================================================================================================================//
 // CLASS METHODS
 //====================================================================================================================//
+
+void Camera::updateCamera() {
+    lensRadius = aperture / 2.0f;
+    focusDist = glm::length(origin - lookAt);;
+    float theta = (vfov * MA_PI) / 180.0f;
+    float halfHeight = tan(theta / 2.0f);
+    float halfWidth = aspect * halfHeight;
+    w = glm::normalize(origin - lookAt);
+    u = glm::normalize(glm::cross(vup, w));
+    v = glm::cross(w,u);
+    lowerLeftCorner = origin - halfWidth * focusDist * u - halfHeight * focusDist * v - focusDist * w;
+    horizontal = 2.0f * halfWidth * focusDist * u;
+    vertical = 2.0f * halfHeight * focusDist * v;
+}
+
 Ray Camera::generateRay(float ux, float vy) const {
     Vector3f rd = lensRadius * randomUnitSphere();
     Vector3f offset = u * rd.x + v * rd.y;

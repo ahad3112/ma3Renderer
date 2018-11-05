@@ -16,8 +16,7 @@
 //====================================================================================================================//
 // Constructor
 //====================================================================================================================//
-MAWindow::MAWindow(Camera *camera, const char *ma_title, int ma_width, int ma_height) :
-        camera(camera), title(ma_title), height(ma_height), width(ma_width) {
+MAWindow::MAWindow(const char *ma_title, int ma_width, int ma_height) : title(ma_title), height(ma_height), width(ma_width) {
     initGLFW();
     initGL();
 }
@@ -62,11 +61,6 @@ void MAWindow::initGLFW() {
         fprintf(stderr, "GLEW INITIALIZATION ERROR: %s\n", glewGetErrorString(GLEW_RESULT));
         exit(EXIT_FAILURE);
     }
-
-    //=========================== Setup glfw callback ==========================//
-    glfwSetKeyCallback(window, keyCallback);
-    glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);
-
 }
 
 //====================================================================================================================//
@@ -143,19 +137,11 @@ void displayOpenGLInfo() {
     printf("OpenGL version supported %s\n", glGetString(GL_VERSION));
 }
 
+
+
 //====================================================================================================================//
 // GLFW callback mehtods
 //====================================================================================================================//
-void MAWindow::errorCallback(int error, const char *description) {
+void errorCallback(int error, const char *description) {
     fprintf(stderr, "Error: %s\n", description);
-}
-
-void MAWindow::keyCallback(GLFWwindow *window, int key, int scancode, int action, int mode) {
-    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
-        glfwSetWindowShouldClose(window, GL_TRUE);
-    }
-}
-
-void MAWindow::framebufferSizeCallback(GLFWwindow *window, int width, int height) {
-    glViewport(0, 0, width, height);
 }

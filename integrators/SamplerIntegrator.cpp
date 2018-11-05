@@ -10,7 +10,7 @@
 #define N_SAMPLE 1
 #define MAX_DEPTH 1
 
-SamplerIntegrator::SamplerIntegrator(Camera *camera) : camera(camera) {
+SamplerIntegrator::SamplerIntegrator(MAWindow *ma_window, Camera *camera) : ma_window(ma_window), camera(camera) {
 
 }
 
@@ -35,13 +35,20 @@ void SamplerIntegrator::Render(const Scene &scene) {
     Point2i  *pixels  = (camera->film)->pixels;
     Vector3f  *colors = (camera->film)->colors;
 
-    MAWindow ma_window(camera, "########## ma3Renderer ##########", SCREEN_WIDTH, SCREEN_HEIGHT);
-    ma_window.registerBuffer(pixels, colors);
+    //================================================================================================================//
+    // Register the buffer to window for display
+    //================================================================================================================//
+    ma_window->registerBuffer(pixels, colors);
 
     // TODO SHOULD GET THIS SAMPLE FROM Sampler class
     //CameraSample cameraSample;
 
-    while (!glfwWindowShouldClose(ma_window.getWindow())) {
+    while (!glfwWindowShouldClose(ma_window->getWindow())) {
+        if (ma_window->cameraSettingChanged) {
+            camera->updateCamera();
+            ma_window->cameraSettingChanged = false;
+        }
+
         int index = 0;
         for (int y = (camera->film)->croppedPixelBounds.pMax.y - 1; y >= (camera->film)->croppedPixelBounds.pMin.y; y--) {
             for (int x = (camera->film)->croppedPixelBounds.pMin.x; x < (camera->film)->croppedPixelBounds.pMax.x; x++) {
@@ -72,17 +79,9 @@ void SamplerIntegrator::Render(const Scene &scene) {
                 }
                 index++;
             }
-            ma_window.display();
+            ma_window->display();
         }
     }
-
-    //================================================================================================================//
-    // Terminate glfw
-    //================================================================================================================//
-    glDisableClientState(GL_COLOR_ARRAY);
-    glDisableClientState(GL_VERTEX_ARRAY);
-    glfwTerminate();
-
 
     // < Save final image after rendering 32 >
 }

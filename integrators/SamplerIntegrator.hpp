@@ -8,11 +8,12 @@
 
 #include "../core/Integrator.hpp"
 #include "../core/Camera.hpp"
+#include "../visualization/MA_window.hpp"
 
 class SamplerIntegrator : public Integrator{
 public:
     // < SamplerIntegrator public methods 26>
-    SamplerIntegrator(Camera *camera);
+    SamplerIntegrator(MAWindow *ma_window, Camera *camera);
 
     // TODO IMPLEMENT SAMPLER CLASS
 //    SamplerIntegrator(Camera *camera, Sampler *sampler);
@@ -23,6 +24,7 @@ public:
 protected:
     // < SamplerIntegrator Protected Data 26>
     Camera *camera;
+    MAWindow *ma_window;
 private:
     // < SamplerIntegrator Protected Data 25>
     // TODO implement later if required
