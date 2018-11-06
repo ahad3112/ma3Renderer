@@ -80,11 +80,12 @@ int main(int argc, char *argv[]) {
     //================================================================================================================//
     // Camera
     //================================================================================================================//
-    Point3f lookFrom(-2,2,1);
+    //Point3f lookFrom(-2,2,1);
+    Point3f lookFrom(0,0,0.10f);
     Point3f lookAt(0,0,-1);
     //float focusDist = glm::length(lookFrom - lookAt);
     float aperture = 0.5f;
-    float fov = 60.0f;          // [degrees]
+    float fov = 90.0f;          // [degrees]
     float aspectRatio = (float)WINDOW_WIDTH / (float)WINDOW_HEIGHT;
     camera = new Camera(lookFrom, lookAt, Vector3f(0,1,0), fov, aspectRatio, aperture, film);
 
@@ -110,10 +111,15 @@ int main(int argc, char *argv[]) {
     // Scene
     //================================================================================================================//
     float R = cos(MA_PI / 4.0f);
-    Sphere sphere1(Point3f(-R, 0.0f,-1.0f), R);
-    Sphere sphere2(Point3f(R, 0.0f, -1.0f), R);
-    Sphere sphere3(Point3f(0.0f, -100.5f, -1.0f), 100.0f);
-    Sphere sphere4(Point3f(-2.0f, 1.0f, -1.0f), 0.5f);
+//    Sphere sphere1(Point3f(-R, 0.0f,-1.0f), R);
+//    Sphere sphere2(Point3f(R, 0.0f, -1.0f), R);
+//    Sphere sphere3(Point3f(0.0f, -100.5f, -1.0f), 100.0f);
+//    Sphere sphere4(Point3f(-2.0f, 1.0f, -1.0f), 0.5f);
+
+    Sphere sphere1(Point3f(0.0f, 0.0f,-1.0f), 0.5);
+    Sphere sphere2(Point3f(0, -100.5f, -1.0f), -100.0f);
+    Sphere sphere3(Point3f(1.0f, 0.0f, -1.0f), 0.5f);
+    Sphere sphere4(Point3f(-1.0f, 0.0f, -1.0f), 0.5f);
 
 
     MatteMaterial matte1(Vector3f(0.1, 0.2, .5));
@@ -121,12 +127,13 @@ int main(int argc, char *argv[]) {
     MatteMaterial matte3(Vector3f(.8, .8, 0.0));
     Metal metal1(Vector3f(.8, .6, .2), 0.2);
     Metal metal2(Vector3f(.8, .8, .8), 0.2);
+    Metal dielect1(Vector3f(1.0f, 1.0f, 1.0f), 1.5f);
 
 
     GeometricPrimitive gprimitive1(&sphere1, &matte1);
-    GeometricPrimitive gprimitive2(&sphere2, &metal2);
-    GeometricPrimitive gprimitive3(&sphere3, &matte3);
-    GeometricPrimitive gprimitive4(&sphere4, &metal2);
+    GeometricPrimitive gprimitive2(&sphere2, &matte2);
+    GeometricPrimitive gprimitive3(&sphere3, &metal1);
+    GeometricPrimitive gprimitive4(&sphere4, &dielect1);
 
 
 
@@ -135,7 +142,7 @@ int main(int argc, char *argv[]) {
     scene.addPrimitive(&gprimitive1);
     scene.addPrimitive(&gprimitive2);
     scene.addPrimitive(&gprimitive3);
-    //scene.addPrimitive(&gprimitive4);
+    scene.addPrimitive(&gprimitive4);
 
     //================================================================================================================//
     // Call Integrator for rendering

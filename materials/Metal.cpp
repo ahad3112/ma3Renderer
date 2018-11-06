@@ -22,10 +22,10 @@ void Metal::computeScatteringFunctions(SurfaceInteraction *isect) const {
     std::cout << __func__  << "Not implemented" << std::endl;
 }
 
-bool Metal::computeScatteringFunctions(SurfaceInteraction *isect, const Ray &ray, Ray &scatterRay) const {
+bool Metal::computeScatteringFunctions(SurfaceInteraction *isect, const Ray &ray, Ray &scatteredRay) const {
     Vector3f reflected = glm::reflect(glm::normalize(ray.direction), isect->normal);
-    scatterRay = Ray(isect->position, reflected + fuzz * randomUnitSphere());
+    scatteredRay = Ray(isect->position, reflected + fuzz * randomUnitSphere());
 
 
-    return (glm::dot(scatterRay.direction, isect->normal) > 0);
+    return (glm::dot(scatteredRay.direction, isect->normal) > 0);
 }

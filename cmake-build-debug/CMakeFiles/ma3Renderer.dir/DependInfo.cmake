@@ -20,6 +20,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/maaahad/CLionProjects/ma3Renderer/core/shape.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/shape.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/main.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/main.cpp.o"
+  "/Users/maaahad/CLionProjects/ma3Renderer/materials/Dielectric.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/materials/MatteMaterial.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/materials/Metal.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/materials/Metal.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/shapes/Sphere.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o"

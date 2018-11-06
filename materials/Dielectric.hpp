@@ -1,16 +1,16 @@
 //
-// Created by Muhammed Ahad on 2018-10-30.
+// Created by Muhammed Ahad on 2018-11-06.
 //
 
-#ifndef MA3RENDERER_METAL_HPP
-#define MA3RENDERER_METAL_HPP
+#ifndef MA3RENDERER_DIELECTRIC_HPP
+#define MA3RENDERER_DIELECTRIC_HPP
 
 
 #include "../core/Material.hpp"
 
-class Metal : public Material {
+class Dielectric : public Material {
 public:
-    Metal(const Vector3f &albedo, float f);
+    Dielectric(const Vector3f &albedo, float refractionIndex);
 
     void computeScatteringFunctions(SurfaceInteraction *isect) const override;
 
@@ -19,9 +19,8 @@ public:
     Vector3f getAlbedo() const override;
 
 private:
-
-    float fuzz;
+    float refractionIndex;
 };
 
 
-#endif //MA3RENDERER_METAL_HPP
+#endif //MA3RENDERER_DIELECTRIC_HPP

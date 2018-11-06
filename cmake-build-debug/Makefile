@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/760F7697-B361-4BC5-95AC-ACE266CE9A91/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/96C553C0-3B0A-47F7-B405-44227C8636F9/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/760F7697-B361-4BC5-95AC-ACE266CE9A91/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/96C553C0-3B0A-47F7-B405-44227C8636F9/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/760F7697-B361-4BC5-95AC-ACE266CE9A91/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/96C553C0-3B0A-47F7-B405-44227C8636F9/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/760F7697-B361-4BC5-95AC-ACE266CE9A91/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/96C553C0-3B0A-47F7-B405-44227C8636F9/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -555,6 +555,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+materials/Dielectric.o: materials/Dielectric.cpp.o
+
+.PHONY : materials/Dielectric.o
+
+# target to build an object file
+materials/Dielectric.cpp.o:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o
+.PHONY : materials/Dielectric.cpp.o
+
+materials/Dielectric.i: materials/Dielectric.cpp.i
+
+.PHONY : materials/Dielectric.i
+
+# target to preprocess a source file
+materials/Dielectric.cpp.i:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.i
+.PHONY : materials/Dielectric.cpp.i
+
+materials/Dielectric.s: materials/Dielectric.cpp.s
+
+.PHONY : materials/Dielectric.s
+
+# target to generate assembly for a file
+materials/Dielectric.cpp.s:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.s
+.PHONY : materials/Dielectric.cpp.s
+
 materials/MatteMaterial.o: materials/MatteMaterial.cpp.o
 
 .PHONY : materials/MatteMaterial.o
@@ -747,6 +774,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... materials/Dielectric.o"
+	@echo "... materials/Dielectric.i"
+	@echo "... materials/Dielectric.s"
 	@echo "... materials/MatteMaterial.o"
 	@echo "... materials/MatteMaterial.i"
 	@echo "... materials/MatteMaterial.s"

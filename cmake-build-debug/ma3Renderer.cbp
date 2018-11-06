@@ -186,6 +186,12 @@
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/main.cpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/materials/Dielectric.cpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/materials/Dielectric.hpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/materials/MatteMaterial.cpp">
 			<Option target="ma3Renderer"/>
 		</Unit>

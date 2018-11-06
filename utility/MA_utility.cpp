@@ -22,6 +22,20 @@ float degrees(float radian) {
     return (180.0f / MA_PI) * radian;
 }
 
-//Vector3f reflect(const Vector3f &v, const Normal3f &n) {
-//    return v - 2.0f * glm::dot(v, n) * n;
-//}
+Vector3f reflect(const Vector3f &v, const Normal3f &n) {
+    return v - 2.0f * glm::dot(v, n) * n;
+}
+
+bool refract(const Vector3f &v, const Normal3f &n, float eta, Vector3f &refractedD) {
+    Vector3f uv = glm::normalize(v);
+    float dotVal = glm::dot(uv, n);
+    float discriminant = 1.0f - eta * eta * (1.0f - dotVal * dotVal);
+
+    if(discriminant > 0.0f) {
+        refractedD = eta * (uv - n * dotVal) - n * std::sqrt(discriminant);
+        return true;
+    } else {
+        return false;
+    }
+
+}

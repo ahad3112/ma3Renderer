@@ -28,6 +28,7 @@ const auto MA_INFINITY = std::numeric_limits<float>::infinity();
 //====================================================================================================================//
 Vector3f randomUnitSphere();
 Vector3f reflect(const Vector3f &v, const Normal3f &n);
+bool refract(const Vector3f &v, const Normal3f &n, float eta, Vector3f &refractedD);
 
 float radians(float degree);
 float degrees(float radian);

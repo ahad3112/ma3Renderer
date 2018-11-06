@@ -7,8 +7,8 @@
 
 
 #define GAMMA_2_CORRECTION 0
-#define N_SAMPLE 1
-#define MAX_DEPTH 1
+#define N_SAMPLE 200
+#define MAX_DEPTH 200
 
 SamplerIntegrator::SamplerIntegrator(MAWindow *ma_window, Camera *camera) : ma_window(ma_window), camera(camera) {
 
@@ -47,6 +47,7 @@ void SamplerIntegrator::Render(const Scene &scene) {
         if (ma_window->cameraSettingChanged) {
             camera->updateCamera();
             ma_window->cameraSettingChanged = false;
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         }
 
         int index = 0;
