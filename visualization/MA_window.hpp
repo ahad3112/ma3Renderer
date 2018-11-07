@@ -37,8 +37,6 @@ private:
 //====================================================================================================================//
 // Call-back functions
 //====================================================================================================================//
-void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mode);
-void framebufferSizeCallback(GLFWwindow* window, int width, int height);
 void errorCallback (int error, const char *description);
 
 

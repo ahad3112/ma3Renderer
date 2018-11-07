@@ -295,11 +295,20 @@ CMakeFiles/ma3Renderer.dir/main.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/shape.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/main.cpp
+ /Users/maaahad/CLionProjects/ma3Renderer/materials/Dielectric.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/materials/MatteMaterial.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/materials/Metal.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/shapes/Sphere.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/visualization/MA_window.hpp
+CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Interaction.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Material.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/materials/Dielectric.cpp
+ /Users/maaahad/CLionProjects/ma3Renderer/materials/Dielectric.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Interaction.hpp

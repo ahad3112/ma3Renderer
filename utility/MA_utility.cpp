@@ -37,5 +37,12 @@ bool refract(const Vector3f &v, const Normal3f &n, float eta, Vector3f &refracte
     } else {
         return false;
     }
+}
+
+float schlick(float cosine, float refractionIndex) {
+    float r0 = (1.0f - refractionIndex) / (1.0f + refractionIndex);
+    r0 = r0 *   r0;
+    return r0 + (1.0f - r0) * std::pow((1.0f - cosine), 5);
 
 }
+

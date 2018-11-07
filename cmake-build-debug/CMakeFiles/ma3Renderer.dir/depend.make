@@ -294,11 +294,20 @@ CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Transform.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/shape.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../integrators/SamplerIntegrator.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../main.cpp
+CMakeFiles/ma3Renderer.dir/main.cpp.o: ../materials/Dielectric.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../materials/MatteMaterial.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../materials/Metal.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../shapes/Sphere.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../visualization/MA_window.hpp
+
+CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o: ../core/Interaction.hpp
+CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o: ../core/Material.hpp
+CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o: ../core/Ray.hpp
+CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o: ../materials/Dielectric.cpp
+CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o: ../materials/Dielectric.hpp
+CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o: ../utility/MA_utility.hpp
 
 CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o: ../core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o: ../core/Interaction.hpp
