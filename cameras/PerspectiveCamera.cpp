@@ -55,6 +55,9 @@ float PerspectiveCamera::generateRay(const CameraSample &sample, Ray *ray) const
 
     *ray = Ray(cameraToWorld(Point3f(0.0f, 0.0f, 0.0f)), cameraToWorld(glm::normalize(Vector3f(pCamera.x, pCamera.y, pCamera.z)),1));
 
+//    std::cout << ray->direction.x << " " << ray->direction.y << " " << ray->direction.z << std::endl;
+
+
 
     // < Modify ray for depth of field >
     return 1.0f;

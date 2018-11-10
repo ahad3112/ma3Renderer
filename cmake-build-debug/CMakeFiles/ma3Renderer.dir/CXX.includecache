@@ -6,11 +6,31 @@
 
 #IncludeRegexTransform: 
 
+/Users/maaahad/CLionProjects/ma3Renderer/core/Camera.hpp
+Geometry.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+Ray.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
+Film.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Film.hpp
+Transform.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/core/Film.hpp
+string
+-
+Geometry.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+
 /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
 glm/glm.hpp
 -
 algorithm
 -
+
+/Users/maaahad/CLionProjects/ma3Renderer/core/Integrator.hpp
+Scene.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Scene.hpp
 
 /Users/maaahad/CLionProjects/ma3Renderer/core/Interaction.hpp
 Geometry.hpp
@@ -22,25 +42,61 @@ Ray.hpp
 Interaction.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Interaction.hpp
 
+/Users/maaahad/CLionProjects/ma3Renderer/core/Primitive.hpp
+Ray.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
+Interaction.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Interaction.hpp
+Material.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Material.hpp
+
 /Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
 Geometry.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
 ../utility/MA_utility.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 
-/Users/maaahad/CLionProjects/ma3Renderer/materials/Dielectric.cpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Scene.hpp
+vector
+-
+Primitive.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Primitive.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
 iostream
 -
-Dielectric.hpp
-/Users/maaahad/CLionProjects/ma3Renderer/materials/Dielectric.hpp
+string
+-
+Geometry.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
 
-/Users/maaahad/CLionProjects/ma3Renderer/materials/Dielectric.hpp
-../core/Material.hpp
-/Users/maaahad/CLionProjects/ma3Renderer/core/Material.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.cpp
+SamplerIntegrator.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.hpp
+../visualization/MA_window.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/visualization/MA_window.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.hpp
+../core/Integrator.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Integrator.hpp
+../core/Camera.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Camera.hpp
+../visualization/MA_window.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/visualization/MA_window.hpp
 
 /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 limits
 -
 ../core/Geometry.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/visualization/MA_window.hpp
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+../core/Geometry.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+../core/Camera.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Camera.hpp
 

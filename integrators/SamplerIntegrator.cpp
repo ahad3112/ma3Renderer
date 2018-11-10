@@ -7,10 +7,10 @@
 
 
 #define GAMMA_2_CORRECTION 0
-#define N_SAMPLE 20
-#define MAX_DEPTH 20
+#define N_SAMPLE 2
 
-SamplerIntegrator::SamplerIntegrator(MAWindow *ma_window, Camera *camera) : ma_window(ma_window), camera(camera) {
+SamplerIntegrator::SamplerIntegrator(int maxDepth, MAWindow *ma_window, Camera *camera) :
+ma_window(ma_window), camera(camera), maxDepth(maxDepth) {
 
 }
 
@@ -41,7 +41,7 @@ void SamplerIntegrator::Render(const Scene &scene) {
     ma_window->registerBuffer(pixels, colors);
 
     // TODO SHOULD GET THIS SAMPLE FROM Sampler class
-    //CameraSample cameraSample;
+    CameraSample cameraSample;
 
     while (!glfwWindowShouldClose(ma_window->getWindow())) {
         if (ma_window->cameraSettingChanged) {
@@ -58,16 +58,17 @@ void SamplerIntegrator::Render(const Scene &scene) {
                 for(int ns = 0; ns < N_SAMPLE; ns++) {
                     float u = (float)(x + drand48()) / (float)SCREEN_WIDTH;
                     float v = (float)(y + drand48()) / (float)SCREEN_HEIGHT;
-                    Ray ray = camera->generateRay(u, v);
+                    Ray ray;
+                    ray = camera->generateRay(u, v);
 
                     // Create camera sample
 
                     //cameraSample.pFilms = Point2f((float)(x + drand48()), (float)(y + drand48()));
 
-                    //cameraSample.pFilms = Point2f((float)x, (float)y); // TESTING PURPOSE
+                    cameraSample.pFilms = Point2f((float)x, (float)y); // TESTING PURPOSE
 
                     // Create Ray using the Perspective Camera
-                    //float weight = camera->generateRay(cameraSample,&ray);
+                    // float weight = camera->generateRay(cameraSample,&ray);
 
                     L += Li(ray, scene);
                 }
@@ -89,19 +90,34 @@ void SamplerIntegrator::Render(const Scene &scene) {
 
 Vector3f SamplerIntegrator::Li(const Ray &ray, const Scene &scene, int depth) const {
     SurfaceInteraction isect;
-    if (scene.intersect(ray,&isect)) {
-        Ray scattered;
-        if(depth < MAX_DEPTH && isect.computeScatteringFunctions(ray, scattered)) {
-            return (isect.primitive->getMaterial()->getAlbedo()) * Li(scattered, scene, depth++);
+//    if (scene.intersect(ray,&isect)) {
+//        Ray scattered;
+//        if(depth < maxDepth && isect.computeScatteringFunctions(ray, scattered)) {
+//            return (isect.primitive->getMaterial()->getAlbedo()) * Li(scattered, scene, depth++);
+//
+//        } else {
+//            return Vector3f(0, 0, 0);
+//        }
+//    } else {
+//        Vector3f unitDirection = glm::normalize(ray.direction);
+//        float t = 0.5f * (unitDirection.y + 1.0f);
+//        return (1.0f - t) * Vector3f(1.0f, 1.0f, 1.0f) + t * Vector3f(0.5f, 0.7f, 1.0f);
+//    }
 
-        } else {
-            return Vector3f(0, 0, 0);
-        }
-    } else {
+    // TODO UPDATE THIS FUNCTION BASED ON PBRT P33 (WHITTED INTEGRATOR)
+    //Spectrum L(0.0f);
+    // < Find the closest intersection or return the background color >
+    if(!scene.intersect(ray, &isect)) {
         Vector3f unitDirection = glm::normalize(ray.direction);
         float t = 0.5f * (unitDirection.y + 1.0f);
         return (1.0f - t) * Vector3f(1.0f, 1.0f, 1.0f) + t * Vector3f(0.5f, 0.7f, 1.0f);
     }
 
-    // TODO UPDATE THIS FUNCTION BASED ON PBRT P33 (WHITTED INTEGRATOR)
+    // compute emitted and reflected light ar ray intersection point
+    Ray scattered;
+    if (depth < maxDepth && isect.computeScatteringFunctions(ray, scattered)) {
+        return (isect.primitive->getMaterial()->getAlbedo()) * Li(scattered, scene, depth++);
+    } else {
+        return Vector3f(0, 0, 0);
+    }
 }

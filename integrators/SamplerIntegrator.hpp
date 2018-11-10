@@ -13,7 +13,7 @@
 class SamplerIntegrator : public Integrator{
 public:
     // < SamplerIntegrator public methods 26>
-    SamplerIntegrator(MAWindow *ma_window, Camera *camera);
+    SamplerIntegrator(int maxDepth, MAWindow *ma_window, Camera *camera);
 
     // TODO IMPLEMENT SAMPLER CLASS
 //    SamplerIntegrator(Camera *camera, Sampler *sampler);
@@ -29,6 +29,7 @@ private:
     // < SamplerIntegrator Protected Data 25>
     // TODO implement later if required
     //Sampler *sampler;
+    int maxDepth;
 
 
 };
