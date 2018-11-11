@@ -7,7 +7,9 @@
 
 
 #define GAMMA_2_CORRECTION 0
-#define N_SAMPLE 2
+#define A 1.0f
+#define GAMMA 0.5f
+#define N_SAMPLE 20
 
 SamplerIntegrator::SamplerIntegrator(int maxDepth, MAWindow *ma_window, Camera *camera) :
 ma_window(ma_window), camera(camera), maxDepth(maxDepth) {
@@ -68,19 +70,21 @@ void SamplerIntegrator::Render(const Scene &scene) {
                     cameraSample.pFilms = Point2f((float)x, (float)y); // TESTING PURPOSE
 
                     // Create Ray using the Perspective Camera
-                    // float weight = camera->generateRay(cameraSample,&ray);
+                    //float weight = camera->generateRay(cameraSample,&ray);
 
                     L += Li(ray, scene);
                 }
 
                 if(GAMMA_2_CORRECTION) {
-                    colors[index] = Vector3f(std::sqrt(L.x / (float)N_SAMPLE), std::sqrt(L.x / (float)N_SAMPLE), std::sqrt(L.x / (float)N_SAMPLE));
+                    colors[index] = Vector3f(A * std::pow(L.x / (float)N_SAMPLE, GAMMA), std::pow(L.x / (float)N_SAMPLE, GAMMA), std::pow(L.x / (float)N_SAMPLE, GAMMA));
+                    //colors[index] = Vector3f(std::sqrt(L.x / (float)N_SAMPLE), std::sqrt(L.x / (float)N_SAMPLE), std::sqrt(L.x / (float)N_SAMPLE));
                 } else {
                     colors[index] = L / (float)N_SAMPLE;
 
                 }
                 index++;
             }
+
             ma_window->display();
         }
     }

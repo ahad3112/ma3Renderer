@@ -17,7 +17,7 @@ void Dielectric::computeScatteringFunctions(SurfaceInteraction *isect) const {
 
 bool Dielectric::computeScatteringFunctions(SurfaceInteraction *isect, const Ray &ray, Ray &scatteredRay) const {
     Vector3f outwardNormal;
-    Vector3f reflected = reflect(ray.direction, isect->normal);
+    Vector3f reflected = glm::reflect(ray.direction, isect->normal);
     float eta;
     Vector3f refracted;
     float reflectProb, cosine;
@@ -25,9 +25,9 @@ bool Dielectric::computeScatteringFunctions(SurfaceInteraction *isect, const Ray
     if(glm::dot(ray.direction, isect->normal) > 0.0f) {
         outwardNormal = -isect->normal;
         eta = refractionIndex;
-        //cosine = refractionIndex * glm::dot(ray.direction, isect->normal) / glm::length(ray.direction);
-        cosine = dot(ray.direction, isect->normal) / glm::length(ray.direction);
-        cosine = std::sqrt(1.0f - refractionIndex * refractionIndex * (1.0f-cosine * cosine));
+        cosine = refractionIndex * glm::dot(ray.direction, isect->normal) / glm::length(ray.direction);
+//        cosine = dot(ray.direction, isect->normal) / glm::length(ray.direction);
+//        cosine = std::sqrt(1.0f - refractionIndex * refractionIndex * (1.0f-cosine * cosine));
     } else {
         outwardNormal = isect->normal;
         eta = 1.0f / refractionIndex;
@@ -36,15 +36,22 @@ bool Dielectric::computeScatteringFunctions(SurfaceInteraction *isect, const Ray
 
     if(refract(ray.direction, outwardNormal, eta, refracted)) {
         reflectProb = schlick(cosine, refractionIndex);
+
     } else {
         reflectProb = 1.0f;
+
     }
 
-    if(drand48() > reflectProb) {
+    if(drand48() < reflectProb) {
+
+        //std::cout << reflected.x << " " << reflected.y << " " << reflected.z << std::endl;
+        //reflected = Vector3f();
         scatteredRay = Ray(isect->position, reflected);
-    } else {
+    }
+    else {
         scatteredRay = Ray(isect->position, refracted);
     }
+
 
     return true;
 }

@@ -18,7 +18,7 @@
 
 #define WINDOW_WIDTH 720
 #define WINDOW_HEIGHT 480
-#define MAX_DEPTH 40
+#define MAX_DEPTH 10
 
 
 //================================================================================================================//
@@ -31,6 +31,9 @@ void framebufferSizeCallback(GLFWwindow* window, int width, int height);
 void testShirley();
 
 void testPBRT();
+
+void testTransform();
+Scene *randomScene();
 
 //================================================================================================================//
 // Global variables
@@ -60,9 +63,9 @@ int main(int argc, char *argv[]) {
 
 
     testShirley();
-    //testPBRT();
+    // testPBRT();
 
-
+    // testTransform();
     //================================================================================================================//
     // Delete resources
     //================================================================================================================//
@@ -84,6 +87,27 @@ int main(int argc, char *argv[]) {
 }
 
 //====================================================================================================================//
+// Testing Transform
+//====================================================================================================================//
+void testTransform() {
+    // Identity matrix
+    Transform t = translate(Vector3f(2.0f, 1.0f, 0.0f));
+    std::cout << "Transform: " << t << std::endl;
+    Point3f p;
+    p = t(p);
+    std::cout << "P: " << p.x << " " << p.y << " " << p.z << std::endl;
+//    // Inverse
+//    Transform tInv = inverse(t);
+//    std::cout << "Inverse Transform: " << tInv << std::endl;
+//    // transpose
+//    Transform tTrans = transpose(t);
+//    std::cout << "Inverse Transform: " << tTrans << std::endl;
+    //
+
+
+}
+
+//====================================================================================================================//
 // Trying two different way Pbrt and shirley
 //====================================================================================================================//
 
@@ -99,15 +123,15 @@ void testShirley() {
     //================================================================================================================//
     // Camera
     //================================================================================================================//
-    Point3f lookFrom(3,3,2);
-    //Point3f lookFrom(-2,2,1);
+    //Point3f lookFrom(3,3,2);
+    Point3f lookFrom(-2,2,1);
     //Point3f lookFrom(0,0,0.0f);
     Point3f lookAt(0,0,-1);
-    //float focusDist = glm::length(lookFrom - lookAt);
-    float aperture = 2.0f;
-    float fov = 20.0f;          // [degrees]
+    Vector3f vup(0,1,0);
+    float aperture = 0.0f;
+    float fov = 60.0f;          // [degrees]
     float aspectRatio = (float)WINDOW_WIDTH / (float)WINDOW_HEIGHT;
-    camera = new Camera(lookFrom, lookAt, Vector3f(0,1,0), fov, aspectRatio, aperture, film);
+    camera = new Camera(lookFrom, lookAt, vup, fov, aspectRatio, aperture, film);
 
     //================================================================================================================//
     // Scene
@@ -147,12 +171,15 @@ void testShirley() {
 
 
 
-    Scene scene;
-    scene.addPrimitive(&gprimitive1);
-    scene.addPrimitive(&gprimitive2);
-    scene.addPrimitive(&gprimitive3);
-    scene.addPrimitive(&gprimitive4);
-    scene.addPrimitive(&gprimitive5);
+//    Scene scene;
+//    scene.addPrimitive(&gprimitive1);
+//    scene.addPrimitive(&gprimitive2);
+//    scene.addPrimitive(&gprimitive3);
+//    scene.addPrimitive(&gprimitive4);
+//    scene.addPrimitive(&gprimitive5);
+
+
+    Scene scene = *randomScene();
 
     //================================================================================================================//
     // Call Integrator for rendering
@@ -161,6 +188,10 @@ void testShirley() {
     integrator.Render(scene);
 
 }
+
+
+
+
 
 void testPBRT() {
 
@@ -261,11 +292,69 @@ void testPBRT() {
 //    scene.addPrimitive(&gprimitive4);
 //    scene.addPrimitive(&gprimitive5);
 
+
+
     //================================================================================================================//
     // Call Integrator for rendering
     //================================================================================================================//
     SamplerIntegrator integrator(MAX_DEPTH,ma_window,camera);
     integrator.Render(scene);
+}
+
+
+Scene *randomScene() {
+    Scene *scene = new Scene();
+
+    int max = 5;
+    int min = -max;
+
+    Sphere *sp1 = new Sphere(Vector3f(0, -1000, 0), 1000);
+    Material *mat1 = new MatteMaterial(Vector3f(.5, .5, .5));
+    scene->addPrimitive(new GeometricPrimitive(sp1, mat1));
+
+    int counter = 0;
+    for (int a = min; a < max; a++) {
+        for(int b = min; b < max; b++) {
+            float chooseMat = drand48();
+            Point3f center(a + 0.9f * drand48(), 0.2f, b + 0.9f * drand48());
+
+            if(glm::length(center - Point3f(4.0, 0.2, 0.0)) > 0.9f){
+
+                if (chooseMat < 0.8f) {
+                    // diffuse
+                    Sphere *sphere = new Sphere(center, 0.2);
+                    Material *material = new MatteMaterial(Vector3f(drand48() * drand48(), drand48() * drand48(), drand48() * drand48()));
+                    scene->addPrimitive(new GeometricPrimitive(sphere, material));
+                } else if (chooseMat < 0.95f) {
+                    // metal
+                    Sphere *sphere = new Sphere(center, 0.2);
+                    Material *material = new Metal(Vector3f(.5 * (1 + drand48()), .5 * (1 + drand48()), .5 * (1 + drand48())), .5 * drand48());
+                    scene->addPrimitive(new GeometricPrimitive(sphere, material));
+                } else {
+                    // glass
+                    Sphere *sphere = new Sphere(center, 0.2);
+                    Material *material = new Dielectric(Vector3f(1.0f, 1.0f, 1.0f),1.5);
+                    //scene->addPrimitive(new GeometricPrimitive(sphere, material));
+                }
+
+            }
+
+            counter++;
+        }
+    }
+
+    std::cout << "Total Spheres: " << counter << std::endl;
+    Sphere *sp2 = new Sphere(Vector3f(-4, 1, 0), 1);
+    Material *mat2 = new MatteMaterial(Vector3f(.4, .2, .1));
+    scene->addPrimitive(new GeometricPrimitive(sp2, mat2));
+
+    Sphere *sp3 = new Sphere(Vector3f(4, 1, 0), 1);
+    Material *mat3 = new Metal(Vector3f(.7, .6, .5), 0.0);
+    scene->addPrimitive(new GeometricPrimitive(sp3, mat3));
+
+    // Add another dielectric
+
+    return scene;
 }
 
 
@@ -277,9 +366,15 @@ void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
         glfwSetWindowShouldClose(window, GL_TRUE);
     }
-    if (key == GLFW_KEY_F && action == GLFW_PRESS) {
+    if (key == GLFW_KEY_O && action == GLFW_PRESS) {
         // Update the field of view
         camera->setVfov(camera->getVfov() + 10.0f);
+        ma_window->cameraSettingChanged = true;
+    }
+
+    if (key == GLFW_KEY_I && action == GLFW_PRESS) {
+        // Update the field of view
+        camera->setVfov(camera->getVfov() - 10.0f);
         ma_window->cameraSettingChanged = true;
     }
 
