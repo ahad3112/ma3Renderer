@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/49C6CCA5-E47C-4613-8081-2D51306349D6/d/CLion 2018.3 EAP.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/96587454-5959-4AB9-91F3-4AC9F4F802FB/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = "/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/49C6CCA5-E47C-4613-8081-2D51306349D6/d/CLion 2018.3 EAP.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/96587454-5959-4AB9-91F3-4AC9F4F802FB/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/49C6CCA5-E47C-4613-8081-2D51306349D6/d/CLion 2018.3 EAP.app/Contents/bin/cmake/mac/bin/cmake" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/96587454-5959-4AB9-91F3-4AC9F4F802FB/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/49C6CCA5-E47C-4613-8081-2D51306349D6/d/CLion 2018.3 EAP.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/96587454-5959-4AB9-91F3-4AC9F4F802FB/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -284,6 +284,33 @@ core/GeometricPrimitive.s: core/GeometricPrimitive.cpp.s
 core/GeometricPrimitive.cpp.s:
 	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.s
 .PHONY : core/GeometricPrimitive.cpp.s
+
+core/Geometry.o: core/Geometry.cpp.o
+
+.PHONY : core/Geometry.o
+
+# target to build an object file
+core/Geometry.cpp.o:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.o
+.PHONY : core/Geometry.cpp.o
+
+core/Geometry.i: core/Geometry.cpp.i
+
+.PHONY : core/Geometry.i
+
+# target to preprocess a source file
+core/Geometry.cpp.i:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.i
+.PHONY : core/Geometry.cpp.i
+
+core/Geometry.s: core/Geometry.cpp.s
+
+.PHONY : core/Geometry.s
+
+# target to generate assembly for a file
+core/Geometry.cpp.s:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.s
+.PHONY : core/Geometry.cpp.s
 
 core/Integrator.o: core/Integrator.cpp.o
 
@@ -744,6 +771,9 @@ help:
 	@echo "... core/GeometricPrimitive.o"
 	@echo "... core/GeometricPrimitive.i"
 	@echo "... core/GeometricPrimitive.s"
+	@echo "... core/Geometry.o"
+	@echo "... core/Geometry.i"
+	@echo "... core/Geometry.s"
 	@echo "... core/Integrator.o"
 	@echo "... core/Integrator.i"
 	@echo "... core/Integrator.s"

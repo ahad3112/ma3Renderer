@@ -51,6 +51,9 @@ CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.o: ../core/Ray.hpp
 CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.o: ../core/shape.hpp
 CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.o: ../utility/MA_utility.hpp
 
+CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.o: ../core/Geometry.cpp
+CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.o: ../core/Geometry.hpp
+
 CMakeFiles/ma3Renderer.dir/core/Integrator.cpp.o: ../core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/core/Integrator.cpp.o: ../core/Integrator.cpp
 CMakeFiles/ma3Renderer.dir/core/Integrator.cpp.o: ../core/Integrator.hpp

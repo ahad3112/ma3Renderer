@@ -18,7 +18,7 @@
 
 #define WINDOW_WIDTH 720
 #define WINDOW_HEIGHT 480
-#define MAX_DEPTH 10
+#define MAX_DEPTH 1
 
 
 //================================================================================================================//
@@ -62,8 +62,8 @@ int main(int argc, char *argv[]) {
     glfwSetFramebufferSizeCallback(ma_window->getWindow(), framebufferSizeCallback);
 
 
-    testShirley();
-    // testPBRT();
+    //testShirley();
+    testPBRT();
 
     // testTransform();
     //================================================================================================================//
@@ -202,31 +202,40 @@ void testPBRT() {
     Point2i resolution(WINDOW_WIDTH , WINDOW_HEIGHT);
     Bounds2f cropWindow(Point2f(0.0f, 0.0f), Point2f(1.0f, 1.0f));  // RANGE (0,1)
     float diagonal = 10.0f;         // In mili meter.... TODO ...need to know what is does
-    float scale = 1.0f;             // TODO ...need to know what is does
+    float scaling = 1.0f;             // TODO ...need to know what is does
     film  = new Film(resolution, cropWindow, diagonal, std::string("fileName"), 1.0f);
 
     //================================================================================================================//
     // PerspectiveCamera PBRT TODO NOT WORKING RIGHT NOW
     //================================================================================================================//
-    // PerspectiveCamera Assume that the camera is at the origin of the world space
 
-//    Transform worldToCamera(Matrix4x4(1.0f,-0.0f,1.50996e-007f,-1.13687e-013f,
-//                                        -0.0f,1.0f,-0.0f,-1.0f,
-//                                        1.50996e-007f,-0.0f,-1.0f,7.0f,
-//                                        -0.0f,-0.0f,-0.0f,1.0f));
-//    Transform cameraToWorld = inverse(worldToCamera);
+    Transform tr1(Matrix4x4(1.0f, 3.0f, 1.0f, 6.0f,
+                           3.0f, 1.0f, 1.0f, 6.0f,
+                           -40.0f, -2.0f, 1.0f, -3.0f,
+                          2.0f, 40.0f, 1.0f, 11.0f));
+    Transform tr2(Matrix4x4(1.0f, 3.0f, 2.0f, 0.0f,
+                            0.0f, 1.0f, 1.0f, 0.0f,
+                            0.0f, 0.0f, 1.0f, 0.0f,
+                            0.0f, 0.0f, 1.0f, 1.0f));
 
+    Transform tr = tr1 * tr2;
 
-    Point3f lookFrom(3,4,1.5);
-    Point3f look(.5,0.5,0);
-    Vector3f up(0,0,1);
+    std::cout << "tr1: " << tr1 << std::endl;
+
+    Point3f p1 = tr(Point3f(-2,2,1));
+    //std::cout << p1.x << " " << p1.y << " " << p1.z << std::endl;
+
+    Point3f lookFrom(2,0,0);
+    //Point3f lookFrom(0,0,0);
+    Point3f look(0,0,1);
+    Vector3f up(0,1,0);
 
     Transform worldToCamera = lookAt(lookFrom, look, up);
     Transform cameraToWorld = inverse(worldToCamera);
-    Point3f p = cameraToWorld(Point3f(0,0,0));
-    std::cout << p.x << " " << p.y << " " << p.z << std::endl;
-
-    std::cout << "worldToCamera: " << worldToCamera << std::endl;
+    Point3f p = worldToCamera(Point3f(4,3,1));
+    //std::cout << p.x << " " << p.y << " " << p.z << std::endl;
+//
+//    std::cout << "worldToCamera: " << worldToCamera << std::endl;
 
     Bounds2f screenWindow(Point2f(-1.0f, -1.0f), Point2f(1.0f, 1.0f));
     float shutterOpen = 0.0f;
@@ -240,33 +249,21 @@ void testPBRT() {
 
     camera = new PerspectiveCamera(cameraToWorld, screenWindow, shutterOpen, shutterClose, lensRadius, focalDist, fov, film);
 
-    //camera = new Camera(lookFrom, look,up, fov, aspectRatio, aperture, film);
-
 
     //================================================================================================================//
     // Scene
     //================================================================================================================//
 
-    // < Sphere 1 >
-//    Transform  objectToWorld1(Matrix4x4(1.0f,0.0f,0.0f,-0.22827f,
-//                                  0.0f,1.0f,0.0f,1.2f,
-//                                  0.0f,0.0f,1.0f,0.152505f,
-//                                  0.0f,0.0f,0.0f,1.0f));
-//
-//    Sphere sphere1(objectToWorld1(Point3f(0.0f, 0.0f,0.0f)), 0.3);
 
-
-    Sphere sphere1(Point3f(0.0f, 0.0f, 0.0f), 1.0);
-
-
-    Sphere sphere2(Point3f(0, -100.5f, 1.0f), 100.0f);
-    Sphere sphere3(Point3f(1.0f, 0.0f, 1.0f), 0.5f);
-    Sphere sphere4(Point3f(-1.0f, 0.0f, 1.0f), 0.5f);
-    Sphere sphere5(Point3f(-1.0f, 0.0f, 1.0f), 0.2f);
+    Sphere sphere1(Point3f(0.0f, 0.0f,-1.0f), 0.5);
+    Sphere sphere2(Point3f(0, -100.5f, -1.0f), -100.0f);
+    Sphere sphere3(Point3f(1.0f, 0.0f, -1.0f), 0.5f);
+    Sphere sphere4(Point3f(-1.0f, 0.0f, -1.0f), 0.5f);
+    Sphere sphere5(Point3f(-1.0f, 0.0f, -1.0f), 0.2f);
 
 
 
-    MatteMaterial matte1(Vector3f(0.4, 0.45, 0.5));
+    MatteMaterial matte1(Vector3f(0.1, 0.2, .5));
     MatteMaterial matte2(Vector3f(.8, 0.8, 0.0));
     Metal metal1(Vector3f(.8, .6, .2), 0.0);
     Metal metal2(Vector3f(1.0, 0.0, 0.0), 0.0);
@@ -287,10 +284,10 @@ void testPBRT() {
 
     Scene scene;
     scene.addPrimitive(&gprimitive1);
-//    scene.addPrimitive(&gprimitive2);
-//    scene.addPrimitive(&gprimitive3);
-//    scene.addPrimitive(&gprimitive4);
-//    scene.addPrimitive(&gprimitive5);
+    scene.addPrimitive(&gprimitive2);
+    scene.addPrimitive(&gprimitive3);
+    scene.addPrimitive(&gprimitive4);
+    scene.addPrimitive(&gprimitive5);
 
 
 

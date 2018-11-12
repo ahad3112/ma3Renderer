@@ -21,6 +21,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o"
   "CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o"
   "CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o"
+  "CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.o"
   "ma3Renderer.pdb"
   "ma3Renderer"
 )

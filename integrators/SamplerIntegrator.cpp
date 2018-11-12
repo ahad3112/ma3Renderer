@@ -9,7 +9,7 @@
 #define GAMMA_2_CORRECTION 0
 #define A 1.0f
 #define GAMMA 0.5f
-#define N_SAMPLE 20
+#define N_SAMPLE 1
 
 SamplerIntegrator::SamplerIntegrator(int maxDepth, MAWindow *ma_window, Camera *camera) :
 ma_window(ma_window), camera(camera), maxDepth(maxDepth) {
@@ -61,7 +61,7 @@ void SamplerIntegrator::Render(const Scene &scene) {
                     float u = (float)(x + drand48()) / (float)SCREEN_WIDTH;
                     float v = (float)(y + drand48()) / (float)SCREEN_HEIGHT;
                     Ray ray;
-                    ray = camera->generateRay(u, v);
+                    //ray = camera->generateRay(u, v);
 
                     // Create camera sample
 
@@ -70,7 +70,7 @@ void SamplerIntegrator::Render(const Scene &scene) {
                     cameraSample.pFilms = Point2f((float)x, (float)y); // TESTING PURPOSE
 
                     // Create Ray using the Perspective Camera
-                    //float weight = camera->generateRay(cameraSample,&ray);
+                    float weight = camera->generateRay(cameraSample,&ray);
 
                     L += Li(ray, scene);
                 }

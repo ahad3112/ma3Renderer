@@ -94,6 +94,7 @@ using Bounds3f = Bounds3<Point3f, float>;
 // Matrix4x4
 //====================================================================================================================//
 using Matrix4x4 = glm::tmat4x4<float>; // TODO : DOUBLE CHECK EVERYTHING:::
+Matrix4x4 mult(const Matrix4x4 &m1, const Matrix4x4 &m2);
 
 //////////////////////// Utility function ////////////////////
 

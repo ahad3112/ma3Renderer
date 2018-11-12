@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/maaahad/CLionProjects/ma3Renderer/core/Camera.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/Film.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Film.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/GeometricPrimitive.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.o"
+  "/Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/Integrator.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Integrator.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/Interaction.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Interaction.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/Material.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Material.cpp.o"

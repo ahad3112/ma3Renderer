@@ -126,6 +126,9 @@
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/GeometricPrimitive.hpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.cpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp">
 			<Option target="ma3Renderer"/>
 		</Unit>

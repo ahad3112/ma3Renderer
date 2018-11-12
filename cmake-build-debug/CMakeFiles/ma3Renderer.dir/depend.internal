@@ -51,6 +51,9 @@ CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/shape.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
+CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.o
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.cpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/core/Integrator.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Integrator.cpp
