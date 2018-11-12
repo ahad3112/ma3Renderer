@@ -14,7 +14,7 @@ PerspectiveCamera::PerspectiveCamera() {
 
 PerspectiveCamera::PerspectiveCamera(const Transform &cameraToWorld, const Bounds2f &screenWindow, float shutterOpen,
                                      float shutterClose, float lensRadius, float focalDist, float fov, Film *film)
-                                     : ProjectiveCamera(cameraToWorld, perspective(fov, -.01f, -1000.0f),
+                                     : ProjectiveCamera(cameraToWorld, perspective(fov, .01f, 1000.0f),
                                                         screenWindow, shutterOpen, shutterClose, lensRadius, focalDist, film){
     // < Compute differential changes in origin for perspective camera rays 367 >
     // TODO
@@ -53,7 +53,7 @@ float PerspectiveCamera::generateRay(const CameraSample &sample, Ray *ray) const
 
 //    *ray = Ray(Point3f(0.0f, 0.0f, 0.0f), glm::normalize(Vector3f(pCamera.x, pCamera.y, pCamera.z)));
 
-    *ray = Ray(cameraToWorld(Point3f(0.0f, 0.0f, 0.0f)), cameraToWorld(glm::normalize(Vector3f(pCamera.x, pCamera.y, pCamera.z))));
+    *ray = Ray(cameraToWorld(Point3f(0.0f, 0.0f, 0.0f)), cameraToWorld(glm::normalize(Vector3f(pCamera.x, pCamera.y, pCamera.z)), 1));
 
 //    std::cout << ray->direction.x << " " << ray->direction.y << " " << ray->direction.z << std::endl;
 

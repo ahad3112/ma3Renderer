@@ -209,33 +209,38 @@ void testPBRT() {
     // PerspectiveCamera PBRT TODO NOT WORKING RIGHT NOW
     //================================================================================================================//
 
-    Transform tr1(Matrix4x4(1.0f, 3.0f, 1.0f, 6.0f,
-                           3.0f, 1.0f, 1.0f, 6.0f,
-                           -40.0f, -2.0f, 1.0f, -3.0f,
-                          2.0f, 40.0f, 1.0f, 11.0f));
+    // [ Debugging Transform =========================================================================================//
+    Matrix4x4 m(1.0f, 10.0f, 11.0f, 0.0f,
+                0.0f, 1.0f, 2.0f, 7.0f,
+                0.0f, 1.0f, 1.0f, 1.0f,
+                1.0f, 3.0f, 4.0f, 9.0f);
+
+    //std::cout << "Matrix: " << glm::transpose(m) << std::endl;
+
+    Transform tr1(m);
     Transform tr2(Matrix4x4(1.0f, 3.0f, 2.0f, 0.0f,
                             0.0f, 1.0f, 1.0f, 0.0f,
                             0.0f, 0.0f, 1.0f, 0.0f,
                             0.0f, 0.0f, 1.0f, 1.0f));
 
-    Transform tr = tr1 * tr2;
+    Transform tr = tr1 * tr1;
 
-    std::cout << "tr1: " << tr1 << std::endl;
+    //std::cout << "tr1: " << tr << std::endl;
 
     Point3f p1 = tr(Point3f(-2,2,1));
     //std::cout << p1.x << " " << p1.y << " " << p1.z << std::endl;
+    // =========================================================================================== Debugging Transform ]
 
-    Point3f lookFrom(2,0,0);
-    //Point3f lookFrom(0,0,0);
-    Point3f look(0,0,1);
-    Vector3f up(0,1,0);
+    Point3f lookFrom(3,4,1.5);
+    Point3f look(0.5,0.5,0);
+    Vector3f up(0,0,1);
 
     Transform worldToCamera = lookAt(lookFrom, look, up);
     Transform cameraToWorld = inverse(worldToCamera);
-    Point3f p = worldToCamera(Point3f(4,3,1));
+    //Point3f p = cameraToWorld(Point3f(1,0,0));
     //std::cout << p.x << " " << p.y << " " << p.z << std::endl;
 //
-//    std::cout << "worldToCamera: " << worldToCamera << std::endl;
+    //std::cout << "worldToCamera: " << cameraToWorld << std::endl;
 
     Bounds2f screenWindow(Point2f(-1.0f, -1.0f), Point2f(1.0f, 1.0f));
     float shutterOpen = 0.0f;
@@ -255,11 +260,11 @@ void testPBRT() {
     //================================================================================================================//
 
 
-    Sphere sphere1(Point3f(0.0f, 0.0f,-1.0f), 0.5);
-    Sphere sphere2(Point3f(0, -100.5f, -1.0f), -100.0f);
-    Sphere sphere3(Point3f(1.0f, 0.0f, -1.0f), 0.5f);
-    Sphere sphere4(Point3f(-1.0f, 0.0f, -1.0f), 0.5f);
-    Sphere sphere5(Point3f(-1.0f, 0.0f, -1.0f), 0.2f);
+    Sphere sphere1(Point3f(0.0f, 0.0f,0.0f), 2.0);
+    Sphere sphere2(Point3f(0, -100.5f, 1.0f), 100.0f);
+    Sphere sphere3(Point3f(1.0f, 0.0f, 1.0f), 0.5f);
+    Sphere sphere4(Point3f(-1.0f, 0.0f, 1.0f), 0.5f);
+    Sphere sphere5(Point3f(-1.0f, 0.0f, 1.0f), 0.2f);
 
 
 
@@ -275,8 +280,8 @@ void testPBRT() {
     GeometricPrimitive gprimitive1(&sphere1, &matte1);
     GeometricPrimitive gprimitive2(&sphere2, &matte2);
     GeometricPrimitive gprimitive3(&sphere3, &metal1);
-    GeometricPrimitive gprimitive4(&sphere4, &dielect1);
-    GeometricPrimitive gprimitive5(&sphere5, &dielect2);
+    GeometricPrimitive gprimitive4(&sphere4, &metal1);
+    GeometricPrimitive gprimitive5(&sphere5, &metal1);
 
 
 
@@ -284,10 +289,10 @@ void testPBRT() {
 
     Scene scene;
     scene.addPrimitive(&gprimitive1);
-    scene.addPrimitive(&gprimitive2);
-    scene.addPrimitive(&gprimitive3);
-    scene.addPrimitive(&gprimitive4);
-    scene.addPrimitive(&gprimitive5);
+//    scene.addPrimitive(&gprimitive2);
+//    scene.addPrimitive(&gprimitive3);
+//    scene.addPrimitive(&gprimitive4);
+//    scene.addPrimitive(&gprimitive5);
 
 
 
