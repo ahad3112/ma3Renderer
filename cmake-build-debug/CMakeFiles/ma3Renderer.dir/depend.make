@@ -48,6 +48,7 @@ CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.o: ../core/Interaction.hp
 CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.o: ../core/Material.hpp
 CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.o: ../core/Primitive.hpp
 CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.o: ../core/Ray.hpp
+CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.o: ../core/Transform.hpp
 CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.o: ../core/shape.hpp
 CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.o: ../utility/MA_utility.hpp
 
@@ -71,6 +72,7 @@ CMakeFiles/ma3Renderer.dir/core/Interaction.cpp.o: ../core/Interaction.hpp
 CMakeFiles/ma3Renderer.dir/core/Interaction.cpp.o: ../core/Material.hpp
 CMakeFiles/ma3Renderer.dir/core/Interaction.cpp.o: ../core/Primitive.hpp
 CMakeFiles/ma3Renderer.dir/core/Interaction.cpp.o: ../core/Ray.hpp
+CMakeFiles/ma3Renderer.dir/core/Interaction.cpp.o: ../core/Transform.hpp
 CMakeFiles/ma3Renderer.dir/core/Interaction.cpp.o: ../core/shape.hpp
 CMakeFiles/ma3Renderer.dir/core/Interaction.cpp.o: ../utility/MA_utility.hpp
 
@@ -104,6 +106,7 @@ CMakeFiles/ma3Renderer.dir/core/Scene.cpp.o: ../core/Scene.hpp
 CMakeFiles/ma3Renderer.dir/core/Scene.cpp.o: ../utility/MA_utility.hpp
 
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: ../core/Ray.hpp
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: ../core/Transform.cpp
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: ../core/Transform.hpp
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: ../utility/MA_utility.hpp
@@ -264,7 +267,13 @@ CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: /usr/local/Cellar/glm/0.9.9.2/i
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: /usr/local/Cellar/glm/0.9.9.2/include/glm/vec4.hpp
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: /usr/local/Cellar/glm/0.9.9.2/include/glm/vector_relational.hpp
 
+CMakeFiles/ma3Renderer.dir/core/shape.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/core/shape.cpp.o: ../core/Interaction.hpp
+CMakeFiles/ma3Renderer.dir/core/shape.cpp.o: ../core/Ray.hpp
+CMakeFiles/ma3Renderer.dir/core/shape.cpp.o: ../core/Transform.hpp
 CMakeFiles/ma3Renderer.dir/core/shape.cpp.o: ../core/shape.cpp
+CMakeFiles/ma3Renderer.dir/core/shape.cpp.o: ../core/shape.hpp
+CMakeFiles/ma3Renderer.dir/core/shape.cpp.o: ../utility/MA_utility.hpp
 
 CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../core/Camera.hpp
 CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o: ../core/Film.hpp
@@ -331,6 +340,7 @@ CMakeFiles/ma3Renderer.dir/materials/Metal.cpp.o: ../utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o: ../core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o: ../core/Interaction.hpp
 CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o: ../core/Ray.hpp
+CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o: ../core/Transform.hpp
 CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o: ../core/shape.hpp
 CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o: ../shapes/Sphere.cpp
 CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o: ../shapes/Sphere.hpp

@@ -42,7 +42,7 @@ bool Dielectric::computeScatteringFunctions(SurfaceInteraction *isect, const Ray
 
     }
 
-    if(drand48() < reflectProb) {
+    if(drand48() < reflectProb) {  // TODO not sure about this condition
 
         //std::cout << reflected.x << " " << reflected.y << " " << reflected.z << std::endl;
         //reflected = Vector3f();

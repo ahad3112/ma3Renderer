@@ -16,7 +16,7 @@
 #include "materials/Dielectric.hpp"
 
 
-#define WINDOW_WIDTH 720
+#define WINDOW_WIDTH 480
 #define WINDOW_HEIGHT 480
 #define MAX_DEPTH 2
 
@@ -247,27 +247,22 @@ void testPBRT() {
     //================================================================================================================//
 
 
-    Point3f lookFrom(3, 4.0, 1.5);
-    Point3f look(0.5, 0.5, 0);
-    Vector3f up(0, 0, 1);
+    Point3f lookFrom(0, 0.0, -1.0);
+    Point3f look(0.0, 0.0, 0);
+    Vector3f up(0, 1, 0);
 
-//    Point3f lookFrom(2.0, 2.0, -1.0);
-//    Point3f look(0.0, 0.0, 0);
-//    Vector3f up(0, 1, 0);
 
     Transform worldToCamera = lookAt(lookFrom, look, up);
     Transform cameraToWorld = inverse(worldToCamera);
-    //Point3f p = cameraToWorld(Point3f(1,0,0));
-    //std::cout << p.x << " " << p.y << " " << p.z << std::endl;
-//
-    //std::cout << "worldToCamera: " << cameraToWorld << std::endl;
+
+
 
     Bounds2f screenWindow(Point2f(-1.0f, -1.0f), Point2f(1.0f, 1.0f));
     float shutterOpen = 0.0f;
     float shutterClose = 0.0f;
     float lensRadius = 0.0f;
     float focalDist = 50.0f;
-    float fov = 45.0f;
+    float fov = 60.0f;
 
     float aperture = 2.0f;
     float aspectRatio = (float)WINDOW_WIDTH / (float)WINDOW_HEIGHT;
@@ -280,10 +275,10 @@ void testPBRT() {
     //================================================================================================================//
 
 
-    Sphere sphere1(Point3f(0.0f, 0.0f, 0.0f), 1.0);
-    Sphere sphere2(Point3f(0, -100.5f, 102.0f), 100.0f);
-    Sphere sphere3(Point3f(0.0f, 0.0f, 10.0f), 2.0f);
-    Sphere sphere4(Point3f(-1.0f, 0.0f, 1.0f), 0.5f);
+    Sphere sphere1(Point3f(0.0f, 0.0f, 1.0f), 0.25);
+    Sphere sphere2(Point3f(0, 100.25f, 1.0f), 100.0f);
+    Sphere sphere3(Point3f(0.5f, 0.0f, 0.5f), 0.25f);
+    Sphere sphere4(Point3f(-.5f, 0.0f, 0.5f), 0.25f);
     Sphere sphere5(Point3f(-1.0f, 0.0f, 1.0f), 0.2f);
 
 
@@ -300,7 +295,7 @@ void testPBRT() {
     GeometricPrimitive gprimitive1(&sphere1, &matte1);
     GeometricPrimitive gprimitive2(&sphere2, &matte2);
     GeometricPrimitive gprimitive3(&sphere3, &metal1);
-    GeometricPrimitive gprimitive4(&sphere4, &metal1);
+    GeometricPrimitive gprimitive4(&sphere4, &dielect1);
     GeometricPrimitive gprimitive5(&sphere5, &metal1);
 
 
@@ -309,9 +304,9 @@ void testPBRT() {
 
     Scene scene;
     scene.addPrimitive(&gprimitive1);
-//    scene.addPrimitive(&gprimitive2);
-//    scene.addPrimitive(&gprimitive3);
-//    scene.addPrimitive(&gprimitive4);
+    scene.addPrimitive(&gprimitive2);
+    scene.addPrimitive(&gprimitive3);
+    scene.addPrimitive(&gprimitive4);
 //    scene.addPrimitive(&gprimitive5);
 
 
