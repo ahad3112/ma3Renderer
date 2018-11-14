@@ -9,7 +9,7 @@
 #define GAMMA_2_CORRECTION 0
 #define A 1.0f
 #define GAMMA 0.5f
-#define N_SAMPLE 20
+#define N_SAMPLE 50
 
 SamplerIntegrator::SamplerIntegrator(int maxDepth, MAWindow *ma_window, Camera *camera) :
 ma_window(ma_window), camera(camera), maxDepth(maxDepth) {

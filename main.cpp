@@ -18,7 +18,7 @@
 
 #define WINDOW_WIDTH 480
 #define WINDOW_HEIGHT 480
-#define MAX_DEPTH 2
+#define MAX_DEPTH 20
 
 
 //================================================================================================================//
@@ -295,7 +295,7 @@ void testPBRT() {
     GeometricPrimitive gprimitive1(&sphere1, &matte1);
     GeometricPrimitive gprimitive2(&sphere2, &matte2);
     GeometricPrimitive gprimitive3(&sphere3, &metal1);
-    GeometricPrimitive gprimitive4(&sphere4, &dielect1);
+    GeometricPrimitive gprimitive4(&sphere4, &metal2);
     GeometricPrimitive gprimitive5(&sphere5, &metal1);
 
 
