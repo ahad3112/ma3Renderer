@@ -18,7 +18,7 @@
 
 #define WINDOW_WIDTH 720
 #define WINDOW_HEIGHT 480
-#define MAX_DEPTH 1
+#define MAX_DEPTH 2
 
 
 //================================================================================================================//
@@ -65,7 +65,7 @@ int main(int argc, char *argv[]) {
     //testShirley();
     testPBRT();
 
-    // testTransform();
+    //testTransform();
     //================================================================================================================//
     // Delete resources
     //================================================================================================================//
@@ -90,19 +90,49 @@ int main(int argc, char *argv[]) {
 // Testing Transform
 //====================================================================================================================//
 void testTransform() {
-    // Identity matrix
-    Transform t = translate(Vector3f(2.0f, 1.0f, 0.0f));
-    std::cout << "Transform: " << t << std::endl;
-    Point3f p;
-    p = t(p);
-    std::cout << "P: " << p.x << " " << p.y << " " << p.z << std::endl;
-//    // Inverse
-//    Transform tInv = inverse(t);
-//    std::cout << "Inverse Transform: " << tInv << std::endl;
-//    // transpose
-//    Transform tTrans = transpose(t);
-//    std::cout << "Inverse Transform: " << tTrans << std::endl;
-    //
+
+    // [ Debugging Transform =========================================================================================//
+    Matrix4x4 m(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16);
+    Matrix4x4 mn(360, 0, 0, 360, 0, -240, 0, 240, 0, 0, 1, 0, 0, 0, 0, 1);
+
+    std::cout << "Matrix4x4 : " << glm::inverse(mn) << std::endl;
+
+
+
+    Point3f lookFrom(0, 0.0, 1);
+    Point3f look(0.0, 0.0, 1.5);
+    Vector3f up(0, -1, 0);
+
+
+    Transform worldToCamera = lookAt(lookFrom, look, up);
+    Transform cameraToWorld = inverse(worldToCamera);
+
+    std::cout << "worldToCamera : " << worldToCamera << std::endl;
+    std::cout << "cameraToWorld : " << cameraToWorld << std::endl;
+
+    Point3f p1 = worldToCamera(Point3f(1,0,-10));
+    std::cout << p1.x << " " << p1.y << " " << p1.z << std::endl;
+
+//    Matrix4x4 m(1.0f, 10.0f, 11.0f, 0.0f,
+//                0.0f, 1.0f, 2.0f, 7.0f,
+//                0.0f, 1.0f, 1.0f, 1.0f,
+//                1.0f, 3.0f, 4.0f, 9.0f);
+//
+//    //std::cout << "Matrix: " << glm::transpose(m) << std::endl;
+//
+//    Transform tr1(m);
+//    Transform tr2(Matrix4x4(1.0f, 3.0f, 2.0f, 0.0f,
+//                            0.0f, 1.0f, 1.0f, 0.0f,
+//                            0.0f, 0.0f, 1.0f, 0.0f,
+//                            0.0f, 0.0f, 1.0f, 1.0f));
+//
+//    Transform tr = tr1 * tr1;
+//
+//    //std::cout << "tr1: " << tr << std::endl;
+//
+//    Point3f p1 = tr(Point3f(-2,2,1));
+//    //std::cout << p1.x << " " << p1.y << " " << p1.z << std::endl;
+    // =========================================================================================== Debugging Transform ]
 
 
 }
@@ -123,13 +153,20 @@ void testShirley() {
     //================================================================================================================//
     // Camera
     //================================================================================================================//
+
+
+    Point3f lookFrom(3, 4.0, -1.5);
+    Point3f lookAt(0.5, 0.5, 0);
+    Vector3f vup(0, 0, 1);
+
+
     //Point3f lookFrom(3,3,2);
-    Point3f lookFrom(-2,2,1);
+    //Point3f lookFrom(-2,2,1);
     //Point3f lookFrom(0,0,0.0f);
-    Point3f lookAt(0,0,-1);
-    Vector3f vup(0,1,0);
+    //Point3f lookAt(0,0,-1);
+    //Vector3f vup(0,1,0);
     float aperture = 0.0f;
-    float fov = 60.0f;          // [degrees]
+    float fov = 30.0f;          // [degrees]
     float aspectRatio = (float)WINDOW_WIDTH / (float)WINDOW_HEIGHT;
     camera = new Camera(lookFrom, lookAt, vup, fov, aspectRatio, aperture, film);
 
@@ -144,7 +181,7 @@ void testShirley() {
 //    Sphere sphere5(Point3f(-2.0f, 1.0f, -1.0f), 0.5f);
 
 
-    Sphere sphere1(Point3f(0.0f, 0.0f,-1.0f), 0.5);
+    Sphere sphere1(Point3f(0.0f, 0.0f,0.0f), 1.0);
     Sphere sphere2(Point3f(0, -100.5f, -1.0f), -100.0f);
     Sphere sphere3(Point3f(1.0f, 0.0f, -1.0f), 0.5f);
     Sphere sphere4(Point3f(-1.0f, 0.0f, -1.0f), 0.5f);
@@ -171,15 +208,15 @@ void testShirley() {
 
 
 
-//    Scene scene;
-//    scene.addPrimitive(&gprimitive1);
+    Scene scene;
+    scene.addPrimitive(&gprimitive1);
 //    scene.addPrimitive(&gprimitive2);
 //    scene.addPrimitive(&gprimitive3);
 //    scene.addPrimitive(&gprimitive4);
 //    scene.addPrimitive(&gprimitive5);
 
 
-    Scene scene = *randomScene();
+//    Scene scene = *randomScene();
 
     //================================================================================================================//
     // Call Integrator for rendering
@@ -209,31 +246,14 @@ void testPBRT() {
     // PerspectiveCamera PBRT TODO NOT WORKING RIGHT NOW
     //================================================================================================================//
 
-    // [ Debugging Transform =========================================================================================//
-    Matrix4x4 m(1.0f, 10.0f, 11.0f, 0.0f,
-                0.0f, 1.0f, 2.0f, 7.0f,
-                0.0f, 1.0f, 1.0f, 1.0f,
-                1.0f, 3.0f, 4.0f, 9.0f);
 
-    //std::cout << "Matrix: " << glm::transpose(m) << std::endl;
+    Point3f lookFrom(3, 4.0, 1.5);
+    Point3f look(0.5, 0.5, 0);
+    Vector3f up(0, 0, 1);
 
-    Transform tr1(m);
-    Transform tr2(Matrix4x4(1.0f, 3.0f, 2.0f, 0.0f,
-                            0.0f, 1.0f, 1.0f, 0.0f,
-                            0.0f, 0.0f, 1.0f, 0.0f,
-                            0.0f, 0.0f, 1.0f, 1.0f));
-
-    Transform tr = tr1 * tr1;
-
-    //std::cout << "tr1: " << tr << std::endl;
-
-    Point3f p1 = tr(Point3f(-2,2,1));
-    //std::cout << p1.x << " " << p1.y << " " << p1.z << std::endl;
-    // =========================================================================================== Debugging Transform ]
-
-    Point3f lookFrom(3,4,1.5);
-    Point3f look(0.5,0.5,0);
-    Vector3f up(0,0,1);
+//    Point3f lookFrom(2.0, 2.0, -1.0);
+//    Point3f look(0.0, 0.0, 0);
+//    Vector3f up(0, 1, 0);
 
     Transform worldToCamera = lookAt(lookFrom, look, up);
     Transform cameraToWorld = inverse(worldToCamera);
@@ -260,9 +280,9 @@ void testPBRT() {
     //================================================================================================================//
 
 
-    Sphere sphere1(Point3f(0.0f, 0.0f,0.0f), 2.0);
-    Sphere sphere2(Point3f(0, -100.5f, 1.0f), 100.0f);
-    Sphere sphere3(Point3f(1.0f, 0.0f, 1.0f), 0.5f);
+    Sphere sphere1(Point3f(0.0f, 0.0f, 0.0f), 1.0);
+    Sphere sphere2(Point3f(0, -100.5f, 102.0f), 100.0f);
+    Sphere sphere3(Point3f(0.0f, 0.0f, 10.0f), 2.0f);
     Sphere sphere4(Point3f(-1.0f, 0.0f, 1.0f), 0.5f);
     Sphere sphere5(Point3f(-1.0f, 0.0f, 1.0f), 0.2f);
 

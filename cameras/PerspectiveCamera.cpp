@@ -51,14 +51,10 @@ float PerspectiveCamera::generateRay(const CameraSample &sample, Ray *ray) const
     Point3f pFilm = Point3f(sample.pFilms.x, sample.pFilms.y, 0.0f);
     Point3f pCamera = rasterToCamera(pFilm);
 
-//    *ray = Ray(Point3f(0.0f, 0.0f, 0.0f), glm::normalize(Vector3f(pCamera.x, pCamera.y, pCamera.z)));
-
-    *ray = Ray(cameraToWorld(Point3f(0.0f, 0.0f, 0.0f)), cameraToWorld(glm::normalize(Vector3f(pCamera.x, pCamera.y, pCamera.z)), 1));
-
-//    std::cout << ray->direction.x << " " << ray->direction.y << " " << ray->direction.z << std::endl;
-
+    *ray = cameraToWorld(Ray(Point3f(0.0f, 0.0f, 0.0f), glm::normalize(Vector3f(pCamera.x, pCamera.y, pCamera.z))));
 
 
     // < Modify ray for depth of field >
+
     return 1.0f;
 }

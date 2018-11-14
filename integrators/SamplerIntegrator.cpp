@@ -124,4 +124,5 @@ Vector3f SamplerIntegrator::Li(const Ray &ray, const Scene &scene, int depth) co
     } else {
         return Vector3f(0, 0, 0);
     }
+
 }
