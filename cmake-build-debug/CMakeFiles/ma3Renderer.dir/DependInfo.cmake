@@ -5,8 +5,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/maaahad/CLionProjects/ma3Renderer/accelerators/Aggregrate.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/accelerators/Aggregrate.cpp.o"
+  "/Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/cameras/PerspectiveCamera.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/cameras/ProjectiveCamera.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o"
+  "/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/Camera.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/Film.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Film.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/GeometricPrimitive.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.o"

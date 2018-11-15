@@ -96,6 +96,12 @@
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/accelerators/Aggregrate.hpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.cpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.hpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/cameras/PerspectiveCamera.cpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
@@ -106,6 +112,12 @@
 			<Option target="ma3Renderer"/>
 		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/cameras/ProjectiveCamera.hpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.cpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Camera.cpp">

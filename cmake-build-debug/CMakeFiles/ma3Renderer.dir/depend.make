@@ -10,6 +10,12 @@ CMakeFiles/ma3Renderer.dir/accelerators/Aggregrate.cpp.o: ../core/Primitive.hpp
 CMakeFiles/ma3Renderer.dir/accelerators/Aggregrate.cpp.o: ../core/Ray.hpp
 CMakeFiles/ma3Renderer.dir/accelerators/Aggregrate.cpp.o: ../utility/MA_utility.hpp
 
+CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../brdf/LambertianReflection.cpp
+CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../brdf/LambertianReflection.hpp
+CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../core/BxDF.hpp
+CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../utility/MA_utility.hpp
+
 CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../cameras/PerspectiveCamera.cpp
 CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../cameras/PerspectiveCamera.hpp
 CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../cameras/ProjectiveCamera.hpp
@@ -28,6 +34,10 @@ CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: ../core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: ../core/Ray.hpp
 CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: ../core/Transform.hpp
 CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: ../utility/MA_utility.hpp
+
+CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o: ../core/BxDF.cpp
+CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o: ../core/BxDF.hpp
+CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o: ../core/Geometry.hpp
 
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../core/Camera.cpp
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../core/Camera.hpp

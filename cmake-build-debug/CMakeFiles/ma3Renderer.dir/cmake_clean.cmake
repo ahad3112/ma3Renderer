@@ -22,6 +22,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o"
   "CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o"
   "CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.o"
+  "CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o"
+  "CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o"
   "ma3Renderer.pdb"
   "ma3Renderer"
 )

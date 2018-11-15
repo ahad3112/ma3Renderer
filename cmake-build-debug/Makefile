@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/237B9F0F-D181-4194-97DB-0B973DBDC6FD/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/3FA60780-01E8-426A-9214-605B4B36B45D/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/237B9F0F-D181-4194-97DB-0B973DBDC6FD/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/3FA60780-01E8-426A-9214-605B4B36B45D/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/237B9F0F-D181-4194-97DB-0B973DBDC6FD/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/3FA60780-01E8-426A-9214-605B4B36B45D/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/237B9F0F-D181-4194-97DB-0B973DBDC6FD/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/3FA60780-01E8-426A-9214-605B4B36B45D/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -150,6 +150,33 @@ accelerators/Aggregrate.cpp.s:
 	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/accelerators/Aggregrate.cpp.s
 .PHONY : accelerators/Aggregrate.cpp.s
 
+brdf/LambertianReflection.o: brdf/LambertianReflection.cpp.o
+
+.PHONY : brdf/LambertianReflection.o
+
+# target to build an object file
+brdf/LambertianReflection.cpp.o:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o
+.PHONY : brdf/LambertianReflection.cpp.o
+
+brdf/LambertianReflection.i: brdf/LambertianReflection.cpp.i
+
+.PHONY : brdf/LambertianReflection.i
+
+# target to preprocess a source file
+brdf/LambertianReflection.cpp.i:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.i
+.PHONY : brdf/LambertianReflection.cpp.i
+
+brdf/LambertianReflection.s: brdf/LambertianReflection.cpp.s
+
+.PHONY : brdf/LambertianReflection.s
+
+# target to generate assembly for a file
+brdf/LambertianReflection.cpp.s:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.s
+.PHONY : brdf/LambertianReflection.cpp.s
+
 cameras/PerspectiveCamera.o: cameras/PerspectiveCamera.cpp.o
 
 .PHONY : cameras/PerspectiveCamera.o
@@ -203,6 +230,33 @@ cameras/ProjectiveCamera.s: cameras/ProjectiveCamera.cpp.s
 cameras/ProjectiveCamera.cpp.s:
 	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.s
 .PHONY : cameras/ProjectiveCamera.cpp.s
+
+core/BxDF.o: core/BxDF.cpp.o
+
+.PHONY : core/BxDF.o
+
+# target to build an object file
+core/BxDF.cpp.o:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o
+.PHONY : core/BxDF.cpp.o
+
+core/BxDF.i: core/BxDF.cpp.i
+
+.PHONY : core/BxDF.i
+
+# target to preprocess a source file
+core/BxDF.cpp.i:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.i
+.PHONY : core/BxDF.cpp.i
+
+core/BxDF.s: core/BxDF.cpp.s
+
+.PHONY : core/BxDF.s
+
+# target to generate assembly for a file
+core/BxDF.cpp.s:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.s
+.PHONY : core/BxDF.cpp.s
 
 core/Camera.o: core/Camera.cpp.o
 
@@ -756,12 +810,18 @@ help:
 	@echo "... accelerators/Aggregrate.o"
 	@echo "... accelerators/Aggregrate.i"
 	@echo "... accelerators/Aggregrate.s"
+	@echo "... brdf/LambertianReflection.o"
+	@echo "... brdf/LambertianReflection.i"
+	@echo "... brdf/LambertianReflection.s"
 	@echo "... cameras/PerspectiveCamera.o"
 	@echo "... cameras/PerspectiveCamera.i"
 	@echo "... cameras/PerspectiveCamera.s"
 	@echo "... cameras/ProjectiveCamera.o"
 	@echo "... cameras/ProjectiveCamera.i"
 	@echo "... cameras/ProjectiveCamera.s"
+	@echo "... core/BxDF.o"
+	@echo "... core/BxDF.i"
+	@echo "... core/BxDF.s"
 	@echo "... core/Camera.o"
 	@echo "... core/Camera.i"
 	@echo "... core/Camera.s"

@@ -17,6 +17,7 @@
 
 #define MA_EPSILON 0.00001f
 #define MA_PI 3.1415926535f
+#define Inv_MA_PI 0.3183098862f
 
 
 ///////////////// infinity for float ////////////////////////

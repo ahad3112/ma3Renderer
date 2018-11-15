@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/237B9F0F-D181-4194-97DB-0B973DBDC6FD/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/3FA60780-01E8-426A-9214-605B4B36B45D/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/237B9F0F-D181-4194-97DB-0B973DBDC6FD/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/3FA60780-01E8-426A-9214-605B4B36B45D/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -356,6 +356,32 @@ CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.cpp -o CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.s
 
+CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o: CMakeFiles/ma3Renderer.dir/flags.make
+CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o: ../core/BxDF.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o -c /Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.cpp
+
+CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.cpp > CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.i
+
+CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.cpp -o CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.s
+
+CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: CMakeFiles/ma3Renderer.dir/flags.make
+CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../brdf/LambertianReflection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o -c /Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.cpp
+
+CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.cpp > CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.i
+
+CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.cpp -o CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.s
+
 # Object files for target ma3Renderer
 ma3Renderer_OBJECTS = \
 "CMakeFiles/ma3Renderer.dir/main.cpp.o" \
@@ -380,7 +406,9 @@ ma3Renderer_OBJECTS = \
 "CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o" \
 "CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o" \
 "CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o" \
-"CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.o"
+"CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.o" \
+"CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o" \
+"CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o"
 
 # External object files for target ma3Renderer
 ma3Renderer_EXTERNAL_OBJECTS =
@@ -408,11 +436,13 @@ ma3Renderer: CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o
 ma3Renderer: CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o
 ma3Renderer: CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o
 ma3Renderer: CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.o
+ma3Renderer: CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o
+ma3Renderer: CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o
 ma3Renderer: CMakeFiles/ma3Renderer.dir/build.make
 ma3Renderer: /usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib
 ma3Renderer: /usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.dylib
 ma3Renderer: CMakeFiles/ma3Renderer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable ma3Renderer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable ma3Renderer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ma3Renderer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
