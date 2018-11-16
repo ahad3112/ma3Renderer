@@ -46,3 +46,9 @@ float schlick(float cosine, float refractionIndex) {
 
 }
 
+
+template <typename T, typename U, typename V> inline T clamp(T val, U low, V high) {
+    if (val < low) return low;
+    else if (val > high) return high;
+    else return val;
+}

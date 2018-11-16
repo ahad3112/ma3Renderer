@@ -47,6 +47,11 @@ CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
+CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o
+ /Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.cpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/core/Film.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Film.cpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Film.hpp

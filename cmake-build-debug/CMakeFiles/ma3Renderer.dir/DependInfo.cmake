@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/maaahad/CLionProjects/ma3Renderer/cameras/ProjectiveCamera.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/Camera.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o"
+  "/Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/Film.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Film.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/GeometricPrimitive.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/GeometricPrimitive.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.o"

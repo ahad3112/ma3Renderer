@@ -126,6 +126,12 @@
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Camera.hpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.cpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.hpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Film.cpp">
 			<Option target="ma3Renderer"/>
 		</Unit>

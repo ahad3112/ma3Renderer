@@ -42,12 +42,6 @@ ProjectiveCamera.hpp
 ../core/Camera.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Camera.hpp
 
-/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.cpp
-iostream
--
-BxDF.hpp
-/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp
-
 /Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp
 Geometry.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
@@ -69,6 +63,16 @@ Film.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Film.hpp
 Transform.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.cpp
+CoefficientSpectrum.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.hpp
+cmath
+-
+../utility/MA_utility.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 
 /Users/maaahad/CLionProjects/ma3Renderer/core/Film.hpp
 string

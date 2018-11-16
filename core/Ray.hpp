@@ -12,7 +12,7 @@ class Ray {
 public:
     // < Ray public methods>
     Ray() {}
-    Ray(const Point3f &origin, const Vector3f &direction, float tMax = MA_INFINITY);
+    Ray(const Point3f &origin, const Vector3f &direction, float tMax = MA_INFINITY_FLOAT);
 
     Point3f operator()(float t) const;
 

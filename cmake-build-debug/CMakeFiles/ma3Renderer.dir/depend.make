@@ -47,6 +47,11 @@ CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../core/Ray.hpp
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../core/Transform.hpp
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../utility/MA_utility.hpp
 
+CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o: ../core/CoefficientSpectrum.cpp
+CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o: ../core/CoefficientSpectrum.hpp
+CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o: ../utility/MA_utility.hpp
+
 CMakeFiles/ma3Renderer.dir/core/Film.cpp.o: ../core/Film.cpp
 CMakeFiles/ma3Renderer.dir/core/Film.cpp.o: ../core/Film.hpp
 CMakeFiles/ma3Renderer.dir/core/Film.cpp.o: ../core/Geometry.hpp

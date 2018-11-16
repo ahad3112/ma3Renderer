@@ -21,7 +21,7 @@
 
 
 ///////////////// infinity for float ////////////////////////
-const auto MA_INFINITY = std::numeric_limits<float>::infinity();
+const auto MA_INFINITY_FLOAT = std::numeric_limits<float>::infinity();
 
 
 //====================================================================================================================//
@@ -36,5 +36,8 @@ float schlick(float cosine, float refractionIndex);
 
 float radians(float degree);
 float degrees(float radian);
+
+
+template <typename T, typename U, typename V> inline T clamp();
 
 #endif //MA3RENDERER_MAUTILITY_HPP
