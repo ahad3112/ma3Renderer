@@ -6,7 +6,7 @@
 #define MA3RENDERER_RGBSPECTRUM_HPP
 
 
-#include "../core/CoefficientSpectrum.hpp"
+#include "CoefficientSpectrum.hpp"
 
 class RGBSpectrum : public CoefficientSpectrum<3>{
 public:
@@ -14,6 +14,7 @@ public:
     RGBSpectrum( float v = 0.0f) : CoefficientSpectrum<3>(v) {}
 
     void toRGB(float *rgb) const;
+    void toXYZ(float *xyz) const;
     static RGBSpectrum fromRGB(const float rgb[3] , SpectrumType type = SpectrumType::REFLECTANCE);
 };
 

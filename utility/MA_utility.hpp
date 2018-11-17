@@ -40,4 +40,6 @@ float degrees(float radian);
 
 template <typename T, typename U, typename V> inline T clamp();
 
+float lerp(float t, float start, float end);
+
 #endif //MA3RENDERER_MAUTILITY_HPP

@@ -126,12 +126,6 @@
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Camera.hpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
-		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.cpp">
-			<Option target="ma3Renderer"/>
-		</Unit>
-		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.hpp">
-			<Option target="ma3Renderer"/>
-		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Film.cpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
@@ -186,6 +180,12 @@
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Scene.hpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.cpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.hpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Transform.cpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
@@ -229,6 +229,12 @@
 			<Option target="ma3Renderer"/>
 		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/shapes/Sphere.hpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.cpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.hpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.cpp">

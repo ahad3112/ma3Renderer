@@ -24,8 +24,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.o"
   "CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o"
   "CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o"
-  "CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o"
+  "CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o"
   "CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o"
+  "CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o"
   "ma3Renderer.pdb"
   "ma3Renderer"
 )

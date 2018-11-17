@@ -47,11 +47,6 @@ CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../core/Ray.hpp
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../core/Transform.hpp
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../utility/MA_utility.hpp
 
-CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o: ../core/CoefficientSpectrum.cpp
-CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o: ../core/CoefficientSpectrum.hpp
-CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o: ../core/Geometry.hpp
-CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o: ../utility/MA_utility.hpp
-
 CMakeFiles/ma3Renderer.dir/core/Film.cpp.o: ../core/Film.cpp
 CMakeFiles/ma3Renderer.dir/core/Film.cpp.o: ../core/Film.hpp
 CMakeFiles/ma3Renderer.dir/core/Film.cpp.o: ../core/Geometry.hpp
@@ -119,6 +114,13 @@ CMakeFiles/ma3Renderer.dir/core/Scene.cpp.o: ../core/Ray.hpp
 CMakeFiles/ma3Renderer.dir/core/Scene.cpp.o: ../core/Scene.cpp
 CMakeFiles/ma3Renderer.dir/core/Scene.cpp.o: ../core/Scene.hpp
 CMakeFiles/ma3Renderer.dir/core/Scene.cpp.o: ../utility/MA_utility.hpp
+
+CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o: ../core/Spectrum.cpp
+CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o: ../core/Spectrum.hpp
+CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o: ../spectrum/CoefficientSpectrum.hpp
+CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o: ../spectrum/RGBSpectrum.hpp
+CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o: ../utility/MA_utility.hpp
 
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: ../core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: ../core/Ray.hpp
@@ -360,6 +362,18 @@ CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o: ../core/shape.hpp
 CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o: ../shapes/Sphere.cpp
 CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o: ../shapes/Sphere.hpp
 CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o: ../utility/MA_utility.hpp
+
+CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o: ../spectrum/CoefficientSpectrum.cpp
+CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o: ../spectrum/CoefficientSpectrum.hpp
+CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o: ../utility/MA_utility.hpp
+
+CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o: ../core/Spectrum.hpp
+CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o: ../spectrum/CoefficientSpectrum.hpp
+CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o: ../spectrum/RGBSpectrum.cpp
+CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o: ../spectrum/RGBSpectrum.hpp
+CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o: ../utility/MA_utility.hpp
 
 CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o: ../core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o: ../utility/MA_utility.cpp

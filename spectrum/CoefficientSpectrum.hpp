@@ -152,6 +152,7 @@ public:
     }
     // <  CoeffcientSpectrum public data 316 >
     int nSamples = nSpectrumSamples;
+
 protected:
     // < CoefficientSpectrum protected data 316>
     float c[nSpectrumSamples];

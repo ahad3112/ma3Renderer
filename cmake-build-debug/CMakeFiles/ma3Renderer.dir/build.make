@@ -382,18 +382,18 @@ CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.cpp -o CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.s
 
-CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o: CMakeFiles/ma3Renderer.dir/flags.make
-CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o: ../core/CoefficientSpectrum.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o -c /Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.cpp
+CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o: CMakeFiles/ma3Renderer.dir/flags.make
+CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o: ../spectrum/CoefficientSpectrum.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o -c /Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.cpp
 
-CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.cpp > CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.i
+CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.cpp > CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.i
 
-CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.cpp -o CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.s
+CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.cpp -o CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.s
 
 CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o: CMakeFiles/ma3Renderer.dir/flags.make
 CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o: ../spectrum/RGBSpectrum.cpp
@@ -407,6 +407,19 @@ CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.i: cmake_force
 CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.cpp -o CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.s
+
+CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o: CMakeFiles/ma3Renderer.dir/flags.make
+CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o: ../core/Spectrum.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o -c /Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.cpp
+
+CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.cpp > CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.i
+
+CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.cpp -o CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.s
 
 # Object files for target ma3Renderer
 ma3Renderer_OBJECTS = \
@@ -435,8 +448,9 @@ ma3Renderer_OBJECTS = \
 "CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.o" \
 "CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o" \
 "CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o" \
-"CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o" \
-"CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o"
+"CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o" \
+"CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o" \
+"CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o"
 
 # External object files for target ma3Renderer
 ma3Renderer_EXTERNAL_OBJECTS =
@@ -466,13 +480,14 @@ ma3Renderer: CMakeFiles/ma3Renderer.dir/materials/Dielectric.cpp.o
 ma3Renderer: CMakeFiles/ma3Renderer.dir/core/Geometry.cpp.o
 ma3Renderer: CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o
 ma3Renderer: CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o
-ma3Renderer: CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o
+ma3Renderer: CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o
 ma3Renderer: CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o
+ma3Renderer: CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o
 ma3Renderer: CMakeFiles/ma3Renderer.dir/build.make
 ma3Renderer: /usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib
 ma3Renderer: /usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.dylib
 ma3Renderer: CMakeFiles/ma3Renderer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable ma3Renderer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX executable ma3Renderer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ma3Renderer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

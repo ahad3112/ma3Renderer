@@ -285,33 +285,6 @@ core/Camera.cpp.s:
 	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Camera.cpp.s
 .PHONY : core/Camera.cpp.s
 
-core/CoefficientSpectrum.o: core/CoefficientSpectrum.cpp.o
-
-.PHONY : core/CoefficientSpectrum.o
-
-# target to build an object file
-core/CoefficientSpectrum.cpp.o:
-	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o
-.PHONY : core/CoefficientSpectrum.cpp.o
-
-core/CoefficientSpectrum.i: core/CoefficientSpectrum.cpp.i
-
-.PHONY : core/CoefficientSpectrum.i
-
-# target to preprocess a source file
-core/CoefficientSpectrum.cpp.i:
-	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.i
-.PHONY : core/CoefficientSpectrum.cpp.i
-
-core/CoefficientSpectrum.s: core/CoefficientSpectrum.cpp.s
-
-.PHONY : core/CoefficientSpectrum.s
-
-# target to generate assembly for a file
-core/CoefficientSpectrum.cpp.s:
-	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.s
-.PHONY : core/CoefficientSpectrum.cpp.s
-
 core/Film.o: core/Film.cpp.o
 
 .PHONY : core/Film.o
@@ -555,6 +528,33 @@ core/Scene.cpp.s:
 	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Scene.cpp.s
 .PHONY : core/Scene.cpp.s
 
+core/Spectrum.o: core/Spectrum.cpp.o
+
+.PHONY : core/Spectrum.o
+
+# target to build an object file
+core/Spectrum.cpp.o:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o
+.PHONY : core/Spectrum.cpp.o
+
+core/Spectrum.i: core/Spectrum.cpp.i
+
+.PHONY : core/Spectrum.i
+
+# target to preprocess a source file
+core/Spectrum.cpp.i:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.i
+.PHONY : core/Spectrum.cpp.i
+
+core/Spectrum.s: core/Spectrum.cpp.s
+
+.PHONY : core/Spectrum.s
+
+# target to generate assembly for a file
+core/Spectrum.cpp.s:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.s
+.PHONY : core/Spectrum.cpp.s
+
 core/Transform.o: core/Transform.cpp.o
 
 .PHONY : core/Transform.o
@@ -771,6 +771,33 @@ shapes/Sphere.cpp.s:
 	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.s
 .PHONY : shapes/Sphere.cpp.s
 
+spectrum/CoefficientSpectrum.o: spectrum/CoefficientSpectrum.cpp.o
+
+.PHONY : spectrum/CoefficientSpectrum.o
+
+# target to build an object file
+spectrum/CoefficientSpectrum.cpp.o:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o
+.PHONY : spectrum/CoefficientSpectrum.cpp.o
+
+spectrum/CoefficientSpectrum.i: spectrum/CoefficientSpectrum.cpp.i
+
+.PHONY : spectrum/CoefficientSpectrum.i
+
+# target to preprocess a source file
+spectrum/CoefficientSpectrum.cpp.i:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.i
+.PHONY : spectrum/CoefficientSpectrum.cpp.i
+
+spectrum/CoefficientSpectrum.s: spectrum/CoefficientSpectrum.cpp.s
+
+.PHONY : spectrum/CoefficientSpectrum.s
+
+# target to generate assembly for a file
+spectrum/CoefficientSpectrum.cpp.s:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.s
+.PHONY : spectrum/CoefficientSpectrum.cpp.s
+
 spectrum/RGBSpectrum.o: spectrum/RGBSpectrum.cpp.o
 
 .PHONY : spectrum/RGBSpectrum.o
@@ -879,9 +906,6 @@ help:
 	@echo "... core/Camera.o"
 	@echo "... core/Camera.i"
 	@echo "... core/Camera.s"
-	@echo "... core/CoefficientSpectrum.o"
-	@echo "... core/CoefficientSpectrum.i"
-	@echo "... core/CoefficientSpectrum.s"
 	@echo "... core/Film.o"
 	@echo "... core/Film.i"
 	@echo "... core/Film.s"
@@ -909,6 +933,9 @@ help:
 	@echo "... core/Scene.o"
 	@echo "... core/Scene.i"
 	@echo "... core/Scene.s"
+	@echo "... core/Spectrum.o"
+	@echo "... core/Spectrum.i"
+	@echo "... core/Spectrum.s"
 	@echo "... core/Transform.o"
 	@echo "... core/Transform.i"
 	@echo "... core/Transform.s"
@@ -933,6 +960,9 @@ help:
 	@echo "... shapes/Sphere.o"
 	@echo "... shapes/Sphere.i"
 	@echo "... shapes/Sphere.s"
+	@echo "... spectrum/CoefficientSpectrum.o"
+	@echo "... spectrum/CoefficientSpectrum.i"
+	@echo "... spectrum/CoefficientSpectrum.s"
 	@echo "... spectrum/RGBSpectrum.o"
 	@echo "... spectrum/RGBSpectrum.i"
 	@echo "... spectrum/RGBSpectrum.s"

@@ -52,3 +52,7 @@ template <typename T, typename U, typename V> inline T clamp(T val, U low, V hig
     else if (val > high) return high;
     else return val;
 }
+
+float lerp(float t, float start, float end) {
+    return (1.0f - t) * start + t * end;
+}

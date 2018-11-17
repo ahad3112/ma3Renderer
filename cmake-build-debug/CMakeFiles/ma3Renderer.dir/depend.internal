@@ -47,11 +47,6 @@ CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
-CMakeFiles/ma3Renderer.dir/core/CoefficientSpectrum.cpp.o
- /Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.cpp
- /Users/maaahad/CLionProjects/ma3Renderer/core/CoefficientSpectrum.hpp
- /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
- /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/core/Film.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Film.cpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Film.hpp
@@ -119,6 +114,13 @@ CMakeFiles/ma3Renderer.dir/core/Scene.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Scene.cpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Scene.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
+CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.cpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
@@ -360,6 +362,18 @@ CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/shape.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/shapes/Sphere.cpp
  /Users/maaahad/CLionProjects/ma3Renderer/shapes/Sphere.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
+CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.cpp
+ /Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
+CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.cpp
+ /Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
