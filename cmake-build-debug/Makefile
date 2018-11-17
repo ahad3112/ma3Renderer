@@ -771,6 +771,33 @@ shapes/Sphere.cpp.s:
 	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.s
 .PHONY : shapes/Sphere.cpp.s
 
+spectrum/RGBSpectrum.o: spectrum/RGBSpectrum.cpp.o
+
+.PHONY : spectrum/RGBSpectrum.o
+
+# target to build an object file
+spectrum/RGBSpectrum.cpp.o:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o
+.PHONY : spectrum/RGBSpectrum.cpp.o
+
+spectrum/RGBSpectrum.i: spectrum/RGBSpectrum.cpp.i
+
+.PHONY : spectrum/RGBSpectrum.i
+
+# target to preprocess a source file
+spectrum/RGBSpectrum.cpp.i:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.i
+.PHONY : spectrum/RGBSpectrum.cpp.i
+
+spectrum/RGBSpectrum.s: spectrum/RGBSpectrum.cpp.s
+
+.PHONY : spectrum/RGBSpectrum.s
+
+# target to generate assembly for a file
+spectrum/RGBSpectrum.cpp.s:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.s
+.PHONY : spectrum/RGBSpectrum.cpp.s
+
 utility/MA_utility.o: utility/MA_utility.cpp.o
 
 .PHONY : utility/MA_utility.o
@@ -906,6 +933,9 @@ help:
 	@echo "... shapes/Sphere.o"
 	@echo "... shapes/Sphere.i"
 	@echo "... shapes/Sphere.s"
+	@echo "... spectrum/RGBSpectrum.o"
+	@echo "... spectrum/RGBSpectrum.i"
+	@echo "... spectrum/RGBSpectrum.s"
 	@echo "... utility/MA_utility.o"
 	@echo "... utility/MA_utility.i"
 	@echo "... utility/MA_utility.s"

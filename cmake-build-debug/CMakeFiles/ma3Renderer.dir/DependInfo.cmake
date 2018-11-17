@@ -28,6 +28,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/maaahad/CLionProjects/ma3Renderer/materials/MatteMaterial.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/materials/Metal.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/materials/Metal.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/shapes/Sphere.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o"
+  "/Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/visualization/MA_window.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/visualization/MA_window.cpp.o"
   )

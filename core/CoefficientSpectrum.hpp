@@ -10,6 +10,11 @@
 #include <iostream>
 #include "../utility/MA_utility.hpp"
 
+enum class SpectrumType {
+    REFLECTANCE,
+    ILLUMINANT,
+};
+
 template <int nSpectrumSamples> class CoefficientSpectrum {
 public:
     // < CoefficientSpectrum public methods 316 >

@@ -231,6 +231,12 @@
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/shapes/Sphere.hpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.cpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.hpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.cpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
