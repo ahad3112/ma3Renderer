@@ -26,10 +26,15 @@ void RGBSpectrum::toRGB(float *rgb) const {
 }
 
 void RGBSpectrum::toXYZ(float *xyz) const {
-    xyz[0] = xyz[1] = xyz[2] = 0.0f;
-    for(int i = 0; i < nSpectralSamples; i++) {
-        std::cout << "Not Implemented yet...\n\tFile: " << __FILE__
-                  << "\n\tFunction : " << __func__
-                  << "\n\tLine: " << __LINE__ << std::endl;
-    }
+//    float rgb[3];
+//    toRGB(rgb);
+    RGBToXYZ(c,xyz);
 }
+
+RGBSpectrum RGBSpectrum::fromXYZ(const float xyz[], SpectrumType type) {
+    float rgb[3];
+    XYZToRGB(xyz,rgb);
+
+    return fromRGB(rgb); // Second argument is not required
+}
+

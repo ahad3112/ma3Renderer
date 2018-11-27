@@ -13,10 +13,15 @@ public:
     // < RGBSpectrum public methods 332 >
     RGBSpectrum( float v = 0.0f) : CoefficientSpectrum<3>(v) {}
 
+
     void toRGB(float *rgb) const;
     void toXYZ(float *xyz) const;
-    static RGBSpectrum fromRGB(const float rgb[3] , SpectrumType type = SpectrumType::REFLECTANCE);
+    RGBSpectrum fromRGB(const float rgb[3] , SpectrumType type = SpectrumType::REFLECTANCE);
+    RGBSpectrum fromXYZ(const float xyz[3], SpectrumType type = SpectrumType::REFLECTANCE);
 };
+
+
+
 
 
 #endif //MA3RENDERER_RGBSPECTRUM_HPP
