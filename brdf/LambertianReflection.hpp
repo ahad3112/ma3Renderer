@@ -12,16 +12,15 @@ class LambertianReflection : public BxDF{
 public:
     // < LambertianReflection public methods 532 >
     // TODO Vectpr3f should be replaced by Spectrum
-    LambertianReflection(const Vector3f &r);
+    LambertianReflection(const Spectrum &r);
 
-    Vector3f f(const Vector3f &wi, const Vector3f &wo) const override;
+    Spectrum f(const Vector3f &wi, const Vector3f &wo) const override;
 
-    Vector3f rho(const Vector3f &, int , const Point2f *) const;
-    Vector3f rho(int , const Point2f *, const Point2f *) const;
-
+    Spectrum rho(const Vector3f &wo, const Vector3f &wi, int nSamples, const Point2f *samples) const override;
+    Spectrum rho(int nSamples, const Point2f *samples1, const Point2f *samples2) const override;
 
     // < Lambertian Reflection private data 532>
-    const Vector3f r;
+    const Spectrum r;
 };
 
 

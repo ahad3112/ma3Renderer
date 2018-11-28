@@ -14,6 +14,9 @@ CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../brdf/LambertianRe
 CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../brdf/LambertianReflection.hpp
 CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../core/BxDF.hpp
 CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../core/Spectrum.hpp
+CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../spectrum/CoefficientSpectrum.hpp
+CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../spectrum/RGBSpectrum.hpp
 CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../utility/MA_utility.hpp
 
 CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../cameras/PerspectiveCamera.cpp
@@ -38,6 +41,10 @@ CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o: ../utility/MA_utility
 CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o: ../core/BxDF.cpp
 CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o: ../core/BxDF.hpp
 CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o: ../core/Spectrum.hpp
+CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o: ../spectrum/CoefficientSpectrum.hpp
+CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o: ../spectrum/RGBSpectrum.hpp
+CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o: ../utility/MA_utility.hpp
 
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../core/Camera.cpp
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o: ../core/Camera.hpp

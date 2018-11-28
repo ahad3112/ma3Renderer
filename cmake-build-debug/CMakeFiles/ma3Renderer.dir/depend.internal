@@ -15,6 +15,9 @@ CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/cameras/PerspectiveCamera.cpp
@@ -39,6 +42,10 @@ CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.cpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.hpp
+ /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/core/Camera.cpp.o
  /Users/maaahad/CLionProjects/ma3Renderer/core/Camera.cpp
  /Users/maaahad/CLionProjects/ma3Renderer/core/Camera.hpp

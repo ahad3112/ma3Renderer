@@ -6,6 +6,28 @@
 
 #IncludeRegexTransform: 
 
+/Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.cpp
+LambertianReflection.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.hpp
+../utility/MA_utility.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.hpp
+../core/BxDF.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.cpp
+iostream
+-
+BxDF.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp
+Geometry.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+Spectrum.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.hpp
+
 /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
 glm/glm.hpp
 -

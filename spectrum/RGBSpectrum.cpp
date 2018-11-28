@@ -11,7 +11,6 @@
 
 RGBSpectrum RGBSpectrum::fromRGB(const float rgb[3], SpectrumType type) {
     RGBSpectrum rs;
-
     rs.c[0] = rgb[0];
     rs.c[1] = rgb[1];
     rs.c[2] = rgb[2];
@@ -37,4 +36,5 @@ RGBSpectrum RGBSpectrum::fromXYZ(const float xyz[], SpectrumType type) {
 
     return fromRGB(rgb); // Second argument is not required
 }
+
 

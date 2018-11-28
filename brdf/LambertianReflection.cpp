@@ -9,19 +9,24 @@
 // Class methods
 //====================================================================================================================//
 
-LambertianReflection::LambertianReflection(const Vector3f &r) : BxDF(BxDFType(BSDF_REFLECTION | BSDF_DIFFUSE)), r(r) {
+LambertianReflection::LambertianReflection(const Spectrum &r) : BxDF(BxDFType(BSDF_REFLECTION | BSDF_DIFFUSE)), r(r) {
 
 }
 
-Vector3f LambertianReflection::f(const Vector3f &wi, const Vector3f &wo) const {
-    return r * Inv_MA_PI;
+Spectrum LambertianReflection::f(const Vector3f &wi, const Vector3f &wo) const {
+    Spectrum ret = r;
+    ret *=  Inv_MA_PI;
+    return ret;
+    //return r * Inv_MA_PI;     // This is not working. Don't understand why???
 }
 
 
-Vector3f LambertianReflection::rho(int, const Point2f *, const Point2f *) const {
+Spectrum LambertianReflection::rho(int nSamples, const Point2f *samples1, const Point2f *samples2) const {
     return r;
 }
 
-Vector3f LambertianReflection::rho(const Vector3f &, int, const Point2f *) const {
+
+Spectrum LambertianReflection::rho(const Vector3f &wo, const Vector3f &wi, int nSamples,
+                                   const Point2f *samples) const {
     return r;
 }

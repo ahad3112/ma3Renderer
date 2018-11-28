@@ -6,6 +6,7 @@
 #define MA3RENDERER_BXDF_HPP
 
 #include "Geometry.hpp"
+#include "Spectrum.hpp"
 
 enum BxDFType {
     BSDF_REFLECTION   = 1 << 0,
@@ -23,8 +24,10 @@ public:
     bool matchesFlags(BxDFType t);
 
     // TODO Vector3f should be replace by Spectrum
-    virtual Vector3f f(const Vector3f &wi, const Vector3f &wo) const = 0;
-    virtual Vector3f sample_f(const Vector3f &wi, const Vector3f &wo, float pdf, BxDFType *sampledType = nullptr) const = 0;
+    virtual Spectrum f(const Vector3f &wi, const Vector3f &wo) const = 0;
+    virtual Spectrum sample_f(const Vector3f &wi, const Vector3f &wo, float pdf, BxDFType *sampledType = nullptr) const = 0;
+    virtual Spectrum rho(const Vector3f &wo, const Vector3f &wi, int nSamples, const Point2f *samples) const = 0;
+    virtual Spectrum rho(int nSamples, const Point2f *samples1, const Point2f *samples2) const = 0;
 
     // < BxDF public data >
     const BxDFType type;
