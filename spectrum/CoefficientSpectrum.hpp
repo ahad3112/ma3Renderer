@@ -54,6 +54,7 @@ public:
         return cspectrum;
     }
 
+
     CoefficientSpectrum &operator*=(float v) {
         for(int i = 0; i != nSpectrumSamples; i++) {
             c[i] *= v;

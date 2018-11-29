@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/62FEBB72-EEA0-42C7-905A-53B61157BF30/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/FB81E4BD-DF93-466B-964E-430D5DAA1C18/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/62FEBB72-EEA0-42C7-905A-53B61157BF30/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/FB81E4BD-DF93-466B-964E-430D5DAA1C18/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/62FEBB72-EEA0-42C7-905A-53B61157BF30/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/FB81E4BD-DF93-466B-964E-430D5DAA1C18/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/62FEBB72-EEA0-42C7-905A-53B61157BF30/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/FB81E4BD-DF93-466B-964E-430D5DAA1C18/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -176,6 +176,33 @@ brdf/LambertianReflection.s: brdf/LambertianReflection.cpp.s
 brdf/LambertianReflection.cpp.s:
 	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.s
 .PHONY : brdf/LambertianReflection.cpp.s
+
+bsdf/BSDF.o: bsdf/BSDF.cpp.o
+
+.PHONY : bsdf/BSDF.o
+
+# target to build an object file
+bsdf/BSDF.cpp.o:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.o
+.PHONY : bsdf/BSDF.cpp.o
+
+bsdf/BSDF.i: bsdf/BSDF.cpp.i
+
+.PHONY : bsdf/BSDF.i
+
+# target to preprocess a source file
+bsdf/BSDF.cpp.i:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.i
+.PHONY : bsdf/BSDF.cpp.i
+
+bsdf/BSDF.s: bsdf/BSDF.cpp.s
+
+.PHONY : bsdf/BSDF.s
+
+# target to generate assembly for a file
+bsdf/BSDF.cpp.s:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.s
+.PHONY : bsdf/BSDF.cpp.s
 
 cameras/PerspectiveCamera.o: cameras/PerspectiveCamera.cpp.o
 
@@ -894,6 +921,9 @@ help:
 	@echo "... brdf/LambertianReflection.o"
 	@echo "... brdf/LambertianReflection.i"
 	@echo "... brdf/LambertianReflection.s"
+	@echo "... bsdf/BSDF.o"
+	@echo "... bsdf/BSDF.i"
+	@echo "... bsdf/BSDF.s"
 	@echo "... cameras/PerspectiveCamera.o"
 	@echo "... cameras/PerspectiveCamera.i"
 	@echo "... cameras/PerspectiveCamera.s"

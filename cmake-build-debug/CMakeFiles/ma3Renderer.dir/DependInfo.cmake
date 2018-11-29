@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/maaahad/CLionProjects/ma3Renderer/accelerators/Aggregrate.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/accelerators/Aggregrate.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o"
+  "/Users/maaahad/CLionProjects/ma3Renderer/bsdf/BSDF.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/cameras/PerspectiveCamera.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/cameras/ProjectiveCamera.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/cameras/ProjectiveCamera.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/BxDF.cpp.o"

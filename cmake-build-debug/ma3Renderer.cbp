@@ -102,6 +102,12 @@
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.hpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/bsdf/BSDF.cpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/bsdf/BSDF.hpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/cameras/PerspectiveCamera.cpp">
 			<Option target="ma3Renderer"/>
 		</Unit>

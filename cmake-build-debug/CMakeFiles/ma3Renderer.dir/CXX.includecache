@@ -6,20 +6,16 @@
 
 #IncludeRegexTransform: 
 
-/Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.cpp
-LambertianReflection.hpp
-/Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.hpp
-../utility/MA_utility.hpp
-/Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
-
-/Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.hpp
-../core/BxDF.hpp
-/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp
-
-/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.cpp
-iostream
+/Users/maaahad/CLionProjects/ma3Renderer/bsdf/BSDF.cpp
+cassert
 -
-BxDF.hpp
+BSDF.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/bsdf/BSDF.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/bsdf/BSDF.hpp
+../core/Interaction.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Interaction.hpp
+../core/BxDF.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp
 
 /Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp
@@ -34,9 +30,17 @@ glm/glm.hpp
 algorithm
 -
 
-/Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.cpp
-Spectrum.hpp
-/Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Interaction.hpp
+Geometry.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+Ray.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
+Geometry.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+../utility/MA_utility.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
 
 /Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.hpp
 ../spectrum/RGBSpectrum.hpp
@@ -49,12 +53,6 @@ iostream
 -
 ../utility/MA_utility.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
-
-/Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.cpp
-RGBSpectrum.hpp
-/Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.hpp
-../core/Spectrum.hpp
-/Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.hpp
 
 /Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.hpp
 CoefficientSpectrum.hpp

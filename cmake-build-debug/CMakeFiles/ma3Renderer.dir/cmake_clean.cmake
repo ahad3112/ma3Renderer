@@ -27,6 +27,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o"
   "CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o"
   "CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o"
+  "CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.o"
   "ma3Renderer.pdb"
   "ma3Renderer"
 )
