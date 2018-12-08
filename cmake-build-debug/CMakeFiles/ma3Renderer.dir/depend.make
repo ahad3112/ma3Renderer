@@ -19,6 +19,17 @@ CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../spectrum/Coeffici
 CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../spectrum/RGBSpectrum.hpp
 CMakeFiles/ma3Renderer.dir/brdf/LambertianReflection.cpp.o: ../utility/MA_utility.hpp
 
+CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.o: ../bsdf/BSDF.cpp
+CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.o: ../bsdf/BSDF.hpp
+CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.o: ../core/BxDF.hpp
+CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.o: ../core/Interaction.hpp
+CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.o: ../core/Ray.hpp
+CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.o: ../core/Spectrum.hpp
+CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.o: ../spectrum/CoefficientSpectrum.hpp
+CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.o: ../spectrum/RGBSpectrum.hpp
+CMakeFiles/ma3Renderer.dir/bsdf/BSDF.cpp.o: ../utility/MA_utility.hpp
+
 CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../cameras/PerspectiveCamera.cpp
 CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../cameras/PerspectiveCamera.hpp
 CMakeFiles/ma3Renderer.dir/cameras/PerspectiveCamera.cpp.o: ../cameras/ProjectiveCamera.hpp
@@ -128,6 +139,13 @@ CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o: ../core/Spectrum.hpp
 CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o: ../spectrum/CoefficientSpectrum.hpp
 CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o: ../spectrum/RGBSpectrum.hpp
 CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o: ../utility/MA_utility.hpp
+
+CMakeFiles/ma3Renderer.dir/core/Texture.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/core/Texture.cpp.o: ../core/Interaction.hpp
+CMakeFiles/ma3Renderer.dir/core/Texture.cpp.o: ../core/Ray.hpp
+CMakeFiles/ma3Renderer.dir/core/Texture.cpp.o: ../core/Texture.cpp
+CMakeFiles/ma3Renderer.dir/core/Texture.cpp.o: ../core/Texture.hpp
+CMakeFiles/ma3Renderer.dir/core/Texture.cpp.o: ../utility/MA_utility.hpp
 
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: ../core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o: ../core/Ray.hpp
@@ -326,6 +344,8 @@ CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Material.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Primitive.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Ray.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Scene.hpp
+CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Spectrum.hpp
+CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Texture.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/Transform.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../core/shape.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../integrators/SamplerIntegrator.hpp
@@ -334,6 +354,9 @@ CMakeFiles/ma3Renderer.dir/main.cpp.o: ../materials/Dielectric.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../materials/MatteMaterial.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../materials/Metal.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../shapes/Sphere.hpp
+CMakeFiles/ma3Renderer.dir/main.cpp.o: ../spectrum/CoefficientSpectrum.hpp
+CMakeFiles/ma3Renderer.dir/main.cpp.o: ../spectrum/RGBSpectrum.hpp
+CMakeFiles/ma3Renderer.dir/main.cpp.o: ../textures/ConstantTexture.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../utility/MA_utility.hpp
 CMakeFiles/ma3Renderer.dir/main.cpp.o: ../visualization/MA_window.hpp
 
@@ -349,8 +372,11 @@ CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o: ../core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o: ../core/Interaction.hpp
 CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o: ../core/Material.hpp
 CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o: ../core/Ray.hpp
+CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o: ../core/Spectrum.hpp
 CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o: ../materials/MatteMaterial.cpp
 CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o: ../materials/MatteMaterial.hpp
+CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o: ../spectrum/CoefficientSpectrum.hpp
+CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o: ../spectrum/RGBSpectrum.hpp
 CMakeFiles/ma3Renderer.dir/materials/MatteMaterial.cpp.o: ../utility/MA_utility.hpp
 
 CMakeFiles/ma3Renderer.dir/materials/Metal.cpp.o: ../core/Geometry.hpp
@@ -381,6 +407,14 @@ CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o: ../spectrum/CoefficientSp
 CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o: ../spectrum/RGBSpectrum.cpp
 CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o: ../spectrum/RGBSpectrum.hpp
 CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o: ../utility/MA_utility.hpp
+
+CMakeFiles/ma3Renderer.dir/textures/ConstantTexture.cpp.o: ../core/Geometry.hpp
+CMakeFiles/ma3Renderer.dir/textures/ConstantTexture.cpp.o: ../core/Interaction.hpp
+CMakeFiles/ma3Renderer.dir/textures/ConstantTexture.cpp.o: ../core/Ray.hpp
+CMakeFiles/ma3Renderer.dir/textures/ConstantTexture.cpp.o: ../core/Texture.hpp
+CMakeFiles/ma3Renderer.dir/textures/ConstantTexture.cpp.o: ../textures/ConstantTexture.cpp
+CMakeFiles/ma3Renderer.dir/textures/ConstantTexture.cpp.o: ../textures/ConstantTexture.hpp
+CMakeFiles/ma3Renderer.dir/textures/ConstantTexture.cpp.o: ../utility/MA_utility.hpp
 
 CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o: ../core/Geometry.hpp
 CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o: ../utility/MA_utility.cpp

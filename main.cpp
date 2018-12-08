@@ -14,6 +14,8 @@
 #include "integrators/SamplerIntegrator.hpp"
 #include "cameras/PerspectiveCamera.hpp"
 #include "materials/Dielectric.hpp"
+#include "core/Texture.hpp"
+#include "textures/ConstantTexture.hpp"
 
 
 #define WINDOW_WIDTH 480
@@ -32,6 +34,8 @@ void testShirley();
 
 void testPBRT();
 
+void testSpectrumTexture();
+
 void testTransform();
 Scene *randomScene();
 
@@ -44,46 +48,64 @@ Camera *camera;
 MAWindow *ma_window;
 
 int main(int argc, char *argv[]) {
-    //================================================================================================================//
-    // Start ma3Renderer
-    //================================================================================================================//
-    std::cout << "This is ##### ma3Renderer #####" << std::endl;
+    testSpectrumTexture();
 
-
-    //================================================================================================================//
-    // Call Integrator for rendering
-    //================================================================================================================//
-    ma_window = new MAWindow("########## ma3Renderer ##########", WINDOW_WIDTH, WINDOW_HEIGHT);
-
-    //================================================================================================================//
-    // Setup glfw callback
-    //================================================================================================================//
-    glfwSetKeyCallback(ma_window->getWindow(), keyCallback);
-    glfwSetFramebufferSizeCallback(ma_window->getWindow(), framebufferSizeCallback);
-
-
-    //testShirley();
-    testPBRT();
-
-    //testTransform();
-    //================================================================================================================//
-    // Delete resources
-    //================================================================================================================//
-    // TODO write a method to release memory
-    delete ma_window;
-    delete film;
-    delete camera;
-
-
-    //================================================================================================================//
-    // Terminate glfw
-    //================================================================================================================//
-    // TODO write a method in MAWindow class to release memory and glfw
-    glDisableClientState(GL_COLOR_ARRAY);
-    glDisableClientState(GL_VERTEX_ARRAY);
-    glfwTerminate();
+//    //================================================================================================================//
+//    // Start ma3Renderer
+//    //================================================================================================================//
+//    std::cout << "This is ##### ma3Renderer #####" << std::endl;
+//
+//
+//    //================================================================================================================//
+//    // Call Integrator for rendering
+//    //================================================================================================================//
+//    ma_window = new MAWindow("########## ma3Renderer ##########", WINDOW_WIDTH, WINDOW_HEIGHT);
+//
+//    //================================================================================================================//
+//    // Setup glfw callback
+//    //================================================================================================================//
+//    glfwSetKeyCallback(ma_window->getWindow(), keyCallback);
+//    glfwSetFramebufferSizeCallback(ma_window->getWindow(), framebufferSizeCallback);
+//
+//
+//    //testShirley();
+//    testPBRT();
+//
+//    //testTransform();
+//    //================================================================================================================//
+//    // Delete resources
+//    //================================================================================================================//
+//    // TODO write a method to release memory
+//    delete ma_window;
+//    delete film;
+//    delete camera;
+//
+//
+//    //================================================================================================================//
+//    // Terminate glfw
+//    //================================================================================================================//
+//    // TODO write a method in MAWindow class to release memory and glfw
+//    glDisableClientState(GL_COLOR_ARRAY);
+//    glDisableClientState(GL_VERTEX_ARRAY);
+//    glfwTerminate();
 
     return 0;
+}
+
+//====================================================================================================================//
+// Testing Spectrum and Texture
+//====================================================================================================================//
+
+void testSpectrumTexture() {
+    Spectrum sp(10.0f);
+    float rgb[] = {1,0,0};
+    sp = sp.fromRGB(rgb);
+
+    std::cout << "SP : \n\t" << sp << std::endl;
+
+    // Texture
+    //ConstantTexture<float> cch(0.0f);
+    //std::shared_ptr<ConstantTexture<Spectrum>> tx(new Spectrum(0.0f));
 }
 
 //====================================================================================================================//

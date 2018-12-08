@@ -18,8 +18,9 @@ public:
     void toXYZ(float *xyz) const;
     RGBSpectrum fromRGB(const float rgb[3] , SpectrumType type = SpectrumType::REFLECTANCE);
     RGBSpectrum fromXYZ(const float xyz[3], SpectrumType type = SpectrumType::REFLECTANCE);
-};
 
+    friend std::ostream &operator<<(std::ostream &os, const RGBSpectrum &sp);
+};
 
 
 

@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/FB81E4BD-DF93-466B-964E-430D5DAA1C18/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/E2DDEEDF-73AA-47A1-A11D-9BE160C494B0/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/FB81E4BD-DF93-466B-964E-430D5DAA1C18/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/E2DDEEDF-73AA-47A1-A11D-9BE160C494B0/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/FB81E4BD-DF93-466B-964E-430D5DAA1C18/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/E2DDEEDF-73AA-47A1-A11D-9BE160C494B0/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/FB81E4BD-DF93-466B-964E-430D5DAA1C18/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/private/var/folders/vq/b7brl66d67j8k899rkq663g40000gn/T/AppTranslocation/E2DDEEDF-73AA-47A1-A11D-9BE160C494B0/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -582,6 +582,33 @@ core/Spectrum.cpp.s:
 	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.s
 .PHONY : core/Spectrum.cpp.s
 
+core/Texture.o: core/Texture.cpp.o
+
+.PHONY : core/Texture.o
+
+# target to build an object file
+core/Texture.cpp.o:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Texture.cpp.o
+.PHONY : core/Texture.cpp.o
+
+core/Texture.i: core/Texture.cpp.i
+
+.PHONY : core/Texture.i
+
+# target to preprocess a source file
+core/Texture.cpp.i:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Texture.cpp.i
+.PHONY : core/Texture.cpp.i
+
+core/Texture.s: core/Texture.cpp.s
+
+.PHONY : core/Texture.s
+
+# target to generate assembly for a file
+core/Texture.cpp.s:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/core/Texture.cpp.s
+.PHONY : core/Texture.cpp.s
+
 core/Transform.o: core/Transform.cpp.o
 
 .PHONY : core/Transform.o
@@ -852,6 +879,33 @@ spectrum/RGBSpectrum.cpp.s:
 	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.s
 .PHONY : spectrum/RGBSpectrum.cpp.s
 
+textures/ConstantTexture.o: textures/ConstantTexture.cpp.o
+
+.PHONY : textures/ConstantTexture.o
+
+# target to build an object file
+textures/ConstantTexture.cpp.o:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/textures/ConstantTexture.cpp.o
+.PHONY : textures/ConstantTexture.cpp.o
+
+textures/ConstantTexture.i: textures/ConstantTexture.cpp.i
+
+.PHONY : textures/ConstantTexture.i
+
+# target to preprocess a source file
+textures/ConstantTexture.cpp.i:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/textures/ConstantTexture.cpp.i
+.PHONY : textures/ConstantTexture.cpp.i
+
+textures/ConstantTexture.s: textures/ConstantTexture.cpp.s
+
+.PHONY : textures/ConstantTexture.s
+
+# target to generate assembly for a file
+textures/ConstantTexture.cpp.s:
+	$(MAKE) -f CMakeFiles/ma3Renderer.dir/build.make CMakeFiles/ma3Renderer.dir/textures/ConstantTexture.cpp.s
+.PHONY : textures/ConstantTexture.cpp.s
+
 utility/MA_utility.o: utility/MA_utility.cpp.o
 
 .PHONY : utility/MA_utility.o
@@ -966,6 +1020,9 @@ help:
 	@echo "... core/Spectrum.o"
 	@echo "... core/Spectrum.i"
 	@echo "... core/Spectrum.s"
+	@echo "... core/Texture.o"
+	@echo "... core/Texture.i"
+	@echo "... core/Texture.s"
 	@echo "... core/Transform.o"
 	@echo "... core/Transform.i"
 	@echo "... core/Transform.s"
@@ -996,6 +1053,9 @@ help:
 	@echo "... spectrum/RGBSpectrum.o"
 	@echo "... spectrum/RGBSpectrum.i"
 	@echo "... spectrum/RGBSpectrum.s"
+	@echo "... textures/ConstantTexture.o"
+	@echo "... textures/ConstantTexture.i"
+	@echo "... textures/ConstantTexture.s"
 	@echo "... utility/MA_utility.o"
 	@echo "... utility/MA_utility.i"
 	@echo "... utility/MA_utility.s"

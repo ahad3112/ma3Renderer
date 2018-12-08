@@ -192,6 +192,12 @@
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.hpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Texture.cpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Texture.hpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/core/Transform.cpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
@@ -247,6 +253,12 @@
 			<Option target="ma3Renderer"/>
 		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.hpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/textures/ConstantTexture.cpp">
+			<Option target="ma3Renderer"/>
+		</Unit>
+		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/textures/ConstantTexture.hpp">
 			<Option target="ma3Renderer"/>
 		</Unit>
 		<Unit filename="/Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.cpp">

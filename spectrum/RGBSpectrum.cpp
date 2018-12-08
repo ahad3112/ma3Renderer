@@ -37,4 +37,13 @@ RGBSpectrum RGBSpectrum::fromXYZ(const float xyz[], SpectrumType type) {
     return fromRGB(rgb); // Second argument is not required
 }
 
+std::ostream &operator<<(std::ostream &os, const RGBSpectrum &sp) {
+
+    os << "RGBSpectrum: (" << sp.c[0] << ", "
+       << sp.c[1] << ", "
+       << sp.c[2] << ")";
+
+    return os;
+}
+
 

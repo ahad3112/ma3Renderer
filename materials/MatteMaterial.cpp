@@ -13,11 +13,16 @@ Vector3f MatteMaterial::getAlbedo() const {
     return albedo;
 }
 
+// pbrt
 void MatteMaterial::computeScatteringFunctions(SurfaceInteraction *isect) const {
-    Point3f target = isect->position + isect->normal + randomUnitSphere();
+    //Point3f target = isect->position + isect->normal + randomUnitSphere();
     //isect->scatterRay = Ray(isect->position, target - isect->position); // TODO isect should not have scatterRay... need other way of storing it
+    // <perform bump mapping with bumpma, if present 579> todo Later
+
+
 }
 
+// Shirley
 bool MatteMaterial::computeScatteringFunctions(SurfaceInteraction *isect, const Ray &ray, Ray &scatterRay) const {
     Point3f target = isect->position + isect->normal + randomUnitSphere();
     scatterRay = Ray(isect->position, target - isect->position);

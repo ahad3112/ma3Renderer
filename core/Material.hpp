@@ -11,6 +11,9 @@
 class Material {
 public:
     // < Matarial Interface 577 >
+    Material() {
+
+    }
     Material (const Vector3f &albedo);
     virtual void computeScatteringFunctions(SurfaceInteraction *isect) const = 0;
     virtual bool computeScatteringFunctions(SurfaceInteraction *isect, const Ray &ray, Ray &scatterRay) const = 0;

@@ -21,6 +21,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/maaahad/CLionProjects/ma3Renderer/core/Ray.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Ray.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/Scene.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Scene.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Spectrum.cpp.o"
+  "/Users/maaahad/CLionProjects/ma3Renderer/core/Texture.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Texture.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/Transform.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/Transform.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/core/shape.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/core/shape.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/integrators/SamplerIntegrator.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/integrators/SamplerIntegrator.cpp.o"
@@ -31,6 +32,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/maaahad/CLionProjects/ma3Renderer/shapes/Sphere.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/shapes/Sphere.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/spectrum/CoefficientSpectrum.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/spectrum/RGBSpectrum.cpp.o"
+  "/Users/maaahad/CLionProjects/ma3Renderer/textures/ConstantTexture.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/textures/ConstantTexture.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/utility/MA_utility.cpp.o"
   "/Users/maaahad/CLionProjects/ma3Renderer/visualization/MA_window.cpp" "/Users/maaahad/CLionProjects/ma3Renderer/cmake-build-debug/CMakeFiles/ma3Renderer.dir/visualization/MA_window.cpp.o"
   )
