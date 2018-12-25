@@ -25,7 +25,7 @@ public:
 
     // TODO Vector3f should be replace by Spectrum
     virtual Spectrum f(const Vector3f &wi, const Vector3f &wo) const = 0;
-    virtual Spectrum sample_f(const Vector3f &wi, const Vector3f &wo, float pdf, BxDFType *sampledType = nullptr) const = 0;
+    virtual Spectrum sample_f(const Vector3f &wo, const Vector3f &wi, float pdf, BxDFType *sampledType = nullptr) const = 0;
     virtual Spectrum rho(const Vector3f &wo, const Vector3f &wi, int nSamples, const Point2f *samples) const = 0;
     virtual Spectrum rho(int nSamples, const Point2f *samples1, const Point2f *samples2) const = 0;
 

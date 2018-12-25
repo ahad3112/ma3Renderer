@@ -22,7 +22,7 @@ Spectrum BxDF::f(const Vector3f &wi, const Vector3f &wo) const {
     return Spectrum();
 }
 
-Spectrum BxDF::sample_f(const Vector3f &wi, const Vector3f &wo, float pdf, BxDFType *sampledType) const {
+Spectrum BxDF::sample_f(const Vector3f &wo, const Vector3f &wi, float pdf, BxDFType *sampledType) const {
     std::cerr << "Warning: \n\tFile:" << __FILE__
               << "\n\tLine: " << __LINE__
               << "Function: " << __func__

@@ -13,11 +13,8 @@ LambertianReflection::LambertianReflection(const Spectrum &r) : BxDF(BxDFType(BS
 
 }
 
-Spectrum LambertianReflection::f(const Vector3f &wi, const Vector3f &wo) const {
-    Spectrum ret = r;
-    ret *=  Inv_MA_PI;
-    return ret;
-    //return Inv_MA_PI * r ;     // This is not working. Don't understand why???
+Spectrum LambertianReflection::f(const Vector3f &wo, const Vector3f &wi) const {
+    return r * Inv_MA_PI;
 }
 
 

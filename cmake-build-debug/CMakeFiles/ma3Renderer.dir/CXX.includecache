@@ -6,6 +6,28 @@
 
 #IncludeRegexTransform: 
 
+/Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.cpp
+LambertianReflection.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.hpp
+../utility/MA_utility.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/brdf/LambertianReflection.hpp
+../core/BxDF.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/bsdf/BSDF.cpp
+cassert
+-
+BSDF.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/bsdf/BSDF.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/bsdf/BSDF.hpp
+../core/Interaction.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Interaction.hpp
+../core/BxDF.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp
+
 /Users/maaahad/CLionProjects/ma3Renderer/cameras/PerspectiveCamera.hpp
 ../core/Transform.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Transform.hpp
@@ -15,6 +37,18 @@ ProjectiveCamera.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/cameras/ProjectiveCamera.hpp
 ../core/Camera.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Camera.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.cpp
+iostream
+-
+BxDF.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/core/BxDF.hpp
+Geometry.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
+Spectrum.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.hpp
 
 /Users/maaahad/CLionProjects/ma3Renderer/core/Camera.hpp
 Geometry.hpp
@@ -81,6 +115,10 @@ vector
 -
 Primitive.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Primitive.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.cpp
+Spectrum.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.hpp
 
 /Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.hpp
 ../spectrum/RGBSpectrum.hpp
@@ -158,6 +196,16 @@ textures/ConstantTexture.hpp
 ../core/Material.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Material.hpp
 
+/Users/maaahad/CLionProjects/ma3Renderer/materials/MatteMaterial.cpp
+cmath
+-
+cstdlib
+-
+MatteMaterial.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/materials/MatteMaterial.hpp
+../core/Ray.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Ray.hpp
+
 /Users/maaahad/CLionProjects/ma3Renderer/materials/MatteMaterial.hpp
 iostream
 -
@@ -178,6 +226,10 @@ memory
 ../core/Geometry.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
 
+/Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.cpp
+CoefficientSpectrum.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.hpp
+
 /Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.hpp
 cmath
 -
@@ -185,6 +237,12 @@ iostream
 -
 ../utility/MA_utility.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/utility/MA_utility.hpp
+
+/Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.cpp
+RGBSpectrum.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.hpp
+../core/Spectrum.hpp
+/Users/maaahad/CLionProjects/ma3Renderer/core/Spectrum.hpp
 
 /Users/maaahad/CLionProjects/ma3Renderer/spectrum/RGBSpectrum.hpp
 CoefficientSpectrum.hpp

@@ -14,7 +14,7 @@ public:
     // TODO Vectpr3f should be replaced by Spectrum
     LambertianReflection(const Spectrum &r);
 
-    Spectrum f(const Vector3f &wi, const Vector3f &wo) const override;
+    Spectrum f(const Vector3f &wo, const Vector3f &wi) const override;
 
     Spectrum rho(const Vector3f &wo, const Vector3f &wi, int nSamples, const Point2f *samples) const override;
     Spectrum rho(int nSamples, const Point2f *samples1, const Point2f *samples2) const override;

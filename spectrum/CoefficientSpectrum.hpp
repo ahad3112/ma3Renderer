@@ -62,12 +62,14 @@ public:
         return *this;
     }
 
-    CoefficientSpectrum operator*(float v) {
-        CoefficientSpectrum cspectrum = *this;
-        for(int i = 0; i != nSpectrumSamples; i++) {
-            cspectrum.c[i] *= v;
+
+    CoefficientSpectrum operator*(float v) const {
+        auto csp = *this;
+        for(int i = 0; i!= nSpectrumSamples; i++) {
+            csp.c[i] = csp.c[i] * v;
         }
-        return cspectrum;
+
+        return csp;
     }
 
 
@@ -143,14 +145,14 @@ public:
         return false;
     }
 
-    float operator[](int i) const{
-        if(i >= 0 && i < nSpectrumSamples) return c[i];
-        else {
+    float &operator[](int i) const{
+        if(i < 0 && i >= nSpectrumSamples) {
             std::cerr << "Index out of bounds in\n\tFile: " << __FILE__
                       << "\n\tFunction : " << __func__
                       << "\n\tLine: " << __LINE__ << std::endl;
-            return -1.0f;
         }
+
+        return c[i];
     }
     // <  CoeffcientSpectrum public data 316 >
     int nSamples = nSpectrumSamples;

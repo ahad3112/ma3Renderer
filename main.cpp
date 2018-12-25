@@ -97,15 +97,22 @@ int main(int argc, char *argv[]) {
 //====================================================================================================================//
 
 void testSpectrumTexture() {
-    Spectrum sp(10.0f);
-    float rgb[] = {1,0,0};
+    Spectrum sp;
+    float rgb[] = {1,0,1};
     sp = sp.fromRGB(rgb);
-
-    std::cout << "SP : \n\t" << sp << std::endl;
-
-    // Texture
+//
+////    std::cout << "SP : \n\t" << sp << std::endl;
+//
+//    // Texture
     //ConstantTexture<float> cch(0.0f);
     //std::shared_ptr<ConstantTexture<Spectrum>> tx(new Spectrum(0.0f));
+    ConstantTexture<Spectrum> csp(sp);
+    std::cout << "SP : \n\t" << csp.evaluate(SurfaceInteraction()) << std::endl;
+
+    //Spectrum sp(1);
+    //std::cout << sp * 2 << std::endl;
+
+
 }
 
 //====================================================================================================================//
