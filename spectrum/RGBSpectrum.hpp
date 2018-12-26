@@ -20,6 +20,13 @@ public:
     RGBSpectrum fromXYZ(const float xyz[3], SpectrumType type = SpectrumType::REFLECTANCE);
 
     // Operator overload
+    RGBSpectrum &operator+=(const RGBSpectrum &s) {
+        for(int i = 0; i != nSamples; i++) {
+            c[i] += s.c[i];
+        }
+        return *this;
+    }
+
     RGBSpectrum &operator*=(const float v) {
         for(int i = 0; i!= nSamples; i++) {
             c[i] = c[i] * v;

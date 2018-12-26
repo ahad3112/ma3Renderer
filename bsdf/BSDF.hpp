@@ -5,14 +5,15 @@
 #ifndef MA3RENDERER_BSDF_HPP
 #define MA3RENDERER_BSDF_HPP
 
-
+#include <memory>
+#include <vector>
 #include "../core/Interaction.hpp"
 #include "../core/BxDF.hpp"
 
 class BSDF {
 public:
     // < BSDF public methods 573>
-    BSDF(SurfaceInteraction &si, float eta = 1) : eta(eta), ng(si.normal) {
+    BSDF(SurfaceInteraction &si, float eta = 1) : eta(eta), ng(si.normal), bxdfs(std::make_shared<std::vector<BxDF *>>()) {
 
     }
     ~BSDF() {
@@ -28,7 +29,8 @@ private:
     // < BSDF private data 573>
     int nBxDFs = 0;
     static constexpr int maxBxDFs = 8;
-    BxDF *bxdfs[maxBxDFs];
+    std::shared_ptr<std::vector<BxDF *>> bxdfs;     // Use shared_ptr
+    //BxDF *bxdfs[maxBxDFs];
     const Normal3f ng;
 };
 

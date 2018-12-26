@@ -23,6 +23,10 @@ BSDF.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/bsdf/BSDF.hpp
 
 /Users/maaahad/CLionProjects/ma3Renderer/bsdf/BSDF.hpp
+memory
+-
+vector
+-
 ../core/Interaction.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Interaction.hpp
 ../core/BxDF.hpp
@@ -225,10 +229,6 @@ memory
 /Users/maaahad/CLionProjects/ma3Renderer/core/shape.hpp
 ../core/Geometry.hpp
 /Users/maaahad/CLionProjects/ma3Renderer/core/Geometry.hpp
-
-/Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.cpp
-CoefficientSpectrum.hpp
-/Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.hpp
 
 /Users/maaahad/CLionProjects/ma3Renderer/spectrum/CoefficientSpectrum.hpp
 cmath
